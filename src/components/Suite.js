@@ -3,7 +3,7 @@ import { HiOutlineArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 const Suite = (props) => {
-  const { image, title, description, size, capacity, type, slug } = props.room;
+  const { image, title, description, size, occupancy, type, slug } = props.room;
 
   return (
     <div className="suite">
@@ -17,7 +17,7 @@ const Suite = (props) => {
         </div>
         <p>{description}</p>
         <p>{size}</p>
-        <p>{capacity}</p>
+        <p>{occupancy}</p>
         <div className="btn-container">
           <Link to="/accomodation" className="btn btn-primary">
             Check rates

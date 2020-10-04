@@ -70,6 +70,17 @@ a {
   color           : var(--orange);
 }
 
+.btn-default {
+  background-color: var(--white);
+  color           : var(--maroon);
+  border-color    : var(--white);
+}
+
+.btn-default:hover {
+  color           : var(--white);
+  background-color: transparent;
+}
+
 /* --------------End of Globals ----------------------------- */
 /* ---------------------------Error Page------------------------ */
 .error-page {
@@ -670,6 +681,12 @@ a {
   padding-left: 0;
 }
 
+.accomodation-suites .suite .image img {
+  max-height: 60vh;
+  width     : 100%;
+  object-fit: cover;
+}
+
 .accomodation-suites .suite .info .info-title {
   display        : flex;
   justify-content: space-between;
@@ -677,8 +694,9 @@ a {
 }
 
 .accomodation-suites .suite .info .info-title a {
-  font-size     : 1.2rem;
+  font-size     : 1.1rem;
   text-transform: uppercase;
+  color         : var(--darkMaroon)
 }
 
 .accomodation-suites .suite .info .info-title .arrow {
@@ -739,3 +757,156 @@ a {
 /* -----------------End of Accomodation Suites-------------------- */
 
 /* --------------------------End of Accomodation------------------ */
+
+/* --------------------------Single Room------------------------- */
+.single-room {
+  padding: 0;
+}
+
+.single-room .single-room-header {
+  background-color: var(--maroon);
+  min-height      : 13vh;
+  padding         : 1rem;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  flex-direction  : column;
+}
+
+.single-room .single-room-header h5,
+.single-room .single-room-header h3 {
+  color         : var(--white);
+  margin        : .5rem 0;
+  font-family   : "Playfair Display", Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  text-align    : center;
+}
+
+.single-room .single-room-header h5 {
+  font-style : italic;
+  font-weight: 500;
+}
+
+.single-room .single-room-header h3 {
+  text-transform: uppercase;
+  font-weight   : 400;
+}
+
+.single-room .single-room-content {
+  min-height      : 40vh;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+  text-align      : center;
+  padding         : 1rem 2rem;
+  background-color: var(--maroon);
+}
+
+.single-room .single-room-content p {
+  margin-bottom : 1rem;
+  max-width     : 60vw;
+  padding       : 1rem;
+  letter-spacing: 2px;
+  color         : var(--white)
+}
+
+.single-room .single-room-gallery h3,
+.single-room .single-room-details h4 {
+  text-align    : center;
+  font-weight   : 400;
+  text-transform: uppercase;
+  color         : var(--lightBlack);
+  font-size     : 1.5rem;
+  margin        : 1.5rem 0;
+}
+
+.single-room .single-room-gallery div {
+  min-height: 40vh;
+}
+
+.single-room .single-room-details {
+  padding: 1rem;
+  margin : 0 auto;
+}
+
+.single-room .single-room-details .details {
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: center;
+}
+
+.single-room .single-room-details .details>div {
+  display   : inline-block;
+  max-width : 43vw;
+  width     : 100%;
+  padding   : 1rem;
+  margin    : 10px;
+  border-top: 1px solid var(--black);
+}
+
+.single-room .single-room-details .details div h5 {
+  color         : var(--lightBlack);
+  margin-bottom : 1rem;
+  text-transform: uppercase;
+
+}
+
+.single-room .single-room-additional {
+  padding   : 1rem;
+  text-align: center;
+}
+
+.single-room .single-room-additional p {
+  margin-bottom: 2rem;
+  font-style   : italic;
+}
+
+.single-room .single-room-contact {
+  display         : flex;
+  justify-content : space-between;
+  padding         : 1rem;
+  align-items     : center;
+  max-width       : 60vw;
+  margin          : 1rem auto;
+  margin-bottom   : 2rem;
+  background-color: var(--maroon);
+}
+
+.single-room .single-room-contact p {
+  color: var(--white)
+}
+
+@media screen and (max-width: 700px) {
+  .single-room .single-room-details .details {
+    flex-direction: column;
+    padding-right : 1rem;
+  }
+
+  .single-room .single-room-details .details>div {
+    max-width: 100vw;
+  }
+
+  .single-room .single-room-contact {
+    max-width: 90vw;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .single-room .single-room-content p {
+    max-width: 100vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .single-room .single-room-contact {
+    flex-direction: column;
+  }
+
+  .single-room .single-room-contact p {
+    margin-bottom: 2rem;
+  }
+}
+
+/* -----------------------End of Single Room --------------------- */

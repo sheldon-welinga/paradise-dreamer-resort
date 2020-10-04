@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Accomodation from "./pages/Accomodation";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
+import SingleRoom from "./pages/SingleRoom";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/accomodation" component={Accomodation} />
+        <Route exact path="/accomodation/:type/:slug" component={SingleRoom} />
         <Route component={ErrorPage} />
       </Switch>
       <Footer />
