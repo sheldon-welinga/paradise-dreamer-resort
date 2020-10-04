@@ -1,0 +1,741 @@
+/* -------------------Globals -------------------------- */
+* {
+  margin     : 0;
+  padding    : 0;
+  box-sizing : border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size  : 1rem;
+  color      : #1c1616;
+}
+
+:root {
+  --maroon    : #860d0d;
+  --darkMaroon: #401b1b;
+  --white     : #ffffff;
+  --blue      : #022296;
+  --lightBlue : #0a8ee0;
+  --orange    : #ff2419;
+  --black     : #1c1616;
+  --lightBlack: #110f0fd5;
+  --yellow    : #fbff05;
+}
+
+.page-height {
+  min-height: calc(100vh - 6vh);
+  padding   : 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+.btn {
+  display                   : inline-flex;
+  justify-content           : center;
+  align-items               : center;
+  min-width                 : 150px;
+  padding                   : 10px 1rem;
+  margin                    : 10px 0;
+  font-size                 : 1rem;
+  border-top-left-radius    : 10px;
+  border-bottom-right-radius: 10px;
+  border                    : 1px solid;
+  text-transform            : uppercase;
+  outline                   : none;
+  transition                : all 0.3s ease-in-out;
+}
+
+.btn-primary,
+.btn-primary .fa,
+.btn-outline:hover {
+  background-color: var(--orange);
+  color           : var(--white);
+  border-color    : var(--orange);
+}
+
+.btn .fa {
+  margin-left     : 1rem;
+  font-weight     : 200;
+  background-color: transparent;
+}
+
+.btn-primary:hover,
+.btn-primary:hover>.fa,
+.btn-outline {
+  background-color: transparent;
+  color           : var(--orange);
+}
+
+/* --------------End of Globals ----------------------------- */
+/* ---------------------------Error Page------------------------ */
+.error-page {
+  display              : flex;
+  align-items          : center;
+  justify-content      : center;
+  /* background        : url(/images/resort-image.jpg) center/cover no-repeat;
+  background-attachment: fixed; */
+}
+
+.error-page div {
+  border         : 1px solid var(--black);
+  padding        : 1rem;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  flex-direction : column;
+  border-radius  : 1rem;
+}
+
+.error-page div h2 {
+  color     : var(--maroon);
+  font-size : 3rem;
+  margin    : 1rem 0;
+  text-align: center;
+}
+
+.error-page div p {
+  text-align   : center;
+  font-weight  : 500;
+  margin-bottom: 1rem;
+  /* color     : var(--white); */
+}
+
+/* -----------------------End of Error Page ---------------------- */
+
+/* --------------------Header ----------------------------- */
+.header {
+  position        : sticky;
+  top             : 0;
+  width           : 100%;
+  background-color: var(--white);
+  z-index         : 100;
+}
+
+/* -------------------------Top Header -------------------- */
+.header .header-info {
+  background-color: var(--maroon);
+  color           : var(--white);
+  display         : flex;
+  justify-content : space-between;
+  flex-wrap       : wrap;
+  min-height      : 30px;
+  align-items     : center;
+  padding         : 10px;
+}
+
+.header .header-info div span {
+  color: var(--white);
+}
+
+.header .header-info .fa-phone {
+  margin-right: 0.5rem;
+}
+
+.header .header-info .fa {
+  height         : 30px;
+  width          : 30px;
+  border-radius  : 50%;
+  margin-left    : 5px;
+  margin-right   : 5px;
+  padding        : 10px;
+  font-size      : 1.1rem;
+  display        : inline-flex;
+  justify-content: center;
+  align-items    : center;
+  transition     : all 0.3s ease-in;
+}
+
+.header .header-info .info-right .fa:hover {
+  transform: rotate(360deg);
+}
+
+.header .header-info .fa-facebook {
+  background-color: var(--blue);
+}
+
+.header .header-info .fa-twitter {
+  background-color: var(--lightBlue);
+}
+
+.header .header-info .fa-google-plus {
+  background-color: var(--orange);
+}
+
+.header .header-info .fa-instagram {
+  background: linear-gradient(to right, #f71307, #f71307, #0744a5);
+}
+
+@media screen and (max-width: 678px) {
+  .header .header-info {
+    flex-direction: column;
+    padding-top   : 2px;
+    padding-left  : 0;
+    padding-right : 0;
+    text-align    : center;
+  }
+
+  .header .header-info .info-left {
+    margin-bottom : 10px;
+    border-bottom : 1px solid var(--white);
+    width         : 100%;
+    padding-bottom: 8px;
+  }
+}
+
+/* -----------------End of Top Header ------------------ */
+
+/* ----------------------Navigation Header --------------- */
+.header .header-nav {
+  box-shadow     : 0px 4px 4px -4px black;
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+  position       : relative;
+  padding        : 5px 1rem;
+  min-height     : 60px;
+}
+
+.header .header-nav .nav-logo a,
+.header .header-nav .nav-logo a span {
+  font-size: 1.5rem;
+}
+
+.header .header-nav .nav-logo span {
+  color: var(--orange);
+}
+
+.header .header-nav .nav-menu {
+  display   : flex;
+  list-style: none;
+}
+
+.header .header-nav .nav-menu .nav-link {
+  margin        : 5px 10px;
+  cursor        : pointer;
+  text-transform: uppercase;
+}
+
+.header .header-nav li a {
+  color     : var(--lightBlack);
+  transition: all 0.3s ease-in-out;
+  width     : 100%;
+  display   : inline-block;
+}
+
+.header .header-nav li:hover a {
+  color: var(--orange);
+}
+
+.toggle-collapse {
+  position: absolute;
+  top     : 1rem;
+  right   : 1rem;
+  display : none;
+}
+
+.toggle-collapse .fa-bars {
+  font-size: 1.5rem;
+  cursor   : pointer;
+}
+
+@media screen and (max-width: 920px) {
+  .toggle-collapse {
+    display: block;
+  }
+
+  .header .header-nav {
+    display: block;
+    padding: 0;
+  }
+
+  .header .header-nav .nav-logo {
+    min-height : 55px;
+    display    : flex;
+    align-items: center;
+    padding    : 10px;
+  }
+
+  .header .header-nav .nav-menu {
+    display       : block;
+    padding-bottom: 5px;
+    height        : 0;
+    overflow      : hidden;
+    transition    : all 0.3s linear;
+  }
+
+  .header .header-nav .nav-menu .nav-link {
+    margin    : 2px 0;
+    padding   : 10px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .header .header-nav .nav-menu .nav-link .active {
+    background-color: var(--maroon);
+  }
+
+  .header .header-nav .nav-menu .nav-link:first-child {
+    border-top: 1px solid var(--maroon);
+    margin-top: 5px;
+  }
+
+  .header .header-nav .nav-menu .nav-link:hover {
+    background-color: var(--maroon);
+  }
+
+  .header .header-nav .nav-menu .nav-link:hover a {
+    color: var(--white);
+  }
+
+  .header .header-nav .nav-menu.show-nav {
+    height: 250px;
+  }
+}
+
+/* ----------------End of Navigation Header --------------- */
+/* -------------------End of Header ---------------------- */
+
+/* -----------------------Footer ------------------------- */
+.footer {
+  min-height      : 6vh;
+  background-color: var(--maroon);
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  color           : var(--white);
+}
+
+/* ------------------End of Footer -------------------------- */
+
+/* --------------------------Home----------------------------- */
+.home {
+  padding: 0;
+}
+
+/* ---------------------------Home Slider--------------------- */
+.home-slider {
+  min-height           : 85vh;
+  background           : center/cover no-repeat;
+  animation            : backgroundanimate 50s ease-in-out infinite;
+  animation-delay      : -35s;
+  background-attachment: fixed;
+}
+
+@keyframes backgroundanimate {
+
+  0%,
+  100% {
+    background-image: url(/images/background1.jpg);
+  }
+
+  20% {
+    background-image: url(/images/background2.jpg);
+  }
+
+  40% {
+    background-image: url(/images/background3.jpg);
+  }
+
+  60% {
+    background-image: url(/images/background4.jpg);
+  }
+
+  80% {
+    background-image: url(/images/background5.jpg);
+  }
+}
+
+.home-slider .cover {
+  background-color: rgba(0, 0, 0, 0.2);
+  height          : 85vh;
+  width           : 100%;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+}
+
+.home-slider .cover div h2,
+.home-slider .cover div h4,
+.home-slider .cover div h5 {
+  color      : var(--white);
+  text-align : center;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  padding    : auto 10px;
+}
+
+.home-slider .cover div h2 {
+  font-size: 3rem;
+}
+
+.home-slider .cover div h4 {
+  font-size: 1.6rem;
+  color    : var(--yellow);
+}
+
+.home-slider .cover div h5 {
+  font-size     : 1.8rem;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 920px) {
+  .home-slider .cover div h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .home-slider .cover div h2 {
+    font-size: 2rem;
+  }
+
+  .home-slider .cover div h4 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .home-slider .cover div h2 {
+    font-size: 1.5rem;
+  }
+
+  .home-slider .cover div h5 {
+    font-size: 1.5rem;
+  }
+}
+
+/* -----------------------End of Home Slider------------------- */
+/* -----------------------Welcome Home--------------------------- */
+
+.welcome-home {
+  min-height : 80vh;
+  display    : flex;
+  flex-wrap  : wrap;
+  align-items: center;
+}
+
+.welcome-home .info {
+  flex   : 0.55;
+  padding: 1rem;
+}
+
+.welcome-home .info h4,
+.welcome-home .info h5 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight   : 500;
+  font-size     : 1.2rem;
+  color         : var(--orange);
+  margin        : 10px 0;
+}
+
+.welcome-home .info h5 {
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size  : 1rem;
+  color      : var(--black);
+}
+
+.welcome-home .info h2 {
+  font-family   : "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size     : 2rem;
+  margin        : 10px 0;
+  letter-spacing: 1.5px;
+  color         : var(--darkMaroon);
+}
+
+.welcome-home .info p {
+  margin        : 1rem 0;
+  letter-spacing: 2px;
+  word-spacing  : 2px;
+}
+
+.welcome-home .image {
+  flex    : 0.45;
+  display : inline-block;
+  overflow: hidden;
+  height  : 100%;
+  padding : 3rem;
+}
+
+.welcome-home .image div {
+  border       : 5px solid #e0dfdf;
+  border-radius: 10px;
+  transform    : rotate(15deg);
+  overflow     : hidden;
+  margin       : 2rem;
+}
+
+.welcome-home .image img {
+  display   : inline-block;
+  object-fit: fill;
+  width     : 100%;
+  height    : 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.welcome-home .image div:hover img {
+  transform: scale(1.2);
+}
+
+@media screen and (min-width: 1550px) and (max-width: 3600px) {
+  .welcome-home .image {
+    padding: 5rem;
+  }
+
+  .welcome-home .image div {
+    margin: 3rem;
+  }
+}
+
+@media screen and (min-width: 660px) and (max-width: 920px) {
+  .welcome-home .image {
+    padding: 2rem;
+  }
+
+  .welcome-home .image div {
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .welcome-home {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .welcome-home {
+    display: block;
+  }
+
+  .welcome-home .image {
+    padding: 0rem;
+    width  : 100%;
+  }
+
+  .welcome-home .image div {
+    transform: rotate(0deg);
+  }
+}
+
+/* ------------------End of Welcome Home---------------------- */
+/* -----------------------Resort Section ---------------------- */
+.resort-section {
+  display   : flex;
+  min-height: 40vh;
+}
+
+.resort-section>div {
+  flex   : 0.5;
+  width  : 100%;
+  padding: 1rem;
+}
+
+.resort-post .fa-cutlery,
+.resort-post .fa-coffee {
+  margin-right: 10px;
+  color       : var(--maroon);
+}
+
+.resort-post .resort-icons span {
+  margin-right: 1rem;
+  color       : var(--orange);
+}
+
+.resort-post .resort-icons {
+  display    : flex;
+  align-items: center;
+  margin     : 10px 0;
+}
+
+.resort-section h1,
+.resort-section h2 {
+  text-transform: uppercase;
+  margin        : 10px 0;
+  letter-spacing: 2px;
+  color         : var(--darkMaroon);
+  font-family   : "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size     : 1.3rem;
+}
+
+.resort-section h2 {
+  font-size     : 1.1rem;
+  text-transform: capitalize;
+  color         : var(--maroon);
+}
+
+.resort-section p {
+  letter-spacing: 2px;
+  line-height   : 1.3rem;
+  margin        : 10px 0;
+}
+
+.resort-section .resort-why h1 {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 720px) {
+  .resort-section {
+    flex-direction: column;
+  }
+}
+
+/* -----------------------End of Resort Section ------------------ */
+/* ------------------------End of Home ------------------------ */
+
+/* --------------------------Accomodation----------------------- */
+.accomodation-header h4 {
+  color: var(--white);
+}
+
+.accomodation {
+  padding-left : 3rem;
+  padding-right: 3rem;
+}
+
+.accomodation .accomodation-suite-lists {
+  display        : flex;
+  justify-content: space-between;
+  text-transform : uppercase;
+  margin         : 1rem 0;
+  border-top     : 1px solid var(--black);
+  border-bottom  : 1px solid var(--black);
+  padding        : 1rem;
+}
+
+.accomodation .accomodation-suite-lists .suite {
+  padding-right: 1rem;
+}
+
+.accomodation .accomodation-suite-lists .suite p {
+  margin    : 2rem 1rem;
+  cursor    : pointer;
+  width     : 100%;
+  text-align: center;
+  padding   : 10px;
+  transition: all .3s ease-in-out;
+}
+
+.accomodation .accomodation-suite-lists .suite p:hover {
+  color: var(--orange)
+}
+
+.accomodation .suite p:first-child {
+  margin-top: 0;
+}
+
+.accomodation .suite p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 920px) {
+  .accomodation .accomodation-suite-lists {
+    flex-direction: column;
+  }
+
+  .accomodation .accomodation-suite-lists .suite p {
+    margin: 1rem;
+  }
+
+  .accomodation .suite p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.accomodation-content {
+  margin: 1rem 0;
+}
+
+.accomodation-content p {
+  line-height   : 2rem;
+  letter-spacing: 2px;
+}
+
+/* ----------------------Accomodation Suites-------------------- */
+.accomodation-suites .suite {
+  display: flex;
+  margin : 1rem 0;
+}
+
+.accomodation-suites .suite>div {
+  flex          : 0.5;
+  padding       : 10px;
+  letter-spacing: 2px;
+}
+
+.accomodation-suites .suite .image {
+  padding-left: 0;
+}
+
+.accomodation-suites .suite .info .info-title {
+  display        : flex;
+  justify-content: space-between;
+  margin-bottom  : 1rem;
+}
+
+.accomodation-suites .suite .info .info-title a {
+  font-size     : 1.2rem;
+  text-transform: uppercase;
+}
+
+.accomodation-suites .suite .info .info-title .arrow {
+  font-size: 1.4rem;
+}
+
+.accomodation-suites .suite .info p {
+  margin     : 1.5rem 0;
+  line-height: 1.5rem;
+}
+
+.accomodation-suites .suite .info .btn-outline {
+  margin-left: 1rem;
+}
+
+.accomodation-suites .suite .info .btn {
+  font-size: 0.8rem;
+  padding  : 12px 10px;
+}
+
+@media screen and (max-width: 920px) {
+  .accomodation {
+    padding-left : 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .accomodation-suites .suite {
+    flex-direction: column;
+  }
+
+  .accomodation-suites .suite .image {
+    max-height: 50vh;
+    overflow  : hidden;
+    object-fit: cover;
+  }
+
+  .accomodation-suites .suite .image img {
+    max-height: 50vh;
+    width     : 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .accomodation-suites .suite .info .btn-container {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+  }
+
+  .accomodation-suites .suite .info .btn {
+    margin-left: 0;
+  }
+}
+
+/* -----------------End of Accomodation Suites-------------------- */
+
+/* --------------------------End of Accomodation------------------ */
