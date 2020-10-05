@@ -52,9 +52,9 @@ a {
 .btn-primary,
 .btn-primary .fa,
 .btn-outline:hover {
-  background-color: var(--orange);
+  background-color: var(--maroon);
   color           : var(--white);
-  border-color    : var(--orange);
+  border-color    : var(--maroon);
 }
 
 .btn .fa {
@@ -67,7 +67,7 @@ a {
 .btn-primary:hover>.fa,
 .btn-outline {
   background-color: transparent;
-  color           : var(--orange);
+  color           : var(--maroon);
 }
 
 .btn-default {
@@ -477,13 +477,13 @@ a {
   transform    : rotate(15deg);
   overflow     : hidden;
   margin       : 2rem;
+  object-fit   : cover;
 }
 
 .welcome-home .image img {
   display   : inline-block;
-  object-fit: fill;
+  object-fit: cover;
   width     : 100%;
-  height    : 100%;
   transition: all 0.3s ease-in-out;
 }
 
@@ -760,7 +760,8 @@ a {
 
 /* --------------------------Single Room------------------------- */
 .single-room {
-  padding: 0;
+  padding   : 0;
+  overflow-x: hidden;
 }
 
 .single-room .single-room-header {
@@ -792,6 +793,17 @@ a {
   font-weight   : 400;
 }
 
+.single-room .single-room-header .fa {
+  margin-right: 1rem;
+  margin-left : 0;
+  color       : var(--maroon);
+  transition  : all .3s ease-in-out;
+}
+
+.single-room .single-room-header .btn:hover .fa {
+  color: var(--white)
+}
+
 .single-room .single-room-content {
   min-height      : 40vh;
   display         : flex;
@@ -821,9 +833,60 @@ a {
   margin        : 1.5rem 0;
 }
 
-.single-room .single-room-gallery div {
-  min-height: 40vh;
+.single-room .single-room-gallery {
+  position: relative;
 }
+
+/* ---------------------Single Room Image Slider ---------------------- */
+.single-room .single-room-gallery-slider-container {
+  max-width: 100%;
+  width    : 80%;
+  margin   : 0 auto;
+  position : relative;
+
+}
+
+.single-room .image-slide {
+  display      : flex;
+  /* min-width : 800px; */
+  width        : 100%;
+  min-height   : 60vh;
+  height       : 60vh;
+  position     : relative;
+  transition   : all .3s linear
+}
+
+.single-room .image-slide img {
+  /* min-width : 800px; */
+  width     : 100%;
+  object-fit: cover;
+}
+
+
+.single-room .btn-container {
+  position       : absolute;
+  top            : 50%;
+  transform      : translateY(-50%);
+  width          : 100%;
+  padding        : 1rem;
+  display        : flex;
+  justify-content: space-between;
+  z-index        : 5;
+}
+
+.single-room .btn-container span {
+  background-color: var(--lightBlack);
+  height          : 50px;
+  width           : 50px;
+  display         : inline-flex;
+  align-items     : center;
+  justify-content : center;
+  color           : var(--white);
+  cursor          : pointer;
+}
+
+/* ------------------End of Single Room Image Slider ------------------- */
+
 
 .single-room .single-room-details {
   padding: 1rem;

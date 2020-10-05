@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useCallback } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { StyledHero } from "../components/Styled";
@@ -7,6 +8,65 @@ import ErrorPage from "./ErrorPage";
 const SingleRoom = (props) => {
   const [room, setRoom] = useState({});
   const roomSlug = props.match.params.slug;
+  let counter = 1;
+
+  const imageSlider = useCallback(() => {
+    const carouselImages = [...document.querySelectorAll("#image-slide img")];
+    const carouselSlide = document.getElementById("image-slide");
+
+    // transitionCarouselSlide(carouselSlide, carouselImages);
+    carouselSlide.style.left = `${-100 * counter}%`;
+
+    setInterval(() => {
+      counter++;
+      if (counter >= carouselImages.length - 1) {
+        counter = 1;
+      }
+      carouselSlide.style.left = `${-100 * counter}%`;
+    }, 3000);
+  }, []);
+
+  // const transitionCarouselSlide = (slide, images) => {
+  //   slide.addEventListener("transitionend", () => {
+  //     if (images[counter].id === "lastClone") {
+  //       slide.style.transition = "none";
+  //       counter = images.length - 2;
+  //       slide.style.left = `${-100 * counter}%`;
+  //     }
+
+  //     if (images[counter].id === "firstClone") {
+  //       slide.style.transition = "none";
+  //       counter = images.length - counter;
+  //     }
+  //   });
+  // };
+
+  const handleNextSlide = () => {
+    const carouselImages = [...document.querySelectorAll("#image-slide img")];
+    const carouselSlide = document.getElementById("image-slide");
+
+    // if (counter >= carouselImages.length - 1) return;
+    counter++;
+
+    // transitionCarouselSlide(carouselSlide, carouselImages);
+    if (counter >= carouselImages.length - 1) {
+      counter = 1;
+    }
+    carouselSlide.style.left = `${-100 * counter}%`;
+  };
+
+  const handlePrevSlide = () => {
+    const carouselImages = [...document.querySelectorAll("#image-slide img")];
+    const carouselSlide = document.getElementById("image-slide");
+    counter--;
+
+    if (counter <= 1) {
+      counter = carouselImages.length - 1;
+    }
+    carouselSlide.style.left = `${-100 * counter}%`;
+
+    // transitionCarouselSlide(carouselSlide, carouselImages);
+  };
 
   useEffect(() => {
     const getRoomDetails = async () => {
@@ -25,10 +85,12 @@ const SingleRoom = (props) => {
     };
 
     getRoomDetails();
-  }, [roomSlug]);
+
+    imageSlider();
+  }, [roomSlug, imageSlider]);
 
   if (!room) return <ErrorPage />;
-  //   console.log(room);
+  // console.log(room);
 
   const {
     image,
@@ -40,6 +102,7 @@ const SingleRoom = (props) => {
     views,
     uniqueFeatures,
     content,
+    gallery,
   } = room;
 
   return (
@@ -47,6 +110,10 @@ const SingleRoom = (props) => {
       <div className="single-room-header">
         <h5>Accomodation</h5>
         <h3>{title}</h3>
+        <Link to="/accomodation" className="btn btn-default">
+          <i className="fa fa-long-arrow-left"></i>
+          Back to Accomodation
+        </Link>
       </div>
       <StyledHero image={image} />
       <div className="single-room-content">
@@ -57,7 +124,45 @@ const SingleRoom = (props) => {
       </div>
       <div className="single-room-gallery">
         <h3>Gallery</h3>
-        <div>Slider of images...... To be updated</div>
+        <div className="single-room-gallery-slider-container">
+          <div className="image-slide" id="image-slide">
+            <img
+              src={gallery ? gallery[2] : ""}
+              alt=""
+              className="slider-image"
+              id="lastClone"
+            />
+            <img
+              src={gallery ? gallery[0] : ""}
+              alt=""
+              className="slider-image"
+            />
+            <img
+              src={gallery ? gallery[1] : ""}
+              alt=""
+              className="slider-image"
+            />
+            <img
+              src={gallery ? gallery[2] : ""}
+              alt=""
+              className="slider-image"
+            />
+            <img
+              src={gallery ? gallery[0] : ""}
+              alt=""
+              className="slider-image"
+              id="firstClone"
+            />
+          </div>
+          <div className="btn-container">
+            <span id="prevBtn" className="arrow" onClick={handlePrevSlide}>
+              Prev
+            </span>
+            <span id="nextBtn" className="arrow" onClick={handleNextSlide}>
+              Next
+            </span>
+          </div>
+        </div>
       </div>
       <div className="single-room-details">
         <h4>Details</h4>

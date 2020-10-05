@@ -10,7 +10,11 @@
       "bathroom": "One full marble bathroom per bedroom, plus guest powder room. Master bath also has full-size sauna.",
       "views": "180-degree oceanfront view of the Indian, neighbouring islands and Prince Sheldon Beach",
       "uniqueFeatures": "Full-sized private dry sauna, museaum-quality Hawailan art collection, Frette linens, and an entertainment centre with game consoles, an Apple TV and a Sonos sound system",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-1-1.jpg",
+        "/images/gallery-1-2.jpg",
+        "/images/gallery-1-3.jpg"
+      ],
       "capacity": 11,
       "featured": true,
       "type": "residential-suites",
@@ -27,7 +31,11 @@
       "bathroom": "Three full marble bathrooms, two 3/4 bathrooms with shower",
       "views": "180-degree view of the ocean front and islands on the horizon",
       "uniqueFeatures": "Frette linens, private garden with fire pits, two living rooms with entertainment centres, dining areas and museum-quality Hawaiian art collection",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-2-1.jpg",
+        "/images/gallery-2-2.jpg",
+        "/images/gallery-2-3.jpg"
+      ],
       "capacity": 12,
       "featured": true,
       "type": "residential-suites",
@@ -44,7 +52,11 @@
       "bathroom": "Two full marble bathrooms plus a 3/4 bathroom with shower (or as a Three Bedroom Suite, three full marble bathrooms plus two 3/4 bathrooms with shower)",
       "views": "180 degree Indian Ocean and Prince Beach",
       "uniqueFeatures": "Frette linens and a collection of high-end and unusual wines curated for the suites by famed sommelier to the stars Prince Sheldon the Great of Wally's Wines of Beverly Hills",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-3-1.jpg",
+        "/images/gallery-3-2.jpg",
+        "/images/gallery-3-3.jpg"
+      ],
       "capacity": 13,
       "type": "residential-suites",
       "image": "/images/accomodation-3.jpg",
@@ -60,7 +72,11 @@
       "bathroom": "One full marble bathroom, plus 3/4 bathroom with shower",
       "views": "180-degree oceanfront view of the beach and neighbouring islands",
       "uniqueFeatures": "Frette linens, two spacious outdoor living areas, high ceilings and access to the Club Floor Lounge with private concierge staff",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-4-1.jpg",
+        "/images/gallery-4-2.jpg",
+        "/images/gallery-4-3.jpg"
+      ],
       "capacity": 5,
       "featured": true,
       "type": "residential-suites",
@@ -77,7 +93,11 @@
       "bathroom": "One full marble bathroom, plus 3/4 bathroom with shower",
       "views": "180-degree oceanfront view of the beach and neighbouring islands",
       "uniqueFeatures": "Frette linens, configurable space, large outdoor living area and a MyBar area with marble countertop",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-5-1.jpg",
+        "/images/gallery-5-2.jpg",
+        "/images/gallery-5-3.jpg"
+      ],
       "capacity": 5,
       "featured": true,
       "type": "residential-suites",
@@ -94,7 +114,11 @@
       "bathroom": "Oversized marble bathroom, with deep soaking tub, separate shower and double-basin vanity",
       "views": "Angled view of Indian Ocean",
       "uniqueFeatures": "Access to the Club Floor Lounge with private concierge staff and a private outdoor living space",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-6-1.jpg",
+        "/images/gallery-6-2.jpg",
+        "/images/gallery-6-3.jpg"
+      ],
       "capacity": 4,
       "type": "club-floor",
       "image": "/images/accomodation-6.jpg",
@@ -110,7 +134,11 @@
       "bathroom": "Oversized marble bathroom, with deep soaking tub, separate shower and double-basin vanity",
       "views": "Angled view of Indian Ocean",
       "uniqueFeatures": "High ceilings, access to the Club Floor Lounge with private concierge staff and a private outdoor living space",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-7-1.jpg",
+        "/images/gallery-7-2.jpg",
+        "/images/gallery-7-3.jpg"
+      ],
       "capacity": 4,
       "type": "club-floor",
       "image": "/images/accomodation-7.jpg",

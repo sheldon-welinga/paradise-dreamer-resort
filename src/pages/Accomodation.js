@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyledHero } from "../components/Styled";
 import Suite from "../components/Suite";
 
-const Accomodation = () => {
+const Accomodation = (props) => {
   const [rooms, setRooms] = useState([]);
 
   const getData = async () => {
@@ -16,43 +16,64 @@ const Accomodation = () => {
     }
   };
 
+  const checkRoom = async () => {
+    const data = await getData();
+    const roomType = props.match.params;
+
+    const foundType = data.find((room) => room.type === roomType);
+
+    if (!foundType) {
+      props.history.push("/accomodation");
+    }
+  };
+
   useEffect(() => {
     const getRoomDetails = async () => {
       const data = await getData();
       setRooms(data.filter((room) => room.featured));
     };
-
     getRoomDetails();
+
+    checkRoom();
+
+    // console.log(props.match.params);
   }, []);
 
   const handleResidentialSuites = async () => {
     const data = await getData();
     setRooms(data.filter((room) => room.type === "residential-suites"));
+    props.history.push("/accomodation/residential-suites");
   };
 
   const handleClubFloor = async () => {
     const data = await getData();
     setRooms(data.filter((room) => room.type === "club-floor"));
+    props.history.push("/accomodation/club-floor");
   };
 
   const handleGuestRooms = async () => {
     const data = await getData();
     setRooms(data.filter((room) => room.type === "guest-rooms"));
+    console.log(data.filter((room) => room.type === "guest-rooms"));
+    props.history.push("/accomodation/guest-rooms");
   };
 
   const handleLargeSuites = async () => {
     const data = await getData();
     setRooms(data.filter((room) => room.type === "large-suites"));
+    props.history.push("/accomodation/large-suites");
   };
 
   const handleAccessibleRooms = async () => {
     const data = await getData();
     setRooms(data.filter((room) => room.type === "accessible-rooms"));
+    props.history.push("/accomodation/accessible-rooms");
   };
 
   const handleSmallSuites = async () => {
     const data = await getData();
     setRooms(data.filter((room) => room.type === "small-suites"));
+    props.history.push("/accomodation/small-suites");
   };
 
   return (
