@@ -54,7 +54,6 @@ const Accomodation = (props) => {
   const handleGuestRooms = async () => {
     const data = await getData();
     setRooms(data.filter((room) => room.type === "guest-rooms"));
-    console.log(data.filter((room) => room.type === "guest-rooms"));
     props.history.push("/accomodation/guest-rooms");
   };
 

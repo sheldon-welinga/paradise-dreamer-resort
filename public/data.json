@@ -15,6 +15,43 @@
         "/images/gallery-1-2.jpg",
         "/images/gallery-1-3.jpg"
       ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 11,
       "featured": true,
       "type": "residential-suites",
@@ -36,6 +73,43 @@
         "/images/gallery-2-2.jpg",
         "/images/gallery-2-3.jpg"
       ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 12,
       "featured": true,
       "type": "residential-suites",
@@ -57,6 +131,43 @@
         "/images/gallery-3-2.jpg",
         "/images/gallery-3-3.jpg"
       ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 13,
       "type": "residential-suites",
       "image": "/images/accomodation-3.jpg",
@@ -77,6 +188,43 @@
         "/images/gallery-4-2.jpg",
         "/images/gallery-4-3.jpg"
       ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 5,
       "featured": true,
       "type": "residential-suites",
@@ -98,6 +246,43 @@
         "/images/gallery-5-2.jpg",
         "/images/gallery-5-3.jpg"
       ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 5,
       "featured": true,
       "type": "residential-suites",
@@ -119,6 +304,43 @@
         "/images/gallery-6-2.jpg",
         "/images/gallery-6-3.jpg"
       ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 4,
       "type": "club-floor",
       "image": "/images/accomodation-6.jpg",
@@ -139,6 +361,43 @@
         "/images/gallery-7-2.jpg",
         "/images/gallery-7-3.jpg"
       ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 4,
       "type": "club-floor",
       "image": "/images/accomodation-7.jpg",
@@ -154,12 +413,53 @@
       "bathroom": "Oversized marble bathroom, with deep soaking tub, separate shower and double-basin vanity",
       "views": "Best angled views of Indian Ocean and Resort grounds",
       "uniqueFeatures": "Private outdoor living area, MyBar area with refrigerator, tea setup and Nespresso machine",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-8-1.jpg",
+        "/images/gallery-8-2.jpg",
+        "/images/gallery-8-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 4,
       "featured": true,
       "type": "guest-rooms",
-      "image": "/images/accomodation-6.jpg",
-      "slug": "deluxe-club-ocean-view-room"
+      "image": "/images/accomodation-9.jpg",
+      "slug": "deluxe-club-ocean-view-guest-room"
     },
     {
       "id": 9,
@@ -171,11 +471,52 @@
       "bathroom": "Oversized marble bathroom, with deep soaking tub, separate shower and double-basin vanity",
       "views": "Angled view of the Indian Ocean from the lanai and interior of the room",
       "uniqueFeatures": "MyBar area with refrigerator, tea setup and Nespresso machine, a 65-inch TV and private outdoor living space",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-9-1.jpg",
+        "/images/gallery-9-2.jpg",
+        "/images/gallery-9-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 4,
       "type": "guest-rooms",
       "image": "/images/accomodation-7.jpg",
-      "slug": "club-ocean-view-room"
+      "slug": "club-ocean-view-guest-room"
     },
     {
       "id": 10,
@@ -187,12 +528,53 @@
       "bathroom": "Oversized marble bathroom, with deep soaking tub, separate shower and double-basin vanity",
       "views": "Preferred garden view",
       "uniqueFeatures": "MyBar area with refrigerator, tea setup and Nespresso machine, private outdoor living space and a 65-inch TV",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-10-1.jpg",
+        "/images/gallery-10-2.jpg",
+        "/images/gallery-10-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 4,
       "featured": true,
       "type": "guest-rooms",
       "image": "/images/accomodation-8.jpg",
-      "slug": "deluxe-garden-view-room"
+      "slug": "deluxe-garden-view-guest-room"
     },
     {
       "id": 11,
@@ -204,11 +586,52 @@
       "bathroom": "Oversized marble bathroom, with deep soaking tub, separate shower and double-basin vanity",
       "views": "Limited views of the coconut trees and surrounding foliage",
       "uniqueFeatures": "MyBar area with refrigerator, tea setup and Nespresso machine, private outdoor living space and a 65-inch TV",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-11-1.jpg",
+        "/images/gallery-11-2.jpg",
+        "/images/gallery-11-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 4,
       "type": "guest-rooms",
       "image": "/images/accomodation-10.jpg",
-      "slug": "garden-view-room"
+      "slug": "garden-view-guest-room"
     },
     {
       "id": 12,
@@ -220,7 +643,48 @@
       "bathroom": "Oversized marble bathroom, with deep soaking tub, separate shower and double-basin vanity",
       "views": "Facing Prince Beach Front Mountains and Paradise Alanui Drive, overlooking a small parking area",
       "uniqueFeatures": "MyBar area with refrigerator, tea setup and Nespresso machine, private outdoor living space and a 65-inch TV",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-12-1.jpg",
+        "/images/gallery-12-2.jpg",
+        "/images/gallery-12-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 4,
       "featured": true,
       "type": "guest-rooms",
@@ -237,7 +701,48 @@
       "bathroom": "One full marble bathroom, plus guest 3/4 bathroom with shower",
       "views": "Indian Ocean and the formal sculpture garden",
       "uniqueFeatures": "Configurable space, large outdoor living area and a MyBar area with marble countertop",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-13-1.jpg",
+        "/images/gallery-13-2.jpg",
+        "/images/gallery-13-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 9,
       "featured": true,
       "type": "large-suites",
@@ -254,7 +759,48 @@
       "bathroom": "One full marble bathroom, plus guest 3/4 bathroom with shower",
       "views": "Landscaped gardens and the neighbouring Paradise resort community",
       "uniqueFeatures": "Large outdoor living area, room to entertain with separate dining space and a MyBar area with refrigerator, tea setup and Nespresso machine",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-14-1.jpg",
+        "/images/gallery-14-2.jpg",
+        "/images/gallery-14-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 5,
       "type": "large-suites",
       "image": "/images/accomodation-12.jpg",
@@ -270,7 +816,48 @@
       "bathroom": "Oversized marble bathroom, with deep soaking tub, separate shower and double-basin vanity",
       "views": "Angled view of Indian Ocean and the formal sculpture garden",
       "uniqueFeatures": "Quiet location overlooking the Plumeria Gardens, room to entertain with separate dining area and a MyBar area with refrigerator, tea setup and Nespresso machine",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-15-1.jpg",
+        "/images/gallery-15-2.jpg",
+        "/images/gallery-15-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 4,
       "featured": true,
       "type": "accessible-rooms",
@@ -287,7 +874,48 @@
       "bathroom": "Full marble bathroom with deep soaking tub, shower and double-sink vanity",
       "views": "Best angled views of Indian Ocean and Resort Grounds",
       "uniqueFeatures": "Private outdoor living area, MyBar area with refrigerator, tea setup and Nespresso machine",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-16-1.jpg",
+        "/images/gallery-16-2.jpg",
+        "/images/gallery-16-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 3,
       "type": "accessible-rooms",
       "image": "/images/accomodation-14.jpg",
@@ -303,7 +931,48 @@
       "bathroom": "Full marble bathroom with deep soaking tub, shower and double-sink vanity",
       "views": "Preferred garden view",
       "uniqueFeatures": "MyBar area with refrigerator, tea setup and Nespresso machine, private outdoor living space and a 65-inch TV",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-17-1.jpg",
+        "/images/gallery-17-2.jpg",
+        "/images/gallery-17-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 4,
       "featured": true,
       "type": "accessible-rooms",
@@ -320,7 +989,48 @@
       "bathroom": "Full marble bathroom with deep soaking tub, shower and double-sink vanity",
       "views": "Garden view",
       "uniqueFeatures": "On-Site Reservation Specialists, maximized space and an oversized private lanai",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-18-1.jpg",
+        "/images/gallery-18-2.jpg",
+        "/images/gallery-18-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 4,
       "featured": true,
       "type": "small-suites",
@@ -337,7 +1047,48 @@
       "bathroom": "Oversized marble bathroom, with deep soaking tub, separate shower and double-basin vanity",
       "views": "Landscaped gardens and the neighbouring Prince resort community",
       "uniqueFeatures": "Room to entertain with separate dining area, large outdoor living space and an oversized bathroom with separate vanity",
-      "gallery": [],
+      "gallery": [
+        "/images/gallery-19-1.jpg",
+        "/images/gallery-19-2.jpg",
+        "/images/gallery-19-3.jpg"
+      ],
+      "amenities": {
+        "bedAndBath": [
+          "Luxurious bathrobes and slippers",
+          "Exclusive bath amenities by LATHER",
+          "Choice of down or hypo-allergenic pillows and duvet",
+          "Famous Four Seasons beds",
+          "Luxurious deep soaking tub"
+        ],
+        "technology": [
+          "Basic wireless Internet access",
+          "Multi-device charger",
+          "High-defination, 4G wall-mounted televisions with full cable access and bluetooth capabilities"
+        ],
+        "valuableServices": [
+          "24-hour full-menu In-Room Dining",
+          "Private bar service",
+          "Movies on demand",
+          "Childcare services"
+        ],
+        "resortFeatures": [
+          "58 complimentary cabanas accross the Resort",
+          "Outrigger canoe paddling program, weekdays",
+          "Transportation to all destinations in the Paradise",
+          "Kids For All Seasons day camp",
+          "Up to six daily complimentary activities",
+          "24-hour access to cardio and fitness centre",
+          "Daily local artist showcase"
+        ],
+        "roomFeatures": [
+          "Twice-daily housekeeping with eveing turndown service",
+          "Welcome amenity",
+          "Hot water kettle for tea and hot chocolate",
+          "Nespresso coffee maker",
+          "Two bottles of water daily in refrigerator",
+          "Large private lanais with outdoor lounge furniture"
+        ]
+      },
       "capacity": 4,
       "type": "small-suites",
       "image": "/images/accomodation-18.jpg",

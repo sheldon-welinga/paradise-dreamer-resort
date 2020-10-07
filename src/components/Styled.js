@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import defaultImg from "../accomodation-1.jpg";
+import defaultImgSlider from "../gallery-default.jpg";
 
 const StyledHero = styled.div`
   min-height: 50vh;
@@ -27,4 +28,12 @@ const StyledHero = styled.div`
   }
 `;
 
-export { StyledHero };
+const ImageSlide = styled.div`
+  background: url(${(props) => (props.img ? props.img : defaultImgSlider)})
+    center/cover no-repeat;
+  min-width: 100%;
+  width: 100%;
+  min-height: 40vh;
+`;
+
+export { StyledHero, ImageSlide };

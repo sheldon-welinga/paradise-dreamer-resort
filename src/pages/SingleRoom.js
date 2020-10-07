@@ -2,70 +2,70 @@ import React, { useState } from "react";
 import { useCallback } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { StyledHero } from "../components/Styled";
+import { StyledHero, ImageSlide } from "../components/Styled";
 import ErrorPage from "./ErrorPage";
 
 const SingleRoom = (props) => {
   const [room, setRoom] = useState({});
   const roomSlug = props.match.params.slug;
   let counter = 1;
+  const clientWidthSize = 100;
+
+  const sliderTransionend = (slide, images) => {
+    slide.addEventListener("transitionend", () => {
+      if (!images[counter].id) {
+        return <div>Loading...</div>;
+      } else {
+        if (images[counter].id === "lastClone") {
+          slide.style.transition = "none";
+          counter = images.length - 2;
+          slide.style.transform = `translateX(${-clientWidthSize * counter}%)`;
+        }
+
+        if (images[counter].id === "firstClone") {
+          slide.style.transition = "none";
+          counter = images.length - counter;
+          slide.style.transform = `translateX(${-clientWidthSize * counter}%)`;
+        }
+      }
+    });
+  };
 
   const imageSlider = useCallback(() => {
-    const carouselImages = [...document.querySelectorAll("#image-slide img")];
-    const carouselSlide = document.getElementById("image-slide");
-
-    // transitionCarouselSlide(carouselSlide, carouselImages);
-    carouselSlide.style.left = `${-100 * counter}%`;
+    const sliderImages = [...document.querySelectorAll(".slide")];
+    const slide = document.querySelector(".image-slider");
+    slide.style.transition = "all .3s ease-in-out";
+    slide.style.transform = `translateX(${-clientWidthSize * counter}%)`;
+    sliderTransionend(slide, sliderImages);
 
     setInterval(() => {
       counter++;
-      if (counter >= carouselImages.length - 1) {
-        counter = 1;
-      }
-      carouselSlide.style.left = `${-100 * counter}%`;
+      slide.style.transition = "all .3s ease-in-out";
+      slide.style.transform = `translateX(${-clientWidthSize * counter}%)`;
+      sliderTransionend(slide, sliderImages);
     }, 3000);
-  }, []);
-
-  // const transitionCarouselSlide = (slide, images) => {
-  //   slide.addEventListener("transitionend", () => {
-  //     if (images[counter].id === "lastClone") {
-  //       slide.style.transition = "none";
-  //       counter = images.length - 2;
-  //       slide.style.left = `${-100 * counter}%`;
-  //     }
-
-  //     if (images[counter].id === "firstClone") {
-  //       slide.style.transition = "none";
-  //       counter = images.length - counter;
-  //     }
-  //   });
-  // };
+  }, [sliderTransionend, counter]);
 
   const handleNextSlide = () => {
-    const carouselImages = [...document.querySelectorAll("#image-slide img")];
-    const carouselSlide = document.getElementById("image-slide");
+    const slide = document.querySelector(".image-slider");
+    const sliderImages = [...document.querySelectorAll(".slide")];
+    if (counter >= sliderImages.length - 1) return;
 
-    // if (counter >= carouselImages.length - 1) return;
+    slide.style.transition = "all .3s ease-in-out";
     counter++;
-
-    // transitionCarouselSlide(carouselSlide, carouselImages);
-    if (counter >= carouselImages.length - 1) {
-      counter = 1;
-    }
-    carouselSlide.style.left = `${-100 * counter}%`;
+    slide.style.transform = `translateX(${-clientWidthSize * counter}%)`;
+    sliderTransionend(slide, sliderImages);
   };
 
   const handlePrevSlide = () => {
-    const carouselImages = [...document.querySelectorAll("#image-slide img")];
-    const carouselSlide = document.getElementById("image-slide");
+    const slide = document.querySelector(".image-slider");
+    const sliderImages = [...document.querySelectorAll(".slide")];
+    if (counter <= 0) return;
+    slide.style.transition = "all .3s ease-in-out";
     counter--;
 
-    if (counter <= 1) {
-      counter = carouselImages.length - 1;
-    }
-    carouselSlide.style.left = `${-100 * counter}%`;
-
-    // transitionCarouselSlide(carouselSlide, carouselImages);
+    slide.style.transform = `translateX(${-clientWidthSize * counter}%)`;
+    sliderTransionend(slide, sliderImages);
   };
 
   useEffect(() => {
@@ -87,10 +87,9 @@ const SingleRoom = (props) => {
     getRoomDetails();
 
     imageSlider();
-  }, [roomSlug, imageSlider]);
+  }, [roomSlug]);
 
   if (!room) return <ErrorPage />;
-  // console.log(room);
 
   const {
     image,
@@ -103,7 +102,10 @@ const SingleRoom = (props) => {
     uniqueFeatures,
     content,
     gallery,
+    type,
+    slug,
   } = room;
+  // console.log(gallery);
 
   return (
     <div className="page-height single-room">
@@ -124,43 +126,45 @@ const SingleRoom = (props) => {
       </div>
       <div className="single-room-gallery">
         <h3>Gallery</h3>
-        <div className="single-room-gallery-slider-container">
-          <div className="image-slide" id="image-slide">
-            <img
-              src={gallery ? gallery[2] : ""}
-              alt=""
-              className="slider-image"
+        <div className="gallery-slider-container">
+          <div className="image-slider">
+            <ImageSlide
+              className="slide slide3"
               id="lastClone"
+              img={gallery ? gallery[2] : ""}
             />
-            <img
-              src={gallery ? gallery[0] : ""}
-              alt=""
-              className="slider-image"
+            <ImageSlide
+              className="slide"
+              id="slide1"
+              img={gallery ? gallery[0] : ""}
             />
-            <img
-              src={gallery ? gallery[1] : ""}
-              alt=""
-              className="slider-image"
+            <ImageSlide
+              className="slide"
+              id="slide2"
+              img={gallery ? gallery[1] : ""}
             />
-            <img
-              src={gallery ? gallery[2] : ""}
-              alt=""
-              className="slider-image"
+            <ImageSlide
+              className="slide"
+              id="slide3"
+              img={gallery ? gallery[2] : ""}
             />
-            <img
-              src={gallery ? gallery[0] : ""}
-              alt=""
-              className="slider-image"
+            <ImageSlide
+              className="slide"
               id="firstClone"
+              img={gallery ? gallery[0] : ""}
             />
           </div>
           <div className="btn-container">
-            <span id="prevBtn" className="arrow" onClick={handlePrevSlide}>
-              Prev
-            </span>
-            <span id="nextBtn" className="arrow" onClick={handleNextSlide}>
-              Next
-            </span>
+            <div
+              id="arrow-left"
+              className="arrow"
+              onClick={handlePrevSlide}
+            ></div>
+            <div
+              id="arrow-right"
+              className="arrow"
+              onClick={handleNextSlide}
+            ></div>
           </div>
         </div>
       </div>
@@ -198,12 +202,15 @@ const SingleRoom = (props) => {
           Additional charges apply for children aged 5 to 18 years in all Club
           Floor rooms and suites
         </p>
-        <Link to="/" className="btn btn-primary">
+        <Link
+          to={`/accomodation/${type}/${slug}/amenities`}
+          className="btn btn-primary"
+        >
           Amenities
         </Link>
       </div>
       <div className="single-room-contact">
-        <p>We can help you with any questions or information</p>
+        <p>We can help you with any questions or information.</p>
         <Link to="/contact" className="btn btn-default">
           Contact
         </Link>

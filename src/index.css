@@ -833,56 +833,58 @@ a {
   margin        : 1.5rem 0;
 }
 
-.single-room .single-room-gallery {
-  position: relative;
-}
+/* .single-room .single-room-gallery {
+  
+} */
 
 /* ---------------------Single Room Image Slider ---------------------- */
-.single-room .single-room-gallery-slider-container {
-  max-width: 100%;
-  width    : 80%;
-  margin   : 0 auto;
-  position : relative;
-
+.single-room .gallery-slider-container {
+  width     : 80%;
+  max-width : 100%;
+  margin    : 0 auto;
+  position  : relative;
+  min-height: 50vh;
 }
 
-.single-room .image-slide {
-  display      : flex;
-  /* min-width : 800px; */
-  width        : 100%;
-  min-height   : 60vh;
-  height       : 60vh;
-  position     : relative;
-  transition   : all .3s linear
-}
-
-.single-room .image-slide img {
-  /* min-width : 800px; */
+.single-room .image-slider {
+  display   : flex;
+  height    : 50vh;
+  min-width : 100%;
   width     : 100%;
-  object-fit: cover;
+  transition: all .3s ease-in-out;
+
 }
 
+
+.single-room .arrow {
+  cursor : pointer;
+  width  : 0;
+  height : 0;
+  border : solid;
+  z-index: 5;
+}
 
 .single-room .btn-container {
   position       : absolute;
   top            : 50%;
   transform      : translateY(-50%);
+  min-height     : 10vh;
   width          : 100%;
-  padding        : 1rem;
   display        : flex;
   justify-content: space-between;
-  z-index        : 5;
+  padding        : 1rem
 }
 
-.single-room .btn-container span {
-  background-color: var(--lightBlack);
-  height          : 50px;
-  width           : 50px;
-  display         : inline-flex;
-  align-items     : center;
-  justify-content : center;
-  color           : var(--white);
-  cursor          : pointer;
+.single-room #arrow-left {
+  border-width: 20px 30px 20px 0;
+  left        : 1rem;
+  border-color: transparent var(--white) transparent transparent;
+}
+
+.single-room #arrow-right {
+  border-width: 20px 0 20px 30px;
+  left        : 60%;
+  border-color: transparent transparent transparent var(--white);
 }
 
 /* ------------------End of Single Room Image Slider ------------------- */
@@ -923,6 +925,7 @@ a {
 .single-room .single-room-additional p {
   margin-bottom: 2rem;
   font-style   : italic;
+  font-family  : serif
 }
 
 .single-room .single-room-contact {
@@ -937,7 +940,9 @@ a {
 }
 
 .single-room .single-room-contact p {
-  color: var(--white)
+  color      : var(--white);
+  font-style : italic;
+  font-family: serif
 }
 
 @media screen and (max-width: 700px) {
@@ -973,3 +978,88 @@ a {
 }
 
 /* -----------------------End of Single Room --------------------- */
+
+/* --------------------------Amenities---------------------------- */
+.amenities {
+  padding: 1rem 2rem;
+}
+
+.amenities .back-link {
+  margin        : 1rem;
+  text-transform: uppercase;
+  padding       : 1rem 0;
+}
+
+.amenities .back-link a {
+  display    : flex;
+  align-items: center;
+  font-size  : .8rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+}
+
+.amenities .back-link .icon {
+  font-size   : 1.5rem;
+  font-weight : 200;
+  margin-right: .3rem;
+  color       : var(--lightBlack)
+}
+
+.amenities .title {
+  text-align   : center;
+  margin       : 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.amenities .title p {
+  font-style   : italic;
+  font-family  : serif;
+  font-size    : .8rem;
+  margin-bottom: .4rem;
+}
+
+.amenities .title h4 span {
+  text-transform: uppercase;
+  font-size     : 1.3rem;
+  display       : block;
+  color         : var(--lightBlack);
+  font-weight   : 100;
+  letter-spacing: 2px;
+  font-family   : "Playfair Display", Arial, Helvetica, sans-serif;
+}
+
+.amenities .single-amenity {
+  padding   : 2rem 1rem;
+  border-top: 1px solid var(--black)
+}
+
+.amenities .single-amenity h4 {
+  text-transform: uppercase;
+  margin-bottom : 1.5rem;
+  letter-spacing: 2px;
+  font-size     : .8rem;
+  font-weight   : 600;
+}
+
+.amenities .single-amenity ul {
+  display              : grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap             : 1rem;
+}
+
+.amenities .single-amenity ul li {
+  padding: .4rem;
+}
+
+@media screen and (max-width: 420px) {
+  .amenities {
+    padding: 1rem
+  }
+
+  .amenities .single-amenity ul {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    grid-row-gap         : 2px;
+  }
+}
+
+
+/* ---------------------End of Amenities---------------------------- */
