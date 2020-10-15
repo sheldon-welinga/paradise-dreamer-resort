@@ -1,0 +1,123 @@
+:root {
+  --maroon: #860d0d;
+  --darkMaroon: #401b1b;
+  --white: #ffffff;
+  --blue: #022296;
+  --lightBlue: #0a8ee0;
+  --orange: #ff2419;
+  --black: #1c1616;
+  --lightBlack: #110f0fd5;
+  --yellow: #fbff05;
+}
+
+.container {
+  min-height: calc(100vh - 130px);
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.calendar {
+  /* background-color: var(--orange); */
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  width: 22rem;
+  height: 25rem;
+  margin: 0 auto;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+.calendar div {
+  color: var(--maroon);
+}
+
+.month {
+  width: 100%;
+  min-height: 3rem;
+  background-color: var(--maroon);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.month h1,
+.month i,
+.month p {
+  color: var(--white);
+}
+
+.month i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.month h1 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+}
+
+.month p {
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+}
+
+.weekdays {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weekdays div {
+  font-size: 1.1rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-weight: 200;
+  width: calc(20.8rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.4rem;
+}
+
+.days div {
+  font-size: 1.1rem;
+  margin: 0.3rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  width: calc(17rem / 7);
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* border: 1px solid var(--orange); */
+  transition: all 0.3s ease-in-out;
+}
+
+.days div:hover:not(.today) {
+  border: 1px solid var(--maroon);
+}
+
+.prevdate,
+.nextdate {
+  opacity: 0.5;
+}
+
+.today {
+  background-color: var(--maroon);
+  color: var(--white);
+}

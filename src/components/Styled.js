@@ -6,10 +6,8 @@ const StyledHero = styled.div`
   min-height: 50vh;
   background: url(${(props) => (props.image ? props.image : defaultImg)})
     center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   object-fit: cover;
+  position: relative;
 
   .overlay {
     background-color: rgba(0, 0, 0, 0.4);
@@ -24,6 +22,7 @@ const StyledHero = styled.div`
       font-size: 2rem;
       letter-spacing: 2px;
       text-transform: uppercase;
+      color: #fff;
     }
   }
 `;

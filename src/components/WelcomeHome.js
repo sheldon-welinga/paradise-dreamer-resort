@@ -25,8 +25,8 @@ const WelcomeHome = () => {
           which can accomodate upto 50 guest rooms situated to the East of the
           Crystalline Beach, along the Prince Sheldon the great beach path.
         </p>
-        <Link to="/" className="btn btn-primary">
-          Read More (View our Rates)
+        <Link to="/rates" className="btn btn-primary">
+          View our Rates
         </Link>
       </div>
       <div className="image">

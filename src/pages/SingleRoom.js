@@ -120,7 +120,7 @@ const SingleRoom = (props) => {
       <StyledHero image={image} />
       <div className="single-room-content">
         <p>{content}</p>
-        <Link to="/" className="btn btn-default">
+        <Link to="/rates" className="btn btn-default">
           Check Rates
         </Link>
       </div>

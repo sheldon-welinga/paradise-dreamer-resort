@@ -21,7 +21,7 @@
 }
 
 .page-height {
-  min-height: calc(100vh - 6vh);
+  min-height: calc(100vh - 22vh);
   padding   : 1rem;
 }
 
@@ -30,7 +30,8 @@ a {
 }
 
 .img-responsive {
-  width: 100%;
+  width     : 100%;
+  object-fit: cover;
 }
 
 .btn {
@@ -79,6 +80,16 @@ a {
 .btn-default:hover {
   color           : var(--white);
   background-color: transparent;
+}
+
+#prevdate,
+.nextdate {
+  opacity: 0.5;
+}
+
+#today {
+  background-color: var(--maroon);
+  color           : var(--white);
 }
 
 /* --------------End of Globals ----------------------------- */
@@ -627,11 +638,11 @@ a {
   width     : 100%;
   text-align: center;
   padding   : 10px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .accomodation .accomodation-suite-lists .suite p:hover {
-  color: var(--orange)
+  color: var(--orange);
 }
 
 .accomodation .suite p:first-child {
@@ -696,7 +707,7 @@ a {
 .accomodation-suites .suite .info .info-title a {
   font-size     : 1.1rem;
   text-transform: uppercase;
-  color         : var(--darkMaroon)
+  color         : var(--darkMaroon);
 }
 
 .accomodation-suites .suite .info .info-title .arrow {
@@ -777,7 +788,7 @@ a {
 .single-room .single-room-header h5,
 .single-room .single-room-header h3 {
   color         : var(--white);
-  margin        : .5rem 0;
+  margin        : 0.5rem 0;
   font-family   : "Playfair Display", Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   text-align    : center;
@@ -797,11 +808,11 @@ a {
   margin-right: 1rem;
   margin-left : 0;
   color       : var(--maroon);
-  transition  : all .3s ease-in-out;
+  transition  : all 0.3s ease-in-out;
 }
 
 .single-room .single-room-header .btn:hover .fa {
-  color: var(--white)
+  color: var(--white);
 }
 
 .single-room .single-room-content {
@@ -820,7 +831,7 @@ a {
   max-width     : 60vw;
   padding       : 1rem;
   letter-spacing: 2px;
-  color         : var(--white)
+  color         : var(--white);
 }
 
 .single-room .single-room-gallery h3,
@@ -851,10 +862,8 @@ a {
   height    : 50vh;
   min-width : 100%;
   width     : 100%;
-  transition: all .3s ease-in-out;
-
+  transition: all 0.3s ease-in-out;
 }
-
 
 .single-room .arrow {
   cursor : pointer;
@@ -872,7 +881,7 @@ a {
   width          : 100%;
   display        : flex;
   justify-content: space-between;
-  padding        : 1rem
+  padding        : 1rem;
 }
 
 .single-room #arrow-left {
@@ -888,7 +897,6 @@ a {
 }
 
 /* ------------------End of Single Room Image Slider ------------------- */
-
 
 .single-room .single-room-details {
   padding: 1rem;
@@ -914,7 +922,6 @@ a {
   color         : var(--lightBlack);
   margin-bottom : 1rem;
   text-transform: uppercase;
-
 }
 
 .single-room .single-room-additional {
@@ -925,7 +932,7 @@ a {
 .single-room .single-room-additional p {
   margin-bottom: 2rem;
   font-style   : italic;
-  font-family  : serif
+  font-family  : serif;
 }
 
 .single-room .single-room-contact {
@@ -942,7 +949,7 @@ a {
 .single-room .single-room-contact p {
   color      : var(--white);
   font-style : italic;
-  font-family: serif
+  font-family: serif;
 }
 
 @media screen and (max-width: 700px) {
@@ -958,7 +965,6 @@ a {
   .single-room .single-room-contact {
     max-width: 90vw;
   }
-
 }
 
 @media screen and (max-width: 600px) {
@@ -993,15 +999,15 @@ a {
 .amenities .back-link a {
   display    : flex;
   align-items: center;
-  font-size  : .8rem;
+  font-size  : 0.8rem;
   font-family: "Playfair Display", Arial, Helvetica, sans-serif;
 }
 
 .amenities .back-link .icon {
   font-size   : 1.5rem;
   font-weight : 200;
-  margin-right: .3rem;
-  color       : var(--lightBlack)
+  margin-right: 0.3rem;
+  color       : var(--lightBlack);
 }
 
 .amenities .title {
@@ -1013,8 +1019,8 @@ a {
 .amenities .title p {
   font-style   : italic;
   font-family  : serif;
-  font-size    : .8rem;
-  margin-bottom: .4rem;
+  font-size    : 0.8rem;
+  margin-bottom: 0.4rem;
 }
 
 .amenities .title h4 span {
@@ -1029,14 +1035,14 @@ a {
 
 .amenities .single-amenity {
   padding   : 2rem 1rem;
-  border-top: 1px solid var(--black)
+  border-top: 1px solid var(--black);
 }
 
 .amenities .single-amenity h4 {
   text-transform: uppercase;
   margin-bottom : 1.5rem;
   letter-spacing: 2px;
-  font-size     : .8rem;
+  font-size     : 0.8rem;
   font-weight   : 600;
 }
 
@@ -1047,12 +1053,12 @@ a {
 }
 
 .amenities .single-amenity ul li {
-  padding: .4rem;
+  padding: 0.4rem;
 }
 
 @media screen and (max-width: 420px) {
   .amenities {
-    padding: 1rem
+    padding: 1rem;
   }
 
   .amenities .single-amenity ul {
@@ -1061,5 +1067,302 @@ a {
   }
 }
 
-
 /* ---------------------End of Amenities---------------------------- */
+/* -------------------------------Rates------------------------------- */
+.rates {
+  padding: 0;
+}
+
+.rates .rates-header {
+  min-height                  : 60vh;
+  /* background-position      : bottom; */
+  /* background-size          : 100%; */
+}
+
+.rates .rates-header .details {
+  position        : absolute;
+  background-color: rgba(162, 241, 255, 0.74);
+  left            : 0.4rem;
+  bottom          : 0;
+  padding         : 1rem;
+  padding-bottom  : 0;
+}
+
+.rates .rates-header .details p {
+  margin: 1rem 0;
+}
+
+.rates .rates-header .details p .fa {
+  margin-right: 0.8rem;
+}
+
+.rates .rates-header .details .address {
+  margin: 0;
+}
+
+.rates .rates-header .details h2 {
+  font-size    : 1.5rem;
+  font-weight  : 500;
+  margin-bottom: 10px;
+}
+
+/* -----------------------------End of Rates--------------------------- */
+
+/* ---------------------------Experiences------------------------------- */
+/* ---------------------Experiences Header------------------------------- */
+.experiences {
+  padding: 0 0 1rem 0;
+}
+
+.experiences .experiences-header {
+  display       : flex;
+  padding       : .5rem 1rem;
+  text-transform: capitalize;
+  color         : var(--lightBlack)
+}
+
+.experiences .experiences-header a {
+  display   : inline-flex;
+  padding   : 10px 1rem;
+  position  : relative;
+  transition: all .3s ease-in-out;
+}
+
+.experiences .experiences-header a:hover,
+.experiences .experiences-header .active {
+  color: var(--maroon)
+}
+
+
+
+.experiences .experiences-header .active::after {
+  content         : "";
+  width           : 50%;
+  height          : 1.6px;
+  background-color: var(--maroon);
+  display         : block;
+  position        : absolute;
+  bottom          : 5px;
+}
+
+
+@media screen and (max-width: 425px) {
+  .experiences .experiences-header {
+    height    : 8vh;
+    overflow-y: hidden;
+    transition: all .3s linear;
+  }
+
+  .experiences .experiences-header.show-experience-header {
+    height: 22vh
+  }
+
+  .experiences .experiences-header a,
+  .experiences .experiences-header {
+    display : block;
+    position: relative;
+  }
+
+
+  .experiences .experiences-header span {
+    position           : absolute;
+    width              : 20px;
+    height             : 20px;
+    top                : 1rem;
+    right              : 1rem;
+    /* background-color: #022296; */
+  }
+
+  .experiences .experiences-header span::after {
+    content       : "";
+    width         : 10px;
+    height        : 10px;
+    border-right  : 2px solid var(--black);
+    border-bottom : 2px solid var(--black);
+    display       : block;
+    left          : 3px;
+    position      : absolute;
+    transform     : rotate(45deg);
+    pointer-events: all;
+    cursor        : pointer;
+  }
+}
+
+/* --------------------End of Experiences Header-------------------------- */
+/* -------------------------Adventure, Family------------------------------------ */
+.experiences .adventure,
+.experiences .family,
+.experiences .nature {
+  padding: 1rem;
+}
+
+.experiences .adventure-section-one,
+.experiences .family-section-one,
+.experiences .nature-section-one {
+  text-align: center;
+  width     : 60%;
+  margin    : 0 auto;
+}
+
+.experiences .adventure-section-one h2,
+.experiences .family-section-one h2,
+.experiences .nature-section-one h2,
+.experiences .adventure-section-two .content h2,
+.experiences .family-section-two .content h2,
+.experiences .nature-section-two .content h2,
+.experiences .adventure-section-three .content h2,
+.experiences .family-section-three .content h2,
+.experiences .nature-section-three .content h2,
+.experiences .special-request h3 {
+  padding       : 1rem;
+  font-size     : 1.5rem;
+  font-family   : "Playfair Display", Arial, Helvetica, sans-serif;
+  font-weight   : 300;
+  letter-spacing: 2px;
+}
+
+.experiences .adventure-section-one p,
+.experiences .family-section-one p,
+.experiences .nature-section-one p,
+.experiences .adventure-section-two .content p,
+.experiences .family-section-two .content p,
+.experiences .nature-section-two .content p,
+.experiences .adventure-section-three .content p,
+.experiences .family-section-three .content p,
+.experiences .nature-section-three .content p {
+  padding       : 1rem;
+  letter-spacing: 1.5px;
+  font-size     : 0.9rem;
+}
+
+.experiences .adventure-section-two,
+.experiences .family-section-two,
+.experiences .nature-section-two,
+.experiences .adventure-section-three,
+.experiences .family-section-three,
+.experiences .nature-section-three {
+  display      : flex;
+  margin-top   : 2rem;
+  margin-bottom: 1rem;
+  align-items  : center;
+}
+
+.experiences .adventure-section-two div,
+.experiences .family-section-two div,
+.experiences .nature-section-two div,
+.experiences .adventure-section-three div,
+.experiences .family-section-three div,
+.experiences .nature-section-three div {
+  padding: 1rem;
+}
+
+.experiences .adventure-section-two .content,
+.experiences .family-section-two .content,
+.experiences .nature-section-two .content,
+.experiences .adventure-section-three .content,
+.experiences .family-section-three .content,
+.experiences .nature-section-three .content {
+  flex: 0.4
+}
+
+.experiences .adventure-section-two .image,
+.experiences .family-section-two .image,
+.experiences .nature-section-two .image,
+.experiences .adventure-section-three .image,
+.experiences .family-section-three .image,
+.experiences .nature-section-three .image {
+  flex: 0.6;
+}
+
+.experiences .adventure-section-two .image img,
+.experiences .family-section-two .image img,
+.experiences .nature-section-two .image img,
+.experiences .adventure-section-three .image img,
+.experiences .family-section-three .image img,
+.experiences .nature-section-three .image img {
+  max-height: 350px;
+}
+
+.experiences .adventure-section-two .content p,
+.experiences .family-section-two .content p,
+.experiences .nature-section-two .content p,
+.experiences .adventure-section-three .content p,
+.experiences .family-section-three .content p,
+.experiences .nature-section-three .content p {
+  padding-right: 2rem;
+}
+
+.experiences .special-request {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: center;
+  margin         : 1rem 0;
+}
+
+.experiences .special-request p {
+  padding   : 1rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+
+  .experiences .adventure,
+  .experiences .family,
+  .experiences .family {
+    padding-left : 0;
+    padding-right: 0;
+  }
+
+  .experiences .adventure-section-two,
+  .experiences .family-section-two,
+  .experiences .nature-section-two {
+    flex-direction: column;
+  }
+
+  .experiences .adventure-section-three,
+  .experiences .family-section-three,
+  .experiences .nature-section-three {
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 700px) {
+
+  .experiences .adventure-section-one,
+  .experiences .family-section-one,
+  .experiences .nature-section-one {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .experiences .adventure-section-one h2,
+  .experiences .family-section-one h2,
+  .experiences .nature-section-one h2,
+  .experiences .adventure-section-two .content h2,
+  .experiences .family-section-two .content h2,
+  .experiences .nature-section-two .content h2,
+  .experiences .adventure-section-three .content h2,
+  .experiences .family-section-three .content h2,
+  .experiences .nature-section-three .content h2,
+  .experiences .special-request h3 {
+    font-size: 1.2rem;
+  }
+
+  .experiences .adventure-section-two .content p,
+  .experiences .family-section-two .content p,
+  .experiences .nature-section-two .content p,
+  .experiences .adventure-section-three .content p,
+  .experiences .family-section-three .content p,
+  .experiences .nature-section-three .content p {
+    padding-right: 1rem;
+  }
+}
+
+/* --------------------------End of Adventure----------------------------- */
+
+
+
+/* -----------------------End of Experiences---------------------------- */

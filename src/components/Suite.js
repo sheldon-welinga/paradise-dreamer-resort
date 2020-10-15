@@ -19,7 +19,7 @@ const Suite = (props) => {
         <p>{size}</p>
         <p>{occupancy}</p>
         <div className="btn-container">
-          <Link to="/accomodation" className="btn btn-primary">
+          <Link to="/rates" className="btn btn-primary">
             Check rates
           </Link>
           <Link
