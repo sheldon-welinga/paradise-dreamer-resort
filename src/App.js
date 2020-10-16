@@ -15,6 +15,7 @@ import Experiences from "./pages/Experiences";
 import Home from "./pages/Home";
 import Rates from "./pages/Rates";
 import SingleRoom from "./pages/SingleRoom";
+import SPA from "./pages/SPA";
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
           path="/experiences/nature-discovery-centre"
           component={NatureAndDiscovery}
         />
+        <Route exact path="/spa" component={SPA} />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/datepicker" component={DatePicker} />
         <Route component={ErrorPage} />

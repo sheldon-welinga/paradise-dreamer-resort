@@ -16,13 +16,21 @@ const StyledHero = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
-    h4 {
+    h4,
+    p {
       font-family: "Playfair Display", Arial, Helvetica, sans-serif;
       font-size: 2rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #fff;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
     }
   }
 `;

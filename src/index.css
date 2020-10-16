@@ -1,28 +1,28 @@
 /* -------------------Globals -------------------------- */
 * {
-  margin     : 0;
-  padding    : 0;
-  box-sizing : border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  font-size  : 1rem;
-  color      : #1c1616;
+  font-size: 1rem;
+  color: #1c1616;
 }
 
 :root {
-  --maroon    : #860d0d;
+  --maroon: #860d0d;
   --darkMaroon: #401b1b;
-  --white     : #ffffff;
-  --blue      : #022296;
-  --lightBlue : #0a8ee0;
-  --orange    : #ff2419;
-  --black     : #1c1616;
+  --white: #ffffff;
+  --blue: #022296;
+  --lightBlue: #0a8ee0;
+  --orange: #ff2419;
+  --black: #1c1616;
   --lightBlack: #110f0fd5;
-  --yellow    : #fbff05;
+  --yellow: #fbff05;
 }
 
 .page-height {
   min-height: calc(100vh - 22vh);
-  padding   : 1rem;
+  padding: 1rem;
 }
 
 a {
@@ -30,55 +30,55 @@ a {
 }
 
 .img-responsive {
-  width     : 100%;
+  width: 100%;
   object-fit: cover;
 }
 
 .btn {
-  display                   : inline-flex;
-  justify-content           : center;
-  align-items               : center;
-  min-width                 : 150px;
-  padding                   : 10px 1rem;
-  margin                    : 10px 0;
-  font-size                 : 1rem;
-  border-top-left-radius    : 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  padding: 10px 1rem;
+  margin: 10px 0;
+  font-size: 1rem;
+  border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border                    : 1px solid;
-  text-transform            : uppercase;
-  outline                   : none;
-  transition                : all 0.3s ease-in-out;
+  border: 1px solid;
+  text-transform: uppercase;
+  outline: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-primary,
 .btn-primary .fa,
 .btn-outline:hover {
   background-color: var(--maroon);
-  color           : var(--white);
-  border-color    : var(--maroon);
+  color: var(--white);
+  border-color: var(--maroon);
 }
 
 .btn .fa {
-  margin-left     : 1rem;
-  font-weight     : 200;
+  margin-left: 1rem;
+  font-weight: 200;
   background-color: transparent;
 }
 
 .btn-primary:hover,
-.btn-primary:hover>.fa,
+.btn-primary:hover > .fa,
 .btn-outline {
   background-color: transparent;
-  color           : var(--maroon);
+  color: var(--maroon);
 }
 
 .btn-default {
   background-color: var(--white);
-  color           : var(--maroon);
-  border-color    : var(--white);
+  color: var(--maroon);
+  border-color: var(--white);
 }
 
 .btn-default:hover {
-  color           : var(--white);
+  color: var(--white);
   background-color: transparent;
 }
 
@@ -89,39 +89,99 @@ a {
 
 #today {
   background-color: var(--maroon);
-  color           : var(--white);
+  color: var(--white);
 }
+
+/* --------------------------Accordion--------------------- */
+.accordion .accordion-list {
+  border-top: 1px solid var(--lightBlack);
+  padding: 1rem;
+  padding-left: 2rem;
+}
+
+.accordion .accordion-list .title {
+  padding: 1rem 0;
+  padding-top: 0;
+  text-transform: capitalize;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+}
+
+.accordion .accordion-list:last-child {
+  border-bottom: 1px solid var(--lightBlack);
+}
+
+.accordion .accordion-list .title::before {
+  content: "";
+  height: 6px;
+  width: 6px;
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: -1.8rem;
+  border-top: 2px solid var(--black);
+  border-right: 2px solid var(--black);
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion .accordion-list div p {
+  margin: 0.5rem 0;
+  line-height: 1.5rem;
+}
+
+.accordion .accordion-list div .btn {
+  margin-top: 1.5rem;
+}
+
+.accordion .accordion-list div {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s linear;
+}
+
+.accordion .accordion-list .title.open + div {
+  max-height: 500px;
+}
+
+.accordion .accordion-list .title.open::before {
+  transform: rotate(135deg);
+}
+/* -----------------------End of Accordion----------------- */
 
 /* --------------End of Globals ----------------------------- */
 /* ---------------------------Error Page------------------------ */
 .error-page {
-  display              : flex;
-  align-items          : center;
-  justify-content      : center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* background        : url(/images/resort-image.jpg) center/cover no-repeat;
   background-attachment: fixed; */
 }
 
 .error-page div {
-  border         : 1px solid var(--black);
-  padding        : 1rem;
-  display        : flex;
-  align-items    : center;
+  border: 1px solid var(--black);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  flex-direction : column;
-  border-radius  : 1rem;
+  flex-direction: column;
+  border-radius: 1rem;
 }
 
 .error-page div h2 {
-  color     : var(--maroon);
-  font-size : 3rem;
-  margin    : 1rem 0;
+  color: var(--maroon);
+  font-size: 3rem;
+  margin: 1rem 0;
   text-align: center;
 }
 
 .error-page div p {
-  text-align   : center;
-  font-weight  : 500;
+  text-align: center;
+  font-weight: 500;
   margin-bottom: 1rem;
   /* color     : var(--white); */
 }
@@ -130,23 +190,23 @@ a {
 
 /* --------------------Header ----------------------------- */
 .header {
-  position        : sticky;
-  top             : 0;
-  width           : 100%;
+  position: sticky;
+  top: 0;
+  width: 100%;
   background-color: var(--white);
-  z-index         : 100;
+  z-index: 100;
 }
 
 /* -------------------------Top Header -------------------- */
 .header .header-info {
   background-color: var(--maroon);
-  color           : var(--white);
-  display         : flex;
-  justify-content : space-between;
-  flex-wrap       : wrap;
-  min-height      : 30px;
-  align-items     : center;
-  padding         : 10px;
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 30px;
+  align-items: center;
+  padding: 10px;
 }
 
 .header .header-info div span {
@@ -158,17 +218,17 @@ a {
 }
 
 .header .header-info .fa {
-  height         : 30px;
-  width          : 30px;
-  border-radius  : 50%;
-  margin-left    : 5px;
-  margin-right   : 5px;
-  padding        : 10px;
-  font-size      : 1.1rem;
-  display        : inline-flex;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
+  font-size: 1.1rem;
+  display: inline-flex;
   justify-content: center;
-  align-items    : center;
-  transition     : all 0.3s ease-in;
+  align-items: center;
+  transition: all 0.3s ease-in;
 }
 
 .header .header-info .info-right .fa:hover {
@@ -194,16 +254,16 @@ a {
 @media screen and (max-width: 678px) {
   .header .header-info {
     flex-direction: column;
-    padding-top   : 2px;
-    padding-left  : 0;
-    padding-right : 0;
-    text-align    : center;
+    padding-top: 2px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
   }
 
   .header .header-info .info-left {
-    margin-bottom : 10px;
-    border-bottom : 1px solid var(--white);
-    width         : 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--white);
+    width: 100%;
     padding-bottom: 8px;
   }
 }
@@ -212,13 +272,13 @@ a {
 
 /* ----------------------Navigation Header --------------- */
 .header .header-nav {
-  box-shadow     : 0px 4px 4px -4px black;
-  display        : flex;
+  box-shadow: 0px 4px 4px -4px black;
+  display: flex;
   justify-content: space-between;
-  align-items    : center;
-  position       : relative;
-  padding        : 5px 1rem;
-  min-height     : 60px;
+  align-items: center;
+  position: relative;
+  padding: 5px 1rem;
+  min-height: 60px;
 }
 
 .header .header-nav .nav-logo a,
@@ -231,21 +291,21 @@ a {
 }
 
 .header .header-nav .nav-menu {
-  display   : flex;
+  display: flex;
   list-style: none;
 }
 
 .header .header-nav .nav-menu .nav-link {
-  margin        : 5px 10px;
-  cursor        : pointer;
+  margin: 5px 10px;
+  cursor: pointer;
   text-transform: uppercase;
 }
 
 .header .header-nav li a {
-  color     : var(--lightBlack);
+  color: var(--lightBlack);
   transition: all 0.3s ease-in-out;
-  width     : 100%;
-  display   : inline-block;
+  width: 100%;
+  display: inline-block;
 }
 
 .header .header-nav li:hover a {
@@ -254,14 +314,14 @@ a {
 
 .toggle-collapse {
   position: absolute;
-  top     : 1rem;
-  right   : 1rem;
-  display : none;
+  top: 1rem;
+  right: 1rem;
+  display: none;
 }
 
 .toggle-collapse .fa-bars {
   font-size: 1.5rem;
-  cursor   : pointer;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 920px) {
@@ -275,23 +335,23 @@ a {
   }
 
   .header .header-nav .nav-logo {
-    min-height : 55px;
-    display    : flex;
+    min-height: 55px;
+    display: flex;
     align-items: center;
-    padding    : 10px;
+    padding: 10px;
   }
 
   .header .header-nav .nav-menu {
-    display       : block;
+    display: block;
     padding-bottom: 5px;
-    height        : 0;
-    overflow      : hidden;
-    transition    : all 0.3s linear;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s linear;
   }
 
   .header .header-nav .nav-menu .nav-link {
-    margin    : 2px 0;
-    padding   : 10px;
+    margin: 2px 0;
+    padding: 10px;
     transition: all 0.3s ease-in-out;
   }
 
@@ -322,12 +382,12 @@ a {
 
 /* -----------------------Footer ------------------------- */
 .footer {
-  min-height      : 6vh;
+  min-height: 6vh;
   background-color: var(--maroon);
-  display         : flex;
-  justify-content : center;
-  align-items     : center;
-  color           : var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
 }
 
 /* ------------------End of Footer -------------------------- */
@@ -339,15 +399,14 @@ a {
 
 /* ---------------------------Home Slider--------------------- */
 .home-slider {
-  min-height           : 85vh;
-  background           : center/cover no-repeat;
-  animation            : backgroundanimate 50s ease-in-out infinite;
-  animation-delay      : -35s;
+  min-height: 85vh;
+  background: center/cover no-repeat;
+  animation: backgroundanimate 50s ease-in-out infinite;
+  animation-delay: -35s;
   background-attachment: fixed;
 }
 
 @keyframes backgroundanimate {
-
   0%,
   100% {
     background-image: url(/images/background1.jpg);
@@ -372,21 +431,21 @@ a {
 
 .home-slider .cover {
   background-color: rgba(0, 0, 0, 0.2);
-  height          : 85vh;
-  width           : 100%;
-  display         : flex;
-  align-items     : center;
-  justify-content : center;
+  height: 85vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-slider .cover div h2,
 .home-slider .cover div h4,
 .home-slider .cover div h5 {
-  color      : var(--white);
-  text-align : center;
+  color: var(--white);
+  text-align: center;
   font-family: "Playfair Display", Arial, Helvetica, sans-serif;
   font-weight: 600;
-  padding    : auto 10px;
+  padding: auto 10px;
 }
 
 .home-slider .cover div h2 {
@@ -395,11 +454,11 @@ a {
 
 .home-slider .cover div h4 {
   font-size: 1.6rem;
-  color    : var(--yellow);
+  color: var(--yellow);
 }
 
 .home-slider .cover div h5 {
-  font-size     : 1.8rem;
+  font-size: 1.8rem;
   text-transform: capitalize;
 }
 
@@ -433,14 +492,14 @@ a {
 /* -----------------------Welcome Home--------------------------- */
 
 .welcome-home {
-  min-height : 80vh;
-  display    : flex;
-  flex-wrap  : wrap;
+  min-height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
 .welcome-home .info {
-  flex   : 0.55;
+  flex: 0.55;
   padding: 1rem;
 }
 
@@ -448,53 +507,53 @@ a {
 .welcome-home .info h5 {
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-weight   : 500;
-  font-size     : 1.2rem;
-  color         : var(--orange);
-  margin        : 10px 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--orange);
+  margin: 10px 0;
 }
 
 .welcome-home .info h5 {
   font-family: "Playfair Display", Arial, Helvetica, sans-serif;
-  font-size  : 1rem;
-  color      : var(--black);
+  font-size: 1rem;
+  color: var(--black);
 }
 
 .welcome-home .info h2 {
-  font-family   : "Playfair Display", Arial, Helvetica, sans-serif;
-  font-size     : 2rem;
-  margin        : 10px 0;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  margin: 10px 0;
   letter-spacing: 1.5px;
-  color         : var(--darkMaroon);
+  color: var(--darkMaroon);
 }
 
 .welcome-home .info p {
-  margin        : 1rem 0;
+  margin: 1rem 0;
   letter-spacing: 2px;
-  word-spacing  : 2px;
+  word-spacing: 2px;
 }
 
 .welcome-home .image {
-  flex    : 0.45;
-  display : inline-block;
+  flex: 0.45;
+  display: inline-block;
   overflow: hidden;
-  height  : 100%;
-  padding : 3rem;
+  height: 100%;
+  padding: 3rem;
 }
 
 .welcome-home .image div {
-  border       : 5px solid #e0dfdf;
+  border: 5px solid #e0dfdf;
   border-radius: 10px;
-  transform    : rotate(15deg);
-  overflow     : hidden;
-  margin       : 2rem;
-  object-fit   : cover;
+  transform: rotate(15deg);
+  overflow: hidden;
+  margin: 2rem;
+  object-fit: cover;
 }
 
 .welcome-home .image img {
-  display   : inline-block;
+  display: inline-block;
   object-fit: cover;
-  width     : 100%;
+  width: 100%;
   transition: all 0.3s ease-in-out;
 }
 
@@ -535,7 +594,7 @@ a {
 
   .welcome-home .image {
     padding: 0rem;
-    width  : 100%;
+    width: 100%;
   }
 
   .welcome-home .image div {
@@ -546,53 +605,53 @@ a {
 /* ------------------End of Welcome Home---------------------- */
 /* -----------------------Resort Section ---------------------- */
 .resort-section {
-  display   : flex;
+  display: flex;
   min-height: 40vh;
 }
 
-.resort-section>div {
-  flex   : 0.5;
-  width  : 100%;
+.resort-section > div {
+  flex: 0.5;
+  width: 100%;
   padding: 1rem;
 }
 
 .resort-post .fa-cutlery,
 .resort-post .fa-coffee {
   margin-right: 10px;
-  color       : var(--maroon);
+  color: var(--maroon);
 }
 
 .resort-post .resort-icons span {
   margin-right: 1rem;
-  color       : var(--orange);
+  color: var(--orange);
 }
 
 .resort-post .resort-icons {
-  display    : flex;
+  display: flex;
   align-items: center;
-  margin     : 10px 0;
+  margin: 10px 0;
 }
 
 .resort-section h1,
 .resort-section h2 {
   text-transform: uppercase;
-  margin        : 10px 0;
+  margin: 10px 0;
   letter-spacing: 2px;
-  color         : var(--darkMaroon);
-  font-family   : "Playfair Display", Arial, Helvetica, sans-serif;
-  font-size     : 1.3rem;
+  color: var(--darkMaroon);
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
 }
 
 .resort-section h2 {
-  font-size     : 1.1rem;
+  font-size: 1.1rem;
   text-transform: capitalize;
-  color         : var(--maroon);
+  color: var(--maroon);
 }
 
 .resort-section p {
   letter-spacing: 2px;
-  line-height   : 1.3rem;
-  margin        : 10px 0;
+  line-height: 1.3rem;
+  margin: 10px 0;
 }
 
 .resort-section .resort-why h1 {
@@ -614,18 +673,18 @@ a {
 }
 
 .accomodation {
-  padding-left : 3rem;
+  padding-left: 3rem;
   padding-right: 3rem;
 }
 
 .accomodation .accomodation-suite-lists {
-  display        : flex;
+  display: flex;
   justify-content: space-between;
-  text-transform : uppercase;
-  margin         : 1rem 0;
-  border-top     : 1px solid var(--black);
-  border-bottom  : 1px solid var(--black);
-  padding        : 1rem;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  padding: 1rem;
 }
 
 .accomodation .accomodation-suite-lists .suite {
@@ -633,11 +692,11 @@ a {
 }
 
 .accomodation .accomodation-suite-lists .suite p {
-  margin    : 2rem 1rem;
-  cursor    : pointer;
-  width     : 100%;
+  margin: 2rem 1rem;
+  cursor: pointer;
+  width: 100%;
   text-align: center;
-  padding   : 10px;
+  padding: 10px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -672,19 +731,19 @@ a {
 }
 
 .accomodation-content p {
-  line-height   : 2rem;
+  line-height: 2rem;
   letter-spacing: 2px;
 }
 
 /* ----------------------Accomodation Suites-------------------- */
 .accomodation-suites .suite {
   display: flex;
-  margin : 1rem 0;
+  margin: 1rem 0;
 }
 
-.accomodation-suites .suite>div {
-  flex          : 0.5;
-  padding       : 10px;
+.accomodation-suites .suite > div {
+  flex: 0.5;
+  padding: 10px;
   letter-spacing: 2px;
 }
 
@@ -694,20 +753,20 @@ a {
 
 .accomodation-suites .suite .image img {
   max-height: 60vh;
-  width     : 100%;
+  width: 100%;
   object-fit: cover;
 }
 
 .accomodation-suites .suite .info .info-title {
-  display        : flex;
+  display: flex;
   justify-content: space-between;
-  margin-bottom  : 1rem;
+  margin-bottom: 1rem;
 }
 
 .accomodation-suites .suite .info .info-title a {
-  font-size     : 1.1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
-  color         : var(--darkMaroon);
+  color: var(--darkMaroon);
 }
 
 .accomodation-suites .suite .info .info-title .arrow {
@@ -715,7 +774,7 @@ a {
 }
 
 .accomodation-suites .suite .info p {
-  margin     : 1.5rem 0;
+  margin: 1.5rem 0;
   line-height: 1.5rem;
 }
 
@@ -725,12 +784,12 @@ a {
 
 .accomodation-suites .suite .info .btn {
   font-size: 0.8rem;
-  padding  : 12px 10px;
+  padding: 12px 10px;
 }
 
 @media screen and (max-width: 920px) {
   .accomodation {
-    padding-left : 1rem;
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 }
@@ -742,21 +801,21 @@ a {
 
   .accomodation-suites .suite .image {
     max-height: 50vh;
-    overflow  : hidden;
+    overflow: hidden;
     object-fit: cover;
   }
 
   .accomodation-suites .suite .image img {
     max-height: 50vh;
-    width     : 100%;
+    width: 100%;
     object-fit: cover;
   }
 }
 
 @media screen and (max-width: 374px) {
   .accomodation-suites .suite .info .btn-container {
-    display        : flex;
-    flex-direction : column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
   }
 
@@ -771,44 +830,44 @@ a {
 
 /* --------------------------Single Room------------------------- */
 .single-room {
-  padding   : 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
 .single-room .single-room-header {
   background-color: var(--maroon);
-  min-height      : 13vh;
-  padding         : 1rem;
-  display         : flex;
-  align-items     : center;
-  justify-content : center;
-  flex-direction  : column;
+  min-height: 13vh;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .single-room .single-room-header h5,
 .single-room .single-room-header h3 {
-  color         : var(--white);
-  margin        : 0.5rem 0;
-  font-family   : "Playfair Display", Arial, Helvetica, sans-serif;
+  color: var(--white);
+  margin: 0.5rem 0;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
-  text-align    : center;
+  text-align: center;
 }
 
 .single-room .single-room-header h5 {
-  font-style : italic;
+  font-style: italic;
   font-weight: 500;
 }
 
 .single-room .single-room-header h3 {
   text-transform: uppercase;
-  font-weight   : 400;
+  font-weight: 400;
 }
 
 .single-room .single-room-header .fa {
   margin-right: 1rem;
-  margin-left : 0;
-  color       : var(--maroon);
-  transition  : all 0.3s ease-in-out;
+  margin-left: 0;
+  color: var(--maroon);
+  transition: all 0.3s ease-in-out;
 }
 
 .single-room .single-room-header .btn:hover .fa {
@@ -816,32 +875,32 @@ a {
 }
 
 .single-room .single-room-content {
-  min-height      : 40vh;
-  display         : flex;
-  flex-direction  : column;
-  align-items     : center;
-  justify-content : center;
-  text-align      : center;
-  padding         : 1rem 2rem;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 2rem;
   background-color: var(--maroon);
 }
 
 .single-room .single-room-content p {
-  margin-bottom : 1rem;
-  max-width     : 60vw;
-  padding       : 1rem;
+  margin-bottom: 1rem;
+  max-width: 60vw;
+  padding: 1rem;
   letter-spacing: 2px;
-  color         : var(--white);
+  color: var(--white);
 }
 
 .single-room .single-room-gallery h3,
 .single-room .single-room-details h4 {
-  text-align    : center;
-  font-weight   : 400;
+  text-align: center;
+  font-weight: 400;
   text-transform: uppercase;
-  color         : var(--lightBlack);
-  font-size     : 1.5rem;
-  margin        : 1.5rem 0;
+  color: var(--lightBlack);
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 /* .single-room .single-room-gallery {
@@ -850,49 +909,49 @@ a {
 
 /* ---------------------Single Room Image Slider ---------------------- */
 .single-room .gallery-slider-container {
-  width     : 80%;
-  max-width : 100%;
-  margin    : 0 auto;
-  position  : relative;
+  width: 80%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
   min-height: 50vh;
 }
 
 .single-room .image-slider {
-  display   : flex;
-  height    : 50vh;
-  min-width : 100%;
-  width     : 100%;
+  display: flex;
+  height: 50vh;
+  min-width: 100%;
+  width: 100%;
   transition: all 0.3s ease-in-out;
 }
 
 .single-room .arrow {
-  cursor : pointer;
-  width  : 0;
-  height : 0;
-  border : solid;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border: solid;
   z-index: 5;
 }
 
 .single-room .btn-container {
-  position       : absolute;
-  top            : 50%;
-  transform      : translateY(-50%);
-  min-height     : 10vh;
-  width          : 100%;
-  display        : flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  min-height: 10vh;
+  width: 100%;
+  display: flex;
   justify-content: space-between;
-  padding        : 1rem;
+  padding: 1rem;
 }
 
 .single-room #arrow-left {
   border-width: 20px 30px 20px 0;
-  left        : 1rem;
+  left: 1rem;
   border-color: transparent var(--white) transparent transparent;
 }
 
 .single-room #arrow-right {
   border-width: 20px 0 20px 30px;
-  left        : 60%;
+  left: 60%;
   border-color: transparent transparent transparent var(--white);
 }
 
@@ -900,65 +959,65 @@ a {
 
 .single-room .single-room-details {
   padding: 1rem;
-  margin : 0 auto;
+  margin: 0 auto;
 }
 
 .single-room .single-room-details .details {
-  display        : flex;
-  flex-wrap      : wrap;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.single-room .single-room-details .details>div {
-  display   : inline-block;
-  max-width : 43vw;
-  width     : 100%;
-  padding   : 1rem;
-  margin    : 10px;
+.single-room .single-room-details .details > div {
+  display: inline-block;
+  max-width: 43vw;
+  width: 100%;
+  padding: 1rem;
+  margin: 10px;
   border-top: 1px solid var(--black);
 }
 
 .single-room .single-room-details .details div h5 {
-  color         : var(--lightBlack);
-  margin-bottom : 1rem;
+  color: var(--lightBlack);
+  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
 .single-room .single-room-additional {
-  padding   : 1rem;
+  padding: 1rem;
   text-align: center;
 }
 
 .single-room .single-room-additional p {
   margin-bottom: 2rem;
-  font-style   : italic;
-  font-family  : serif;
+  font-style: italic;
+  font-family: serif;
 }
 
 .single-room .single-room-contact {
-  display         : flex;
-  justify-content : space-between;
-  padding         : 1rem;
-  align-items     : center;
-  max-width       : 60vw;
-  margin          : 1rem auto;
-  margin-bottom   : 2rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  max-width: 60vw;
+  margin: 1rem auto;
+  margin-bottom: 2rem;
   background-color: var(--maroon);
 }
 
 .single-room .single-room-contact p {
-  color      : var(--white);
-  font-style : italic;
+  color: var(--white);
+  font-style: italic;
   font-family: serif;
 }
 
 @media screen and (max-width: 700px) {
   .single-room .single-room-details .details {
     flex-direction: column;
-    padding-right : 1rem;
+    padding-right: 1rem;
   }
 
-  .single-room .single-room-details .details>div {
+  .single-room .single-room-details .details > div {
     max-width: 100vw;
   }
 
@@ -991,65 +1050,65 @@ a {
 }
 
 .amenities .back-link {
-  margin        : 1rem;
+  margin: 1rem;
   text-transform: uppercase;
-  padding       : 1rem 0;
+  padding: 1rem 0;
 }
 
 .amenities .back-link a {
-  display    : flex;
+  display: flex;
   align-items: center;
-  font-size  : 0.8rem;
+  font-size: 0.8rem;
   font-family: "Playfair Display", Arial, Helvetica, sans-serif;
 }
 
 .amenities .back-link .icon {
-  font-size   : 1.5rem;
-  font-weight : 200;
+  font-size: 1.5rem;
+  font-weight: 200;
   margin-right: 0.3rem;
-  color       : var(--lightBlack);
+  color: var(--lightBlack);
 }
 
 .amenities .title {
-  text-align   : center;
-  margin       : 1rem 0;
+  text-align: center;
+  margin: 1rem 0;
   margin-bottom: 2rem;
 }
 
 .amenities .title p {
-  font-style   : italic;
-  font-family  : serif;
-  font-size    : 0.8rem;
+  font-style: italic;
+  font-family: serif;
+  font-size: 0.8rem;
   margin-bottom: 0.4rem;
 }
 
 .amenities .title h4 span {
   text-transform: uppercase;
-  font-size     : 1.3rem;
-  display       : block;
-  color         : var(--lightBlack);
-  font-weight   : 100;
+  font-size: 1.3rem;
+  display: block;
+  color: var(--lightBlack);
+  font-weight: 100;
   letter-spacing: 2px;
-  font-family   : "Playfair Display", Arial, Helvetica, sans-serif;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
 }
 
 .amenities .single-amenity {
-  padding   : 2rem 1rem;
+  padding: 2rem 1rem;
   border-top: 1px solid var(--black);
 }
 
 .amenities .single-amenity h4 {
   text-transform: uppercase;
-  margin-bottom : 1.5rem;
+  margin-bottom: 1.5rem;
   letter-spacing: 2px;
-  font-size     : 0.8rem;
-  font-weight   : 600;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .amenities .single-amenity ul {
-  display              : grid;
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-gap             : 1rem;
+  grid-gap: 1rem;
 }
 
 .amenities .single-amenity ul li {
@@ -1063,7 +1122,7 @@ a {
 
   .amenities .single-amenity ul {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-    grid-row-gap         : 2px;
+    grid-row-gap: 2px;
   }
 }
 
@@ -1074,18 +1133,18 @@ a {
 }
 
 .rates .rates-header {
-  min-height                  : 60vh;
+  min-height: 60vh;
   /* background-position      : bottom; */
   /* background-size          : 100%; */
 }
 
 .rates .rates-header .details {
-  position        : absolute;
+  position: absolute;
   background-color: rgba(162, 241, 255, 0.74);
-  left            : 0.4rem;
-  bottom          : 0;
-  padding         : 1rem;
-  padding-bottom  : 0;
+  left: 0.4rem;
+  bottom: 0;
+  padding: 1rem;
+  padding-bottom: 0;
 }
 
 .rates .rates-header .details p {
@@ -1101,8 +1160,8 @@ a {
 }
 
 .rates .rates-header .details h2 {
-  font-size    : 1.5rem;
-  font-weight  : 500;
+  font-size: 1.5rem;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
@@ -1115,81 +1174,76 @@ a {
 }
 
 .experiences .experiences-header {
-  display       : flex;
-  padding       : .5rem 1rem;
+  display: flex;
+  padding: 0.5rem 1rem;
   text-transform: capitalize;
-  color         : var(--lightBlack)
+  color: var(--lightBlack);
 }
 
 .experiences .experiences-header a {
-  display   : inline-flex;
-  padding   : 10px 1rem;
-  position  : relative;
-  transition: all .3s ease-in-out;
+  display: inline-flex;
+  padding: 10px 1rem;
+  position: relative;
+  transition: all 0.3s ease-in-out;
 }
 
 .experiences .experiences-header a:hover,
 .experiences .experiences-header .active {
-  color: var(--maroon)
+  color: var(--maroon);
 }
-
-
 
 .experiences .experiences-header .active::after {
-  content         : "";
-  width           : 50%;
-  height          : 1.6px;
+  content: "";
+  width: 50%;
+  height: 1.6px;
   background-color: var(--maroon);
-  display         : block;
-  position        : absolute;
-  bottom          : 5px;
+  display: block;
+  position: absolute;
+  bottom: 5px;
 }
-
 
 @media screen and (max-width: 425px) {
   .experiences .experiences-header {
-    height    : 8vh;
+    height: 8vh;
     overflow-y: hidden;
-    transition: all .3s linear;
+    transition: all 0.3s linear;
   }
 
   .experiences .experiences-header.show-experience-header {
-    height: 22vh
+    height: 22vh;
   }
 
   .experiences .experiences-header a,
   .experiences .experiences-header {
-    display : block;
+    display: block;
     position: relative;
   }
 
-
   .experiences .experiences-header span {
-    position           : absolute;
-    width              : 20px;
-    height             : 20px;
-    top                : 1rem;
-    right              : 1rem;
-    /* background-color: #022296; */
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 1rem;
+    right: 1rem;
   }
 
   .experiences .experiences-header span::after {
-    content       : "";
-    width         : 10px;
-    height        : 10px;
-    border-right  : 2px solid var(--black);
-    border-bottom : 2px solid var(--black);
-    display       : block;
-    left          : 3px;
-    position      : absolute;
-    transform     : rotate(45deg);
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+    display: block;
+    left: 3px;
+    position: absolute;
+    transform: rotate(45deg);
     pointer-events: all;
-    cursor        : pointer;
+    cursor: pointer;
   }
 }
 
 /* --------------------End of Experiences Header-------------------------- */
-/* -------------------------Adventure, Family------------------------------------ */
+/* ------------Adventure, Family and Nature--------------------------------- */
 .experiences .adventure,
 .experiences .family,
 .experiences .nature {
@@ -1200,8 +1254,8 @@ a {
 .experiences .family-section-one,
 .experiences .nature-section-one {
   text-align: center;
-  width     : 60%;
-  margin    : 0 auto;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .experiences .adventure-section-one h2,
@@ -1214,10 +1268,10 @@ a {
 .experiences .family-section-three .content h2,
 .experiences .nature-section-three .content h2,
 .experiences .special-request h3 {
-  padding       : 1rem;
-  font-size     : 1.5rem;
-  font-family   : "Playfair Display", Arial, Helvetica, sans-serif;
-  font-weight   : 300;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-weight: 300;
   letter-spacing: 2px;
 }
 
@@ -1230,9 +1284,9 @@ a {
 .experiences .adventure-section-three .content p,
 .experiences .family-section-three .content p,
 .experiences .nature-section-three .content p {
-  padding       : 1rem;
+  padding: 1rem;
   letter-spacing: 1.5px;
-  font-size     : 0.9rem;
+  font-size: 0.9rem;
 }
 
 .experiences .adventure-section-two,
@@ -1241,10 +1295,10 @@ a {
 .experiences .adventure-section-three,
 .experiences .family-section-three,
 .experiences .nature-section-three {
-  display      : flex;
-  margin-top   : 2rem;
+  display: flex;
+  margin-top: 2rem;
   margin-bottom: 1rem;
-  align-items  : center;
+  align-items: center;
 }
 
 .experiences .adventure-section-two div,
@@ -1262,7 +1316,7 @@ a {
 .experiences .adventure-section-three .content,
 .experiences .family-section-three .content,
 .experiences .nature-section-three .content {
-  flex: 0.4
+  flex: 0.4;
 }
 
 .experiences .adventure-section-two .image,
@@ -1293,24 +1347,23 @@ a {
 }
 
 .experiences .special-request {
-  display        : flex;
-  flex-direction : column;
-  align-items    : center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin         : 1rem 0;
+  margin: 1rem 0;
 }
 
 .experiences .special-request p {
-  padding   : 1rem;
+  padding: 1rem;
   text-align: center;
 }
 
 @media screen and (max-width: 750px) {
-
   .experiences .adventure,
   .experiences .family,
   .experiences .family {
-    padding-left : 0;
+    padding-left: 0;
     padding-right: 0;
   }
 
@@ -1328,7 +1381,6 @@ a {
 }
 
 @media screen and (max-width: 700px) {
-
   .experiences .adventure-section-one,
   .experiences .family-section-one,
   .experiences .nature-section-one {
@@ -1337,7 +1389,6 @@ a {
 }
 
 @media screen and (max-width: 400px) {
-
   .experiences .adventure-section-one h2,
   .experiences .family-section-one h2,
   .experiences .nature-section-one h2,
@@ -1361,8 +1412,208 @@ a {
   }
 }
 
-/* --------------------------End of Adventure----------------------------- */
-
-
-
+/* ------------End of Adventure, Family and Nature----------------------- */
 /* -----------------------End of Experiences---------------------------- */
+
+/* -------------------------------SPA------------------------------------ */
+.spa {
+  padding: 0;
+}
+
+.spa .spa-body {
+  padding: 0.5rem;
+}
+
+.spa .spa-header-content p {
+  padding: 0.5rem;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.spa .spa-section-one,
+.spa .spa-section-two {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.spa .spa-section-three {
+  padding: 2rem;
+}
+
+.spa .spa-section-one .content,
+.spa .spa-section-two .image {
+  flex: 0.6;
+  padding: 1rem;
+}
+.spa .spa-section-one .image,
+.spa .spa-section-two .content {
+  flex: 0.4;
+  padding: 1rem;
+}
+
+.spa .spa-section-one .image img {
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.spa .spa-section-one .content h2,
+.spa .spa-section-two .content h2,
+.spa .spa-section-three h2 {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.spa .spa-section-two .content h2 {
+  padding-top: 0;
+}
+
+.spa .spa-section-one .content > p {
+  margin: 1rem 0;
+  letter-spacing: 1.5px;
+}
+
+.spa .spa-section-one .content > a,
+.spa .spa-section-three > a {
+  text-transform: uppercase;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  color: var(--maroon);
+}
+
+.spa .spa-section-two ul {
+  padding: 0 1rem;
+}
+
+.spa .spa-section-two ul li {
+  margin: 0.5rem 0;
+  color: var(--lightBlack);
+}
+
+@media screen and (max-width: 768px) {
+  .spa .spa-section-one {
+    flex-direction: column-reverse;
+  }
+
+  .spa .spa-section-two {
+    flex-direction: column;
+  }
+}
+
+/* ---------------------------Treatment Slider---------------------------- */
+
+.treatment-container {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+.treatment-slider {
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  min-width: 100%;
+  width: 100%;
+  transform: translateX(0);
+  transition: all 0.3s ease-in-out;
+  /* overflow: hidden; */
+}
+
+.treatment-container .treatment-slide {
+  display: flex;
+  padding: 1rem 0;
+  width: 100%;
+  min-width: 100%;
+  min-height: 50vh;
+}
+
+.treatment-container .treatment-slide .image {
+  flex: 0.4;
+  padding-right: 1rem;
+}
+
+.treatment-container .treatment-slide .content {
+  flex: 0.6;
+  padding: 1rem;
+  padding-left: 2rem;
+}
+
+.treatment-container .treatment-slide .content h3 {
+  padding: 1rem 0;
+  padding-top: 0;
+  font-size: 1.5rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.treatment-container .treatment-slide .content p {
+  line-height: 1.5rem;
+}
+
+.treatment-container .arrow {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  z-index: 5;
+  border-top: 2px solid gray;
+  border-right: 2px solid gray;
+  transition: all 0.3s ease-in-out;
+}
+
+.treatment-container .arrow:hover {
+  border-color: var(--lightBlack);
+}
+
+.treatment-container .btn-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  min-height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.treatment-container #arrow-left {
+  transform: rotate(-135deg);
+}
+
+.treatment-container #arrow-right {
+  transform: rotate(45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .treatment-container .treatment-slide {
+    flex-direction: column;
+  }
+
+  .treatment-container .treatment-slide .image {
+    padding: 0;
+  }
+
+  .treatment-container .treatment-slide .image img {
+    max-height: 50vh;
+  }
+
+  .treatment-container .treatment-slide .content {
+    padding: 5px;
+    padding-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .spa .spa-section-three {
+    padding: 1rem;
+  }
+}
+
+/* --------------------End of Treatment Slider--------------------------- */
+/* -------------------------End of SPA----------------------------------- */
