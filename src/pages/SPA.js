@@ -148,6 +148,82 @@ const SPA = () => {
           <Link to="/spa/treatments">All treamments</Link>
           <TreatmentHighlights />
         </div>
+        <div className="spa-section-four">
+          <div className="content">
+            <h2>Wellness &amp; Spa Experts</h2>
+            <p>
+              Experience a layered approach to wellness. Simply relax or go
+              deeper and say hello to a whole new you. Skilled therapists and
+              visiting practitioners guide you towards optimum well-being in
+              step with your wellness goals
+            </p>
+            <Link to="/spa/visiting-practitioners-calendar">
+              Visiting practitioners' calendar
+            </Link>
+            <div className="accordion">
+              <div className="accordion-list">
+                <h4 className="title" onClick={toggleOpen}>
+                  Dr. Peeyush
+                  <span>Ayurvedic Doctor</span>
+                </h4>
+                <div>
+                  <p>
+                    Dr. Peeyush is an ayurvedic doctor from Kerala and brings
+                    over 10 years experience, having worked in various wellness
+                    positions in the hospitality industry as well as in
+                    hospitals in India, Maldivines and Georgia. He offers
+                    personal consultations and his introductory group hatha and
+                    therapeutic yoga sessions can relieve joint and back pain
+                    and improve posture. He also teaches asanas, pranayama,
+                    dhyana and yoga kriyas.
+                  </p>
+                </div>
+              </div>
+              <div className="accordion-list">
+                <h4 className="title" onClick={toggleOpen}>
+                  Luvuyo Mabusela
+                  <span>Resident Fitness and Wellness Expert</span>
+                </h4>
+                <div>
+                  <p>
+                    A former professional cricketer and a keen sportsman. Luvuyo
+                    holds a diploma in Exercise Science and Sports Conditioning
+                    and is also a certified instructor in Pilates, yoga and
+                    spinning. He worked on the world-famous Queen Mary 2 and
+                    travelled the world from Singapore, Australia and Hong Kong
+                    to Europe and the UAE. Luvuyo specializes in body posture,
+                    rehabilitation, core training, weight loss and muscle gain
+                    through using correct exercise personalized to specific
+                    needs.
+                  </p>
+                </div>
+              </div>
+              <div className="accordion-list">
+                <h4 className="title" onClick={toggleOpen}>
+                  Arthur Stecca
+                  <span>Resident Fitness Expert</span>
+                </h4>
+                <div>
+                  <p>
+                    Originally from Brazil, Arthur is our professional Fitness
+                    Coach at the resort. A certified personal trainer in over 30
+                    countries, Arthur has a wealth of experience in Italy,
+                    Dubai, Maldivines, Kuwait and UK and has completed more than
+                    5,000 hours of workouts for clients.
+                  </p>
+                  <p>
+                    An expert in weight training and in teaching people how to
+                    perform each exercise, Arthur possesses a successful track
+                    record of evaluating a client's physical fitness,
+                    understanding their needs and then developing a practical
+                    and achievable workout and nutritional routine for them to
+                    reach their targets.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useCallback } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Loading from "../components/Loading";
 import { StyledHero, ImageSlide } from "../components/Styled";
 import ErrorPage from "./ErrorPage";
 
@@ -89,7 +90,7 @@ const SingleRoom = (props) => {
     imageSlider();
   }, [roomSlug]);
 
-  if (!room) return <ErrorPage />;
+  if (!room) return <Loading />;
 
   const {
     image,
@@ -173,27 +174,27 @@ const SingleRoom = (props) => {
         <div className="details">
           <div>
             <h5>Beds</h5>
-            <p>{description}</p>
+            {description ? <p>{description}</p> : <Loading />}
           </div>
           <div>
             <h5>Occupancy</h5>
-            <p>{occupancy}</p>
+            {occupancy ? <p>{occupancy}</p> : <Loading />}
           </div>
           <div>
             <h5>Size</h5>
-            <p>{size}</p>
+            {size ? <p>{size}</p> : <Loading />}
           </div>
           <div>
             <h5>Bathroom</h5>
-            <p>{bathroom}</p>
+            {bathroom ? <p>{bathroom}</p> : <Loading />}
           </div>
           <div>
             <h5>Views</h5>
-            <p>{views}</p>
+            {views ? <p>{views}</p> : <Loading />}
           </div>
           <div>
             <h5>Unique Features</h5>
-            <p>{uniqueFeatures}</p>
+            {uniqueFeatures ? <p>{uniqueFeatures}</p> : <Loading />}
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Amenities from "./components/Amenities";
+import Amenities from "./pages/Amenities";
 import Calendar from "./components/Calendar";
 import CalendarWidget from "./components/CalendarWidget";
 import DatePicker from "./components/DatePicker";
@@ -9,6 +9,7 @@ import Family from "./components/Family";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import NatureAndDiscovery from "./components/NatureAndDiscovery";
+import PersonalizedWellness from "./pages/PersonalizedWellness";
 import Accomodation from "./pages/Accomodation";
 import ErrorPage from "./pages/ErrorPage";
 import Experiences from "./pages/Experiences";
@@ -41,6 +42,11 @@ const App = () => {
           component={NatureAndDiscovery}
         />
         <Route exact path="/spa" component={SPA} />
+        <Route
+          exact
+          path="/spa/personalized-wellness"
+          component={PersonalizedWellness}
+        />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/datepicker" component={DatePicker} />
         <Route component={ErrorPage} />

@@ -1094,5 +1094,85 @@
       "image": "/images/accomodation-18.jpg",
       "slug": "garden-view-executive-suite"
     }
+  ],
+  "wellness": [
+    {
+      "id": 1,
+      "title": "Sleep",
+      "content": "Handmade mattresses, organic beddings and linens, dedicated sleep programs for plenty of sleep.",
+      "slug": "sleep",
+      "images": [
+        {
+          "image": "/images/sleep-1.jpg",
+          "alternative": "Woman sleeping"
+        }
+      ],
+      "singleItem": []
+    },
+    {
+      "id": 2,
+      "title": "Eat",
+      "content": "Natural ingredients, local and sustainable, less is more: food that's good for you and the world around you.",
+      "slug": "eat",
+      "images": [
+        {
+          "image": "/images/eat-1.jpg",
+          "alternative": "Food on the plate"
+        }
+      ],
+      "singleItem": []
+    },
+    {
+      "id": 3,
+      "title": "SPA",
+      "content": "Signature therapies, locally-inspired treatments, Alchemy Bars, in-house experts and Visiting Practitioners: we have the whole of you covered.",
+      "slug": "spa",
+      "images": [
+        {
+          "image": "/images/wellness-spa-1.jpg",
+          "alternative": "Woman lying down with face facing up"
+        }
+      ],
+      "singleItem": []
+    },
+    {
+      "id": 4,
+      "title": "Move",
+      "content": "Group and private wellness classes, functional fitness, running trails and jungle gyms: keeping active is good for your body and mind.",
+      "slug": "move",
+      "images": [
+        {
+          "image": "/images/move-2.jpg",
+          "alternative": "People in the gym"
+        }
+      ],
+      "singleItem": []
+    },
+    {
+      "id": 5,
+      "title": "Mindfulness",
+      "content": "Less stress, clearer thoughts and more brain power with mindfulness, positive intenions and appreciations and techniques.",
+      "slug": "mindfulness",
+      "images": [
+        {
+          "image": "/images/mindfullness-1.jpg",
+          "alternative": "Woman with happy face looking in the sky"
+        }
+      ],
+      "singleItem": []
+    },
+    {
+      "id": 6,
+      "title": "Grow",
+      "content": "Activities for children based on the dimensions of wellness: social, environmental, physical, spiritual, emotional and intellectual.",
+      "slug": "grow",
+      "images": [
+        {
+          "image": "/images/grow-2.jpg",
+          "alternative": "Family walking on the beach"
+        }
+      ],
+      "singleItem": []
+    }
   ]
 }

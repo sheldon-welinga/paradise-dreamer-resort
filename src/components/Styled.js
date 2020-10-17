@@ -32,6 +32,15 @@ const StyledHero = styled.div`
       font-size: 1.2rem;
       margin-top: 1rem;
     }
+
+    @media screen and (max-width: 668px) {
+      h4 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
   }
 `;
 

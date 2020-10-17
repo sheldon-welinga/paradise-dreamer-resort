@@ -94,7 +94,7 @@ a {
 
 /* --------------------------Accordion--------------------- */
 .accordion .accordion-list {
-  border-top: 1px solid var(--lightBlack);
+  border-top: 1px solid gray;
   padding: 1rem;
   padding-left: 2rem;
 }
@@ -110,8 +110,14 @@ a {
   position: relative;
 }
 
+.accordion .accordion-list .title span {
+  display: block;
+  margin-top: 1rem;
+  color: var(--lightBlack);
+}
+
 .accordion .accordion-list:last-child {
-  border-bottom: 1px solid var(--lightBlack);
+  border-bottom: 1px solid gray;
 }
 
 .accordion .accordion-list .title::before {
@@ -144,13 +150,24 @@ a {
 }
 
 .accordion .accordion-list .title.open + div {
-  max-height: 500px;
+  max-height: 520px;
 }
 
 .accordion .accordion-list .title.open::before {
   transform: rotate(135deg);
 }
 /* -----------------------End of Accordion----------------- */
+
+/* --------------------------Loading--------------------------- */
+.loading {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ---------------------End of Loading-------------------------- */
 
 /* --------------End of Globals ----------------------------- */
 /* ---------------------------Error Page------------------------ */
@@ -1431,13 +1448,18 @@ a {
 }
 
 .spa .spa-section-one,
-.spa .spa-section-two {
+.spa .spa-section-two,
+.spa .spa-section-four {
   display: flex;
   margin: 2rem 0;
 }
 
 .spa .spa-section-three {
   padding: 2rem;
+}
+
+.spa .spa-section-four {
+  padding: 0 1rem;
 }
 
 .spa .spa-section-one .content,
@@ -1458,7 +1480,8 @@ a {
 
 .spa .spa-section-one .content h2,
 .spa .spa-section-two .content h2,
-.spa .spa-section-three h2 {
+.spa .spa-section-three h2,
+.spa .spa-section-four .content h2 {
   padding: 1rem 0;
   font-size: 1.5rem;
   font-family: "Playfair Display", Arial, Helvetica, sans-serif;
@@ -1470,13 +1493,15 @@ a {
   padding-top: 0;
 }
 
-.spa .spa-section-one .content > p {
+.spa .spa-section-one .content > p,
+.spa .spa-section-four .content > p {
   margin: 1rem 0;
   letter-spacing: 1.5px;
 }
 
 .spa .spa-section-one .content > a,
-.spa .spa-section-three > a {
+.spa .spa-section-three > a,
+.spa .spa-section-four .content > a {
   text-transform: uppercase;
   padding: 1rem 0;
   font-size: 0.9rem;
@@ -1494,6 +1519,10 @@ a {
   color: var(--lightBlack);
 }
 
+.spa .spa-section-four p {
+  padding-right: 30vw;
+}
+
 @media screen and (max-width: 768px) {
   .spa .spa-section-one {
     flex-direction: column-reverse;
@@ -1501,6 +1530,10 @@ a {
 
   .spa .spa-section-two {
     flex-direction: column;
+  }
+
+  .spa .spa-section-four p {
+    padding-right: initial;
   }
 }
 
@@ -1510,14 +1543,14 @@ a {
   width: 100%;
   max-width: 100%;
   position: relative;
-  min-height: 60vh;
+  min-height: 50vh;
   overflow: hidden;
 }
 
 .treatment-slider {
   display: flex;
   align-items: center;
-  min-height: 60vh;
+  min-height: 50vh;
   min-width: 100%;
   width: 100%;
   transform: translateX(0);
@@ -1614,6 +1647,91 @@ a {
     padding: 1rem;
   }
 }
-
 /* --------------------End of Treatment Slider--------------------------- */
+/* -----------------------Personalized Wellness--------------------------- */
+.wellness {
+  padding: 0;
+}
+
+.wellness .wellness-section-one {
+  padding: 2rem 1rem;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wellness .wellness-section-one h2,
+.wellness .wellness-section-one h4,
+.wellness .wellness-single-item .content h2 {
+  font-size: 1.5rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 1.8rem;
+}
+
+.wellness .wellness-section-one h4 {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.wellness .wellness-section-one p,
+.wellness .wellness-single-item .content p {
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.wellness .wellness-section-two {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 2rem;
+}
+
+.wellness .wellness-section-two .wellness-single-item {
+  min-height: 40vh;
+}
+
+.wellness .wellness-single-item img {
+  height: 300px;
+  object-fit: contain;
+}
+
+.wellness .wellness-single-item .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.wellness .wellness-single-item .content h2 {
+  padding: 1rem 0.5rem;
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+
+.wellness .wellness-single-item .content p {
+  letter-spacing: 0.8px;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.wellness .wellness-single-item .content a {
+  text-transform: uppercase;
+  color: var(--maroon);
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 400px) {
+  .wellness .wellness-section-two {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
+
+/* -----------------------End of Personalized Wellness--------------------- */
 /* -------------------------End of SPA----------------------------------- */

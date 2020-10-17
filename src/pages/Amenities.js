@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import Loading from "../components/Loading";
 
 const Amenities = (props) => {
   const [amenities, setAmenities] = useState({});
@@ -29,6 +30,14 @@ const Amenities = (props) => {
     getAmenities();
   }, [roomSlug]);
 
+  if (!amenities) {
+    return (
+      <div className="page-height">
+        <Loading />
+      </div>
+    );
+  }
+
   const {
     bedAndBath,
     technology,
@@ -36,7 +45,7 @@ const Amenities = (props) => {
     resortFeatures,
     roomFeatures,
   } = amenities;
-  console.log(room);
+
   return (
     <div className="page-height amenities">
       <div className="back-link">
@@ -54,41 +63,51 @@ const Amenities = (props) => {
       <div className="single-amenity">
         <h4>Bed &amp; Bath</h4>
         <ul>
-          {bedAndBath
-            ? bedAndBath.map((item, index) => <li key={index}>{item}</li>)
-            : ""}
+          {bedAndBath ? (
+            bedAndBath.map((item, index) => <li key={index}>{item}</li>)
+          ) : (
+            <Loading />
+          )}
         </ul>
       </div>
       <div className="single-amenity">
         <h4>Techology</h4>
         <ul>
-          {technology
-            ? technology.map((item, index) => <li key={index}>{item}</li>)
-            : ""}
+          {technology ? (
+            technology.map((item, index) => <li key={index}>{item}</li>)
+          ) : (
+            <Loading />
+          )}
         </ul>
       </div>
       <div className="single-amenity">
         <h4>valuable services with additional charges</h4>
         <ul>
-          {valuableServices
-            ? valuableServices.map((item, index) => <li key={index}>{item}</li>)
-            : ""}
+          {valuableServices ? (
+            valuableServices.map((item, index) => <li key={index}>{item}</li>)
+          ) : (
+            <Loading />
+          )}
         </ul>
       </div>
       <div className="single-amenity">
         <h4>Resort Features &amp; Amenities</h4>
         <ul>
-          {resortFeatures
-            ? resortFeatures.map((item, index) => <li key={index}>{item}</li>)
-            : ""}
+          {resortFeatures ? (
+            resortFeatures.map((item, index) => <li key={index}>{item}</li>)
+          ) : (
+            <Loading />
+          )}
         </ul>
       </div>
       <div className="single-amenity">
         <h4>Room Features</h4>
         <ul>
-          {roomFeatures
-            ? roomFeatures.map((item, index) => <li key={index}>{item}</li>)
-            : ""}
+          {roomFeatures ? (
+            roomFeatures.map((item, index) => <li key={index}>{item}</li>)
+          ) : (
+            <Loading />
+          )}
         </ul>
       </div>
     </div>

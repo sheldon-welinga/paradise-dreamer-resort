@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loading from "../components/Loading";
 import { StyledHero } from "../components/Styled";
 import Suite from "../components/Suite";
 
@@ -107,9 +108,11 @@ const Accomodation = (props) => {
           </p>
         </div>
         <div className="accomodation-suites">
-          {rooms.map((room) => (
-            <Suite key={room.id} room={room} />
-          ))}
+          {rooms.length ? (
+            rooms.map((room) => <Suite key={room.id} room={room} />)
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
     </>
