@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Amenities from "./pages/Amenities";
 import Calendar from "./components/Calendar";
-import CalendarWidget from "./components/CalendarWidget";
+// import CalendarWidget from "./components/CalendarWidget";
 import DatePicker from "./components/DatePicker";
 import Family from "./components/Family";
 import Footer from "./components/Footer";
@@ -17,6 +17,8 @@ import Home from "./pages/Home";
 import Rates from "./pages/Rates";
 import SingleRoom from "./pages/SingleRoom";
 import SPA from "./pages/SPA";
+import SingleWellness from "./pages/SingleWellness";
+import Treatments from "./pages/Treatments";
 
 const App = () => {
   return (
@@ -47,6 +49,12 @@ const App = () => {
           path="/spa/personalized-wellness"
           component={PersonalizedWellness}
         />
+        <Route
+          exact
+          path="/spa/personalized-wellness/:slug"
+          component={SingleWellness}
+        />
+        <Route exact path="/spa/treatments" component={Treatments} />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/datepicker" component={DatePicker} />
         <Route component={ErrorPage} />

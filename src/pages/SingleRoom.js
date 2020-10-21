@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
 import { StyledHero, ImageSlide } from "../components/Styled";
-import ErrorPage from "./ErrorPage";
+// import ErrorPage from "./ErrorPage";
 
 const SingleRoom = (props) => {
   const [room, setRoom] = useState({});

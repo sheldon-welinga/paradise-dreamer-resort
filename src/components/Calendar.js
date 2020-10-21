@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import styles from "../Calendar.module.css";
 
 const Calendar = () => {
@@ -8,11 +8,11 @@ const Calendar = () => {
 
   const currentMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0);
   const lastDay = currentMonth.getDate();
-  const prevLastDay = new Date(
-    date.getFullYear(),
-    date.getMonth(),
-    0
-  ).getDate();
+  // const prevLastDay = new Date(
+  //   date.getFullYear(),
+  //   date.getMonth(),
+  //   0
+  // ).getDate();
   const firstDayIndex = date.getDay();
 
   let lastDayIndex = currentMonth.getDay();

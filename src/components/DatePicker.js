@@ -22,9 +22,9 @@ const DatePicker = () => {
   };
 
   const renderCalendar = () => {
-    const date_picker = document.querySelector(".date-picker");
-    const selected_date = document.querySelector(".date-picker .selected-date");
-    const dates = document.querySelector(".date-picker .dates");
+    // const date_picker = document.querySelector(".date-picker");
+    // const selected_date = document.querySelector(".date-picker .selected-date");
+    // const dates = document.querySelector(".date-picker .dates");
   };
 
   useEffect(() => {

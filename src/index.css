@@ -171,6 +171,12 @@ a {
 
 /* --------------End of Globals ----------------------------- */
 /* ---------------------------Error Page------------------------ */
+.error {
+  color: rgb(226, 67, 67);
+  padding: 1rem;
+  text-align: center;
+}
+
 .error-page {
   display: flex;
   align-items: center;
@@ -1734,4 +1740,323 @@ a {
 }
 
 /* -----------------------End of Personalized Wellness--------------------- */
+/* ----------------------------Single Wellness -------------------------- */
+.single-wellness {
+  padding: 0;
+}
+
+.single-wellness .single-wellness-section-one {
+  display: flex;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.single-wellness .single-wellness-section-one div,
+.single-wellness .single-wellness-section-two > div {
+  flex: 0.5;
+}
+
+.single-wellness .single-wellness-section-two > div {
+  padding: 1rem;
+}
+
+.single-wellness-section-one .image {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.single-wellness-section-one .image img {
+  max-height: 80vh;
+  min-height: 60vh;
+  max-width: 40vw;
+  object-fit: cover;
+}
+
+.single-wellness-section-one .content {
+  padding: 1rem;
+}
+
+.single-wellness-section-one .content h5,
+.single-wellness-section-one .content h2,
+.single-wellness-section-two .content h2 {
+  padding: 0.5rem 1rem;
+  font-size: 1.8rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 1.8rem;
+}
+
+.single-wellness-section-two .content h2 {
+  font-size: 1.2rem;
+}
+
+.single-wellness-section-two .content div:first-child h2 {
+  padding-top: 0;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.single-wellness-section-one .content h5 {
+  font-size: 0.9rem;
+  padding-bottom: 0;
+  text-transform: capitalize;
+}
+
+.single-wellness-section-one .content p,
+.single-wellness-section-two .content p {
+  padding: 1rem;
+  line-height: 1.5rem;
+}
+
+.single-wellness-section-one .other-image {
+  position: absolute;
+  width: 25vw;
+  max-height: 20vh;
+  top: 75%;
+  right: 30%;
+}
+
+.single-wellness-section-one .other-image img {
+  max-height: 25vh;
+}
+
+.single-wellness .single-wellness-section-two {
+  padding: 2rem 1rem;
+  display: flex;
+}
+
+.single-wellness .single-wellness-section-three,
+.single-wellness .single-wellness-section-three h2 {
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.single-wellness .single-wellness-section-three h2 {
+  padding-left: 0;
+  font-size: 1.4rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 4px;
+  line-height: 1.8rem;
+  color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .single-wellness-section-one .other-image {
+    display: none;
+  }
+
+  .single-wellness-section-one {
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+  }
+
+  .single-wellness-section-one .image img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .single-wellness-section-two {
+    padding-top: 0;
+    flex-direction: column;
+    margin-top: -4rem;
+  }
+
+  .single-wellness-section-two .image img {
+    max-height: 70vh;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .single-wellness-section-one .content h2,
+  .single-wellness-section-two .content h2,
+  .single-wellness-section-two .content div:first-child h2 {
+    font-size: 1.3rem;
+  }
+
+  .single-wellness .single-wellness-section-three h2 {
+    font-size: 1.1rem;
+  }
+}
+/* --------------------------End of Single Wellness ---------------------- */
+/* ---------------------------Treatments---------------------------------- */
+.treatments {
+  padding: 0;
+}
+
+.treatments .treatments-section-one {
+  padding: 1rem;
+  display: flex;
+}
+
+.treatments .treatments-section-one .content {
+  flex: 0.6;
+  padding: 1rem;
+}
+
+.treatments .treatments-section-one .content h6 {
+  color: var(--lightBlack);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.treatments .treatments-section-one .content h2 {
+  font-size: 2.3rem;
+  font-family: serif;
+  font-weight: 300;
+  letter-spacing: 4px;
+  line-height: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.treatments .treatments-section-one .content p {
+  line-height: 1.5rem;
+}
+
+.treatments .treatments-section-one .image {
+  flex: 0.4;
+  padding: 1rem;
+}
+
+.treatments .treatments-section-two,
+.treatments .treatments-section-three {
+  margin: 1rem;
+}
+
+.treatments .treatments-section-two .search-bar {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.treatments .treatments-section-two .search-bar .form-control,
+.treatments .treatments-section-two .search-bar select,
+.treatments .treatments-section-two .search-bar select option {
+  margin-right: 1rem;
+  display: inline-flex;
+  padding: 0.8rem;
+}
+
+.treatments .treatments-section-two .search-bar select,
+.treatments .treatments-section-two .search-bar select option {
+  padding-right: 1rem;
+  background-color: var(--maroon);
+  color: var(--white);
+  border: 1px solid var(--maroon);
+  text-transform: uppercase;
+  padding-left: 2rem;
+  display: inline-flex;
+}
+
+.treatments .treatments-section-two .search-bar select option:hover {
+  background-color: #1c1616;
+}
+
+.treatments .treatments-section-two .search-bar select:focus {
+  outline: none;
+}
+
+.treatments .treatments-section-two .search-bar .form-control:focus {
+  outline: none;
+}
+
+.treatments .treatments-section-two .search-bar .single-treatment {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 1rem 0.3rem;
+  padding-bottom: 1.3rem;
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-treatment .treatment-info {
+  flex: 0.7;
+}
+
+.single-treatment .link {
+  flex: 0.3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.single-treatment .treatment-info .title h2 {
+  font-size: 1.4rem;
+  font-family: serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.8rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.single-treatment .treatment-info .title h5 {
+  color: var(--lightBlack);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.single-treatment .treatment-info .content p {
+  margin: 0.5rem 0;
+  line-height: 1.5rem;
+}
+
+.single-treatment .treatment-info .content {
+  max-height: 520px;
+  overflow: hidden;
+  transition: max-height 0.3s linear;
+}
+
+.single-treatment .treatment-info {
+  margin: 0;
+}
+
+.single-treatment .treatment-info .title.close + .content {
+  max-height: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .treatments .treatments-section-one {
+    flex-direction: column;
+  }
+
+  .treatments .treatments-section-one .image img {
+    max-height: 50vh;
+  }
+
+  .single-treatment,
+  .treatments .treatments-section-two .search-bar {
+    flex-direction: column;
+  }
+
+  .single-treatment .link a,
+  .treatments .treatments-section-two .search-bar .form-control,
+  .treatments .treatments-section-two .search-bar form,
+  .treatments .treatments-section-two .search-bar select {
+    width: 100%;
+  }
+
+  .treatments .treatments-section-two .search-bar form {
+    margin-bottom: 1rem;
+  }
+
+  .treatments .treatments-section-two .search-bar .form-control,
+  .treatments .treatments-section-two .search-bar select {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .treatments .treatments-section-one .content h2 {
+    font-size: 1.7rem;
+  }
+}
+
+/* --------------------------End of Treatment------------------------------ */
 /* -------------------------End of SPA----------------------------------- */

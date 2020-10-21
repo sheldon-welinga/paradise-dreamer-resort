@@ -1105,9 +1105,69 @@
         {
           "image": "/images/sleep-1.jpg",
           "alternative": "Woman sleeping"
+        },
+        {
+          "image": "/images/sleep-1.jpg",
+          "alternative": "Woman sleeping"
+        },
+        {
+          "image": "/images/sleep-2.jpg",
+          "alternative": "Woman sleeping"
+        },
+        {
+          "image": "/images/sleep-3.jpg",
+          "alternative": "A bed"
         }
       ],
-      "singleItem": []
+      "singleItem": {
+        "sectionOne": {
+          "title": "A grooundbreaking sleep standard",
+          "content": "Paradise Dreamer vacations are about resting the mind, rejuvenating the body and boosting the immune system. It all starts with a good night's sleep. We've worked internationally-renowned experts including Sleep Doctor Michael J. Breus to develop a sleep standard to ensure that each day ends in peaceful slumber."
+        },
+        "sectionTwo": [
+          {
+            "title": "Guestroom essentials",
+            "content": "Because the importance of sleep goes way beyond just boosting your mood or banishing under-eye circles, we have brought together some of the best sleeping tools from handmade mattresses, temperature regulating pillows and duvets to organic cotton sheets."
+          },
+          {
+            "title": "The bed",
+            "content": "The handmade mattress is made from organic lamb’s wool with coir fiber that comes from a certified organic coconut plantation to ensure unbeatable airflow. The quilted cotton cover is anti-bug/mite/moth/anything creepy crawly, moisture-wicking and hypoallergenic. The latex layer comes from the only certified organic rubber plantation in the world and provides excellent orthopedic support."
+          },
+          {
+            "title": "Pillows and duvets",
+            "content": "The non-allergenic, organic pillows and duvets are resistant to mites and provide excellent thermal and climatic conditions for sleep. The three-tier chamber prevents flattening so the pillow stays fluffy, providing comfort for better sleep."
+          },
+          {
+            "title": "The linen",
+            "content": "The fabrics have been expertly spun into superfine yarns before passing through various finishing processes for superb whiteness and an ultra-smooth touch. The highest quality is ensured from the thread to your bed."
+          },
+          {
+            "title": "Sleep tracking",
+            "content": "We can arrange a time to come to your villa and set up a sleep tracker device that sits unobtrusively by the side of your bed and measures your breathing as you go into the different sleep stages. The results of the sleep tracker are analyzed during a 10-minute sleep review to pinpoint any changes that may need to be made for the following night. Your first two nights are free!"
+          },
+          {
+            "title": "Jet lag app",
+            "content": "Jet lag is caused when the sleep-wake and light-dark cycle shift too quickly for the 24-hour circadian clock in the brain to adapt. We offer a mobile app to improve your traveling experience to shift your circadian rhythm through your exposure to light, caffeine and sleep, starting by making some adjustments a few days before you travel. Rated by NASA astronauts, you can apply the same principles next time you travel across time zones."
+          },
+          {
+            "title": "Supporting your sleep program",
+            "content": "If you're on our Sleep program, and depending on your specific requirements, we may make a few adjustments. For example, if you tend to get uncomfortably hot, we offer specific linen created from sustainably-sourced eucalyptus that regulates core body temperature. We may also change your lighting, offer you a sound therapy machine and provide sleep amenities including pamper products and sleep-inducing snacks and drinks."
+          }
+        ],
+        "sectionThree": {
+          "title": "Enhance your sleep with our programs",
+          "accordion": [
+            {
+              "title": "Sleep",
+              "content": "An individual protocol to improve your sleep that combines data from your sleep tracker with a personal consultation, yoga nidra and meditation, relaxing treatments and amenities, wellness therapies, nutrition advice and low intensity training."
+            },
+            {
+              "title": "Sleep Retreat",
+              "content": "Combines practical advice with yoga nidra and meditation, relaxing treatments, wellness therapies and low intensity training."
+            }
+          ]
+        }
+      }
     },
     {
       "id": 2,
@@ -1118,9 +1178,57 @@
         {
           "image": "/images/eat-1.jpg",
           "alternative": "Food on the plate"
+        },
+        {
+          "image": "/images/eat-3.jpg",
+          "alternative": "Resort with food"
+        },
+        {
+          "image": "/images/eat-1.jpg",
+          "alternative": "Food on the plate"
+        },
+        {
+          "image": "/images/eat-2.jpg",
+          "alternative": "Dining resort room"
         }
       ],
-      "singleItem": []
+      "singleItem": {
+        "sectionOne": {
+          "title": "Eat, drink and be healthy",
+          "content": "Eating and vacations go as well together as chili and chocolate. Our food and drinks philosophy – where food is as nutritious as it is delicious – means you can enjoy both and leave feeling better than when you arrived."
+        },
+        "sectionTwo": [
+          {
+            "title": "Guiding Principles",
+            "content": ""
+          },
+          {
+            "title": "Natural ingredients",
+            "content": "We choose a cleaner and simpler approach to preparation, focusing on quality, balance and fresh whole food made from scratch. Produce doesn’t come much fresher than our herbs and veggies grown in our own organic gardens and mushroom huts. In some locations, eggs and milk come from onsite farms."
+          },
+          {
+            "title": "Local and sustainable",
+            "content": "Each Paradise Dreamer's resort is reinforcing its relationships with local farmers, producers and suppliers, who are committed to responsible sourcing, packaging and seasonality. We keep a close eye on what's in your food and where it comes from so you can reconnect with food safe in the knowledge it’s healthy for you and the world around you."
+          },
+          {
+            "title": "Less is more",
+            "content": "Our chefs indulge their love for hearty and healthy menus, while avoiding the bad stuff such as flavor enhancers and reducing the amount of lectins, lactose, gluten and sugar in your food. Glucose is out, vinegar is in!"
+          }
+        ],
+        "sectionThree": {
+          "title": "Make your gut buddies happy with our programs",
+          "accordion": [
+            {
+              "title": "Detox",
+              "content": "Uses non-invasive yogic cleanse with low intensity training, detoxifying therapies and mind-body practices."
+            },
+            {
+              "title": "Weight Management",
+              "content": "Assesses where you are and then blends cleansing treatments, fitness and wellness activities with a balanced diet and practical advice."
+            }
+          ]
+        }
+      }
     },
     {
       "id": 3,
@@ -1131,9 +1239,53 @@
         {
           "image": "/images/wellness-spa-1.jpg",
           "alternative": "Woman lying down with face facing up"
+        },
+        {
+          "image": "/images/wellness-spa-3.jpg",
+          "alternative": "Woman lying down with face facing up"
+        },
+        {
+          "image": "/images/wellness-spa-2.jpg",
+          "alternative": "Hand with oil on it"
+        },
+        {
+          "image": "/images/wellness-spa-4.jpg",
+          "alternative": "An alchemist"
         }
       ],
-      "singleItem": []
+      "singleItem": {
+        "sectionOne": {
+          "title": "Stimulate, restore and nourish",
+          "content": "We unite a pioneering spirit with holistic wellness, rejuvenation and beauty treatments that go beyond ordinary. Put your feet up and worries down as you surrender to the ministrations of expert therapists at any of our resorts, as well as our standalone partner spas."
+        },
+        "sectionTwo": [
+          {
+            "title": "Signature massages",
+            "content": "Research shows that massage is good for us and it's one of the most popular treatments at Paradise Dreamer too. Our teams of trainers and skilled therapists continuously fine-tune our signature massages to address the most common concerns, while allowing space for each therapeutic spa treatment to be adapted to your specific needs."
+          },
+          {
+            "title": "",
+            "content": "Want to release stress and ease muscle tension? Then try our Deep Tissue. If full personalization is your goal, opt for the Holistic Massage or tackle stubborn cellulite with our Detox Massage. For more targeted options, Tension Soother, Relaxed Feet and Head Massage will do the trick."
+          },
+          {
+            "title": "",
+            "content": "What's more, our signature singing bowl ritual is incorporated before and after each treatment to ensure that your body receives a positive healing experience."
+          }
+        ],
+        "sectionThree": {
+          "title": "Local Practitioners",
+          "accordion": [
+            {
+              "title": "Alchemy Bar",
+              "content": "You can learn to harness the real (super) power of herbs, plants and ingredients at the Alchemy Bar. This is a space dedicated to learning and fun, where skilled spa therapists guide you through a variety of locally-sourced ingredients and products in a private or group workshop. You will feel their textures, smell the wonderful aromas and create your scrub, hair or face mask, herbal poultice or steam bundle. You will also learn how to make these wonderful potions and cures to carry on the good work back home."
+            },
+            {
+              "title": "Weight Management",
+              "content": "Assesses where you are and then blends cleansing treatments, fitness and wellness activities with a balanced diet and practical advice."
+            }
+          ]
+        }
+      }
     },
     {
       "id": 4,
@@ -1144,9 +1296,53 @@
         {
           "image": "/images/move-2.jpg",
           "alternative": "People in the gym"
+        },
+        {
+          "image": "/images/move-2.jpg",
+          "alternative": "People in the gym"
+        },
+        {
+          "image": "/images/move-3.jpg",
+          "alternative": "People running on the road"
+        },
+        {
+          "image": "/images/move-4.jpg",
+          "alternative": "An achrobat woman practising"
         }
       ],
-      "singleItem": []
+      "singleItem": {
+        "sectionOne": {
+          "title": "Keep on moving, even when traveling",
+          "content": "One of the most powerful ways to connect with ourselves is through simply moving our feet. It boosts energy levels, reduces stress and improves both physical and mental health. What's more, it makes us feel happier. Research shows that even 20 minutes of exercise can give you mood-boosting benefits for up to 12 hours afterward."
+        },
+        "sectionTwo": [
+          {
+            "title": "It’s a gym but not as you know it",
+            "content": "Things have moved on from sweat, squats and spandex to HIIT, wearables, CrossFit programs and more. Our science-informed fitness spaces bring together the right balance of cardio equipment and weight machines with pioneering functional and core movement techniques, so you can experience different fitness methods, classes and programs. We look at your “whole” where body workouts are also in tune with the more mental aspects of wellness such as goal setting."
+          },
+          {
+            "title": "",
+            "content": "Don't know where to start? Our personal trainers guide you and tailor the workout specifically to your needs ... and you are encouraged to go at your own pace. Our coaching is designed to be inspiring, enjoyable and personal."
+          },
+          {
+            "title": "",
+            "content": "Thrive better in a group of people with a common goal? From circuit training, abs and core sessions to boot camp classes, there are plenty of group workouts for you to join while staying with us."
+          },
+          {
+            "title": "",
+            "content": "Jungle gyms, running trails and workouts on the beach are available if you like to soak up the benefits of the outdoors, boost the levels of Vitamin D or just enjoy the views. Or simply take time out and release some endorphins on natural trail walk."
+          }
+        ],
+        "sectionThree": {
+          "title": "Strike the pose",
+          "accordion": [
+            {
+              "title": "Strike the pose.",
+              "content": "We love yoga! It helps improve posture and flexibility, prevent injuries, boost energy, unlock the mind and sustain balance and harmony when faced with a daily dose of stress. What's more, when we start to feel great and young on the inside, we shine on the outside too."
+            }
+          ]
+        }
+      }
     },
     {
       "id": 5,
@@ -1157,9 +1353,49 @@
         {
           "image": "/images/mindfullness-1.jpg",
           "alternative": "Woman with happy face looking in the sky"
+        },
+        {
+          "image": "/images/mindfullness-1.jpg",
+          "alternative": "Woman with happy face looking in the sky"
+        },
+        {
+          "image": "/images/mindfullness-2.jpg",
+          "alternative": "Woman seated and meditating"
+        },
+        {
+          "image": "/images/mindfullness-3.jpg",
+          "alternative": "Woman seated and meditating"
         }
       ],
-      "singleItem": []
+      "singleItem": {
+        "sectionOne": {
+          "title": "Pay attention, get real with yourself",
+          "content": "Mindfulness cultivates our ability to live in the present, to become more aware, to listen better and to appreciate what we have in life thanks to paying more attention. It's like having a coach who helps you foster a healthier relationship with your feelings and thoughts no matter what comes your way."
+        },
+        "sectionTwo": [
+          {
+            "title": "Anytime anywhere meditation",
+            "content": "We can't argue with our ancestors. For thousands of years, meditation has helped practitioners to effectively fight worry, stress, lack of clarity and more. Modern studies show that regular practice can help you improve concentration skills, find more emotional positivity and gain a calmer way of seeing the true nature of things. It can also alter your epigenome and promote a longer lifespan."
+          },
+          {
+            "title": "",
+            "content": "At Paradise Dreamer, you can enjoy group meditation classes or private sessions with experienced in-house practitioners. In the short term, it will help you “check in” and focus. In the long run it can bring balance and laughter back into your life and help you to reconnect with others and yourself on a more meaningful level."
+          }
+        ],
+        "sectionThree": {
+          "title": "Mindfulness practices",
+          "accordion": [
+            {
+              "title": "Mindfulness practices",
+              "content": "At some of our locations, we have incorporated mindfulness practices into our treatment protocols to promote stillness, happiness and well-being. You'll be encouraged to set positive intentions through breathing and visualization techniques, while chanting and singing bowls bring your body into harmony with its surroundings."
+            },
+            {
+              "title": "Moment of beholding",
+              "content": "We encourage you to practice a moment of beholding, allowing you to experience yourself as you are and find meaning in something that has just happened."
+            }
+          ]
+        }
+      }
     },
     {
       "id": 6,
@@ -1170,9 +1406,629 @@
         {
           "image": "/images/grow-2.jpg",
           "alternative": "Family walking on the beach"
+        },
+        {
+          "image": "/images/grow-2.jpg",
+          "alternative": "Family walking on the beach"
+        },
+        {
+          "image": "/images/grow-1.jpg",
+          "alternative": "Child on the beach"
+        },
+        {
+          "image": "/images/grow-1.jpg",
+          "alternative": "Child on the beach"
         }
       ],
-      "singleItem": []
+      "singleItem": {
+        "sectionOne": {
+          "title": "Well-being starts young around here",
+          "content": "Vacations are a great time away from routine for youngsters to understand more about what's going on inside them and in the world around them. And who says it can't be fun! Grow With Paradise Dreamer incorporates the six dimensions of wellness (social, environmental, physical, spiritual, emotional and intellectual) so kids can reconnect with nature and gain useful life skills through play."
+        },
+        "sectionTwo": [
+          {
+            "title": "Paradise Dreamer grow programs",
+            "content": "Programs vary from resort to resort, but the focus is on out-of-the-ordinary experiences: everything from the active (flying yoga, organic gardening, cooking workshops) to the relaxing (spa treatments, simple meditation, singing bowl workshops) and the creative with a local twist (Vietnamese origami, Portuguese tile painting, basic Arabic). It’s an adventure, and as they journey through each activity, they’ll get a new stamp for their personal Paradise Dreamer passport."
+          }
+        ],
+        "sectionThree": {}
+      }
+    }
+  ],
+  "treatments": [
+    {
+      "id": 1,
+      "slug": "aphrodite-bath-2-people",
+      "title": "Aphrodite Bath, 2 People",
+      "amount": "13,183.01",
+      "time": "30 min",
+      "type": "Hydrotherapy",
+      "description": "Slip into the scented waters as the goddess of love and essence of ylang ylang unite. Chilled sparkling wine and dark chocolate delights are served to enhance the mood."
+    },
+    {
+      "id": 2,
+      "slug": "arabian-facial",
+      "title": "Arabian Facial",
+      "amount": "18,126.64",
+      "time": "60 min",
+      "type": "Facials",
+      "description": "Cleanse and refresh the skin with this locally-inspired facial, using natural ingredients such as figs, almond powder and warm honey. A hair mask and scalp massage complete this experience. Ideal for all skin types."
+    },
+    {
+      "id": 3,
+      "slug": "ayurveda-aromatherapy-padabhang",
+      "title": "Ayurveda Aromatherapy - Padabhyang",
+      "amount": "23,070.27",
+      "time": "75 min",
+      "type": "Massages",
+      "description": "An energizing foot and leg treatment that is deal for relieving Jetlag, improving circulation and De-stressing after traveling. It includes a foot ritual, a signature massage and a bronze kasa bowl technique to stimulate marma points using unique oil blends. Hot compress and the application of double cream or lotions to complete this treatment."
+    },
+    {
+      "id": 4,
+      "slug": "ayurveda-aromatherapy-mukha-chikitsa",
+      "title": "Ayurveda Aromatherapy- Mukha Chikitsa",
+      "amount": "24,718.15",
+      "time": "75 min",
+      "type": "Facials",
+      "description": "Purify, hydrate and nourish the skin with this holistic facial treatment, which uses a blend of rare ingredients such as mogra (frangrant flower of South Asia), saffron and rose with anti-aging and relaxing properties enjoyed by the nobility of ancient India and Persia. An aromatic hand and arm ritual is followed by a complete facial cleanse and exfoliation. The treatment includes a hydrating oil mask, together with a deep facial marma massage to rejuvenate on a physical, mental and emotional level. Using Subtle Energies."
+    },
+    {
+      "id": 5,
+      "slug": "balinese-massage",
+      "title": "Balinese Massage",
+      "amount": "26,366.02",
+      "time": "90 min",
+      "type": "Massages",
+      "description": "This traditional Balinese massage reawakens the senses and induces a complete state of calm, combining acupressure and skin rolling with firm but smooth massage strokes."
+    },
+    {
+      "id": 6,
+      "slug": "balinese-massage-i",
+      "title": "Balinese Massage",
+      "amount": "19,774.52",
+      "time": "60 min",
+      "type": "Massages",
+      "description": "Re- awaken your senses and find your self in a complete atate of calm. A full body masage involving a seamless blean of accupressure and skin rolling combine with firm, smooth strokes."
+    },
+    {
+      "id": 7,
+      "slug": "bamboo-massage",
+      "title": "Bamboo Massage",
+      "amount": "26,366.02",
+      "time": "90 min",
+      "type": "Massages",
+      "description": "Relieve tension in the back, neck, shoulder and legs with this deep pressure using bamboo."
+    },
+    {
+      "id": 8,
+      "slug": "body-refiner",
+      "title": "Body Refiner",
+      "amount": "24,718.15",
+      "time": "90 min",
+      "type": "Body Services",
+      "description": "Ideal for sensitive skin, this gentle wrap uses jojoba and white clay to exfoliate the skin and a richly scented moisturizer to replenish essential moisture.p for refining and nourishing, ideal for sensitive skin."
+    },
+    {
+      "id": 9,
+      "slug": "detox-cleansing",
+      "title": "Detox Cleansing",
+      "amount": "28,013.90",
+      "time": "90 min",
+      "type": "Body Services",
+      "description": "Regulate fat metabolism in the body with an intense full-body scrub with a stimulating and detoxifying blend of salt, seaweed and lemon. It continues with a potent wrap of seaweed and eucalyptus with rare fossil mud, leaving the skin deeply enveloped, cleansed and stimulated. Using The Organic Pharmacy."
+    },
+    {
+      "id": 10,
+      "slug": "fitness-personal-training",
+      "title": "Fitness Personal Training",
+      "amount": "13,842.16",
+      "time": "60 min",
+      "type": "Fitness",
+      "description": "Our qualified fitness instructor will work with you to motivate and assit you to achive your personal health and fitness goal, whether it is cardiovascular fitness."
+    },
+    {
+      "id": 11,
+      "slug": "fitness-personal-training-i",
+      "title": "Fitness Personal Training",
+      "amount": "10,546.41",
+      "time": "30 min",
+      "type": "Fitness",
+      "description": "Our qualified fitness instructor will work with you to motivate and assit you to achive your personal health and fitness goal, whether it is cardiovascular fitness."
+    },
+    {
+      "id": 12,
+      "slug": "fitness-personal-training-ii",
+      "title": "Fitness Personal Training",
+      "amount": "20,433.67",
+      "time": "90 min",
+      "type": "Fitness",
+      "description": "Our qualified fitness instructor will work with you to motivate and assit you to achive your personal health and fitness goal, whether it is cardiovascular fitness."
+    },
+    {
+      "id": 13,
+      "slug": "foot-acupressure",
+      "title": "Foot Acupressure",
+      "amount": "18,126.64",
+      "time": "60 min",
+      "type": "Massages",
+      "description": "This deeply relaxing treatment involves the application of pressure to reflex points on the feet helping to restore the body to a healthy balance."
+    },
+    {
+      "id": 14,
+      "slug": "fusionetics-movement-assesment",
+      "title": "Fusionetics Movement Assesment",
+      "amount": "4,943.63",
+      "time": "30 min",
+      "type": "Massages",
+      "description": "We take guesswork out of working out with a system that integrates sports science and cutting-edge technology, and helps our personal trainers look at your movement patterns and identify areas of strength and weakness. Afterwards, they design a workout plan that optimizes your training performance and reduces the risk of injury, and ensures that your body is aligned."
+    },
+    {
+      "id": 15,
+      "slug": "gentlemans-facial",
+      "title": "Gentleman's Facial",
+      "amount": "22,411.12",
+      "time": "60 min",
+      "type": "Facials",
+      "description": "Deeply cleanses and hydrates the skin, whilst combating the signs of aging brought on by stress."
+    },
+    {
+      "id": 16,
+      "slug": "green-coffee-body-sculpting",
+      "title": "Green Coffee Body Sculpting",
+      "amount": "21,422.40",
+      "time": "60 min",
+      "type": "Body Services",
+      "description": "Reduce puffiness, bloating and improve circulation for a firmer and slimmer silhouette. Focusing on the thighs, waist, tummy and bottom, this treatment starts with dry skin brushing followed by the thermogenic salon-strength chili and coffee oil massage to help break down fat cells. Stimulate the circulation and metabolism with a final application of Resculpting Body Gel. Using The Organic Pharmacy"
+    },
+    {
+      "id": 17,
+      "slug": "hair-hydration",
+      "title": "Hair Hydration",
+      "amount": "14,830.89",
+      "time": "60 min",
+      "type": "Hair Care",
+      "description": "Rehydrate hair and scalp with this relaxing treatment combining a scalp massage with nutrient-rich oil and a Shea butter hair mask."
+    },
+    {
+      "id": 18,
+      "slug": "hot-stone-massage",
+      "title": "Hot Stone Massage",
+      "amount": "28,013.90",
+      "time": "90 min",
+      "type": "Massages",
+      "description": "A Tibetan full body and face treatment using basalt stones to massage away muscle tension, remove blockages and eliminate stress."
+    },
+    {
+      "id": 19,
+      "slug": "indian-head-massage",
+      "title": "Indian Head Massage",
+      "amount": "18,126.64",
+      "time": "60 min",
+      "type": "Massages",
+      "description": "Using gentle and stimulating techniques, this treatment improves blood flow, nourishes the scalp and induces a deep sense of calm."
+    },
+    {
+      "id": 20,
+      "slug": "jet-jag-recovery",
+      "title": "Jet Lag Recovery",
+      "amount": "24,718.15",
+      "time": "90 min",
+      "type": "Massages",
+      "description": "This re-balancing treatment revives circulation, releases muscle tension and resets the internal clock by combining a full body massage with exclusively blended aromatherapy oils, with a head massage and a Six Senses herbal tea."
+    },
+    {
+      "id": 21,
+      "slug": "margys-collagen-facial",
+      "title": "Margy's Collagen Facial",
+      "amount": "45,481.39",
+      "time": "60 min",
+      "type": "Facials",
+      "description": "This intensively hydrating facial tones and plumps the skin, reduces the appearance of fine lines and wrinkles, and boosts the regeneration of new cells. It leaves the skin looking youthful and with luminous glow. Ideal for all skin types. Using Margy's."
+    },
+    {
+      "id": 22,
+      "slug": "margys-intensive-hamam-treatment",
+      "title": "Margy's Intensive Hamam Treatment",
+      "amount": "56,027.80",
+      "time": "90 min",
+      "type": "Body Services",
+      "description": "Rejuvenate the body and mind with this combination of a traditional Moroccan bath and Margy’s products. Margy’s body scrub is detoxifying and ideal for cellulite; while the argan rassoul enhances skin tone, leaving it glowing and silky smooth. This treatment includes a signature Margy’s facial massage with an extra rich firming mask and completes with a face lift collagen mask. Using Margy's."
+    },
+    {
+      "id": 23,
+      "slug": "margys-mens-fuel-facial",
+      "title": "Margy's Men's Fuel Facial",
+      "amount": "31,309.65",
+      "time": "60 min",
+      "type": "Facials",
+      "description": "Delay the signs of aging with this nourishing facial, which protects the skin against environmental effects and demanding daily routines. Using Margy's."
+    },
+    {
+      "id": 24,
+      "slug": "margys-mens-fuel-facial-and-hair-hydration",
+      "title": "Margy's Men's Fuel Facial & Hair Hydration",
+      "amount": "36,253.28",
+      "time": "90 min",
+      "type": "Facials",
+      "description": "Delay the signs of aging with this nourishing facial, which protects the skin against environmental effects and demanding daily routines. Using Margy's. Add on for Margy’s Men’s Fuel Facial only: Hair Hydration Treatment, 30 minutes."
+    },
+    {
+      "id": 25,
+      "slug": "margys-prestige-collagen-facial",
+      "title": "Margy's Prestige Collagen Facial",
+      "amount": "55,368.65",
+      "time": "90 min",
+      "type": "Facials",
+      "description": "Hydrate the skin, plump fine lines and wrinkles with this anti-oxidant treatment combining a trio of hyaluronic acid, marine extracts and collagen masks with specialist manual techniques, leaving the skin visibly refreshed and with a radiant glow. Using Margy's."
+    },
+    {
+      "id": 26,
+      "slug": "nail-polish-application",
+      "title": "Nail Polish Application",
+      "amount": "8,239.38",
+      "time": "30 min",
+      "type": "Nails",
+      "description": "Plan to get your nails done with the best polish from Prince products."
+    },
+    {
+      "id": 27,
+      "slug": "rose-crystal-lymphatic-facial",
+      "title": "Rose Crystal Lymphatic Facial",
+      "amount": "28,013.90",
+      "time": "90 min",
+      "type": "Facials",
+      "description": "The ultimate signature experience starting with deep cleansing and followed by the application of three masks to decongest, brighten and hydrate the skin. It continues with lymphatic drainage and acupressure massage to firm and reduce puffiness. A relaxing massage of feet, hands, arms and scalp evokes deep sense of relaxation, leaving the skin fresh and glowing. Using The Organic Pharmacy."
+    },
+    {
+      "id": 28,
+      "slug": "rose-crystal-lymphatic-facial-i",
+      "title": "Rose Crystal Lymphatic Facial",
+      "amount": "23,070.27",
+      "time": "60 min",
+      "type": "Facials",
+      "description": "The ultimate signature experience starting with deep cleansing and followed by the application of three masks to decongest, brighten and hydrate the skin. It continues with lymphatic drainage and acupressure massage to firm and reduce puffiness. A relaxing massage of feet, hands, arms and scalp evokes deep sense of relaxation, leaving the skin fresh and glowing. Using The Organic Pharmacy."
+    },
+    {
+      "id": 29,
+      "slug": "royal-moroccan-hammam",
+      "title": "Royal Moroccan Hammam",
+      "amount": "31,309.65",
+      "time": "90 min",
+      "type": "Body Services",
+      "description": "Cleanse and nourish the body with a personalized experience starting with Moroccan steam and body wash with a black soap enriched with eucalyptus essential oil. The body is then exfoliated on a heated marble bed and swathed with a purifying rasoul clay mask, allowing for impurities to rise to the skin’s surface. It continues with the application of hair strengthening oil, a face and foot treatment; completing with a gentle massage and the application of hydrating body milk."
+    },
+    {
+      "id": 30,
+      "slug": "sensory-spa-journey",
+      "title": "Sensory Spa Journey",
+      "amount": "37,901.16",
+      "time": "90 min",
+      "type": "Combination",
+      "description": "Two therapists perform a facial ritual and body aroma massage in unique synchronicity for this deeply relaxing signature experience, complemented with a soothing footbath and scalp massage to induce a deep sense of calm."
+    },
+    {
+      "id": 31,
+      "slug": "paradise-dreamer-detoxifying-bath",
+      "title": "Paradise Dreamer Detoxifying Bath",
+      "amount": "8,239.38",
+      "time": "30 min",
+      "type": "Hydrotherapy",
+      "description": "A detoxifying bath of lemongrass, cedar wood and geranium served with a detoxifying juice."
+    },
+    {
+      "id": 32,
+      "slug": "paradise-dreamer-signature-facial-purifying",
+      "title": "Paradise Dreamer Signature Facial - Purifying",
+      "amount": "24,718.15",
+      "time": "90 min",
+      "type": "Facials",
+      "description": "A deep-cleansing facial ideal for eliminating blocked pores and skin blemishes. Using The Organic Pharmacy."
+    },
+    {
+      "id": 33,
+      "slug": "paradise-dreamer-signature-facial-soothing",
+      "title": "Paradise Dreamer Signature Facial - Soothing",
+      "amount": "18,126.64",
+      "time": "60 min",
+      "type": "Facials",
+      "description": "Calms sensitive and irritated skin with soothing plant extracts and flower essences. Using The Organic Pharmacy"
+    },
+    {
+      "id": 34,
+      "slug": "paradise-dreamer-signature-facial-soothing-i",
+      "title": "Paradise Dreamer Signature Facial - Soothing",
+      "amount": "24,718.15",
+      "time": "90 min",
+      "type": "Facials",
+      "description": "Calms sensitive and irritated skin with soothing plant extracts and flower essences. Using The Organic Pharmacy."
+    },
+    {
+      "id": 35,
+      "slug": "paradise-dreamer-signature-facial-nourishing",
+      "title": "Paradise Dreamer Signature Facial - Nourishing",
+      "amount": "18,126.64",
+      "time": "60 min",
+      "type": "Facials",
+      "description": "Moisturizes and improves skin tone and elasticity. Beneficial for dry or maturing skin. Using The Organic Pharmacy"
+    },
+    {
+      "id": 36,
+      "slug": "paradise-dreamer-signature-facial-nourishing-i",
+      "title": "Paradise Dreamer Signature Facial - Nourishing",
+      "amount": "24,718.15",
+      "time": "90 min",
+      "type": "Facials",
+      "description": "Moisturizes and improves skin tone and elasticity. Beneficial for dry or maturing skin. Using The Organic Pharmacy"
+    },
+    {
+      "id": 37,
+      "slug": "paradise-dreamer-signature-massage-deep-tissue",
+      "title": "Paradise Dreamer Signature Massage - Deep Tissue",
+      "amount": "18,126.64",
+      "time": "60 min",
+      "type": "Massages",
+      "description": "A deep oil-based massage to ease muscle tension and reawaken your senses. Silicone cups are used to lift connective tissue and improve blood flow to stagnant skin and muscles."
+    },
+    {
+      "id": 38,
+      "slug": "paradise-dreamer-signature-massage-deep-tissue-i",
+      "title": "Paradise Dreamer Signature Massage - Deep Tissue",
+      "amount": "24,718.15",
+      "time": "90 min",
+      "type": "Massages",
+      "description": "A deep oil-based massage to ease muscle tension and reawaken your senses. Silicone cups are used to lift connective tissue and improve blood flow to stagnant skin and muscles."
+    },
+    {
+      "id": 39,
+      "slug": "paradise-dreamer-signature-massage-oriental",
+      "title": "Paradise Dreamer Signature Massage - Oriental",
+      "amount": "24,718.15",
+      "time": "90 min",
+      "type": "Massages",
+      "description": "A fullbody massage using accupressure and streching techniques"
+    },
+    {
+      "id": 40,
+      "slug": "paradise-dreamer-signature-massage-oriental-i",
+      "title": "Paradise Dreamer Signature Massage - Oriental",
+      "amount": "18,126.64",
+      "time": "60 min",
+      "type": "Massages",
+      "description": "A stress relieving treatment combining a full body massage with acupressure and stretching techniques."
+    },
+    {
+      "id": 41,
+      "slug": "paradise-dreamer-signature-massage-detox",
+      "title": "Paradise Dreamer Signature Massage - Detox",
+      "amount": "18,126.64",
+      "time": "60 min",
+      "type": "Massages",
+      "description": "A stimulating massage using firming and toning oils to reduce the appearance of cellulite, uneven skin tone and fluid retention. Silicone cups are used to drain toxins and stagnation out of the body, boosting circulation and the flow of energy."
+    },
+    {
+      "id": 42,
+      "slug": "paradise-dreamer-signature-massage-detox-i",
+      "title": "Paradise Dreamer Signature Massage - Detox",
+      "amount": "24,718.15",
+      "time": "90 min",
+      "type": "Massages",
+      "description": "A stimulating massage using firming and toning oils to reduce the appearance of cellulite, uneven skin tone and fluid retention. Silicone cups are used to drain toxins and stagnation out of the body, boosting circulation and the flow of energy."
+    },
+    {
+      "id": 43,
+      "slug": "paradise-dreamer-signature-massage-energizer",
+      "title": "Paradise Dreamer Signature Massage - Energizer",
+      "amount": "24,718.15",
+      "time": "90 min",
+      "type": "Massages",
+      "description": "A reviving upper body massage to relieve muscle tension"
+    },
+    {
+      "id": 44,
+      "slug": "paradise-dreamer-signature-massage-energizer-i",
+      "title": "Paradise Dreamer Signature Massage - Energizer",
+      "amount": "18,126.64",
+      "time": "60 min",
+      "type": "Massages",
+      "description": "A reviving upper body massage to relieve muscle tension"
+    },
+    {
+      "id": 45,
+      "slug": "paradise-dreamer-signature-massage-holistic",
+      "title": "Paradise Dreamer Signature Massage - Holistic",
+      "amount": "18,126.64",
+      "time": "60 min",
+      "type": "Massages",
+      "description": "A soothing massage designed to evoke deep relaxation"
+    },
+    {
+      "id": 46,
+      "slug": "paradise-dreamer-signature-massage-holistic-i",
+      "title": "Paradise Dreamer Signature Massage - Holistic",
+      "amount": "24,718.15",
+      "time": "90 min",
+      "type": "Massages",
+      "description": "A soothing massage designed to evoke deep relaxation"
+    },
+    {
+      "id": 47,
+      "slug": "paradise-dreamer-signature-scrub-calming",
+      "title": "Paradise Dreamer Signature Scrub - Calming",
+      "amount": "15,490.04",
+      "time": "90 min",
+      "type": "Body Services",
+      "description": "This jojoba scrub, infused with Roman chamomile and lavender essences, is ideal for sensitive skin."
+    },
+    {
+      "id": 48,
+      "slug": "paradise-dreamer-signature-scrub-clarity",
+      "title": "Paradise Dreamer Signature Scrub - Clarity",
+      "amount": "15,490.04",
+      "time": "60 min",
+      "type": "Body Services",
+      "description": "Ideal for combination and oily skin, this scrub uses crushed coconut shell with orange and rosemary essences."
+    },
+    {
+      "id": 49,
+      "slug": "paradise-dreamer-signature-scrub-vatality",
+      "title": "Paradise Dreamer Signature Scrub - Vatality",
+      "amount": "15,490.04",
+      "time": "60 min",
+      "type": "Body Services",
+      "description": "This rice grain scrub infused with ylang-ylang and patchouli essences is ideal for all skin types."
+    },
+    {
+      "id": 50,
+      "slug": "skin-solutions-acne-facial",
+      "title": "Skin Solutions Acne Facial",
+      "amount": "23,070.27",
+      "time": "60 min",
+      "type": "Facials",
+      "description": "Decongest the pores and restore balance to acneic skin with this custom blended facial. It includes deep cleansing, exfoliation, lymphatic drainage and three personalized masks, leaving the skin looking fresh, luminous and revitalized. Using The Organic Pharmacy."
+    },
+    {
+      "id": 51,
+      "slug": "sleep-with-paradise-dreamer-upgrade-couple",
+      "title": "Sleep with Paradise Dreamer Upgrade (Couple)",
+      "amount": "28,540.66",
+      "time": "45 min",
+      "type": "Massages",
+      "description": "Wake up ready to move mountains by understanding the quality of your sleep. Personal consultation combined with sleep tracking, a variety of snooze-friendly amenities, moisture-wicking linens and specialty bedding will get your sleep back on track."
+    },
+    {
+      "id": 52,
+      "slug": "sleep-with-paradise-dreamer-upgrade-single",
+      "title": "Sleep with Paradise Dreamer Upgrade (Single)",
+      "amount": "20,929.44",
+      "time": "45 min",
+      "type": "Massages",
+      "description": "Wake up ready to move mountains by understanding the quality of your sleep. Personal consultation combined with sleep tracking, a variety of snooze-friendly amenities, moisture-wicking linens and specialty bedding will get your sleep back on track."
+    },
+    {
+      "id": 53,
+      "slug": "spa-manicure",
+      "title": "Spa Manicure",
+      "amount": "11,535.14",
+      "time": "60 min",
+      "type": "Nails",
+      "description": "Your nail will be shaped and your cuticles tidied and hydrated, followed by a massage of the hand and arms with a nourishing cream to restore natural moisture and improve the texture of your skin. Nail varnish is applied if requested."
+    },
+    {
+      "id": 54,
+      "slug": "spa-pedicure",
+      "title": "Spa Pedicure",
+      "amount": "13,183.01",
+      "time": "60 min",
+      "type": "Pedicures",
+      "description": "Transform your feet with our nail and cuticle care, then relax and enjoy a foot and lower leg massage to soften and nourish your skin whilst boosting your circulation and relieving tired feet. Nail varnish is applied if requested."
+    },
+    {
+      "id": 55,
+      "slug": "thai-herbal-massage",
+      "title": "Thai Herbal Massage",
+      "amount": "28,013.90",
+      "time": "90 min",
+      "type": "Massages",
+      "description": "A full body massage using warm poultices applied to specific pressure points to condition skin and induce a sense of well-being."
+    },
+    {
+      "id": 56,
+      "slug": "thai-massage",
+      "title": "Thai Massage",
+      "amount": "26,366.02",
+      "time": "90 min",
+      "type": "Massages",
+      "description": "Reawaken the body and mind with this energizing treatment combining Thai massage techniques with gentle stretching movements."
+    },
+    {
+      "id": 57,
+      "slug": "thai-massage-i",
+      "title": "Thai Massage",
+      "amount": "21,422.40",
+      "time": "60 min",
+      "type": "Massages",
+      "description": "Reawaken the body and mind with this energizing treatment combining Thai massage techniques with gentle stretching movements."
+    },
+    {
+      "id": 58,
+      "slug": "traditional-moroccan-hammam",
+      "title": "Traditional Moroccan Hammam",
+      "amount": "21,422.40",
+      "time": "60 min",
+      "type": "Body Services",
+      "description": "A cleansing and refreshing treatment commencing with a warm herbal steam, body wash with a black soap and gentle exfoliation using the kese mitt. It continues with the application of purifying rasoul clay enriched with seven fragrant herbs. After rinsing, body milk is applied, leaving the skin supple and enriched."
+    },
+    {
+      "id": 59,
+      "slug": "vitamin-c-and-papaya-enzyme-peel-facial",
+      "title": "Vitamin C & Papaya Enzyme Peel Facial",
+      "amount": "23,070.27",
+      "time": "60 min",
+      "type": "Facials",
+      "description": "Target age spots, pigmentation, fine lines and uneven skin with this facial combining deep cleansing and fruit acid exfoliation to reveal a brighter, nourished and exceptionally smooth complexion. Drainage massage and a hydrating mask stimulate new skin cells and elasticity, leaving the skin withb rejuvenated glow. Using The Organic Pharmacy."
+    },
+    {
+      "id": 60,
+      "slug": "wellness-screening",
+      "title": "Wellness Screening",
+      "amount": "13,842.16",
+      "time": "45 min",
+      "type": "Massages",
+      "description": "This non-invasive analysis measures your key biomarkers and helps our experts understand what your body really needs. It's simple, it's quick and the readings along with a discussion about your lifestyle are used in design of a treatment or a bespoke multi-day program specific to your needs."
+    },
+    {
+      "id": 61,
+      "slug": "wonders-of-paradise",
+      "title": "Wonders of Paradise",
+      "amount": "41,196.91",
+      "time": "180 min",
+      "type": "Body Services",
+      "description": "This locally-inspired cleansing journey begins with a warm sea-salt bath with fresh mint and a body scrub made from local nourishing dates, honey and almond powder. It continues with the Arabian Body Rasul which has slimming and purifying properties to leave the skin revitalized, then concludes with a draining massage."
+    },
+    {
+      "id": 62,
+      "slug": "zighy-beauty",
+      "title": "Zighy Beauty",
+      "amount": "47,788.42",
+      "time": "210 min",
+      "type": "Combination",
+      "description": "Scalp Massage including the application of nutrient-rich hair oil Signature Massage Signature Facial Manicure Pedicure"
+    },
+    {
+      "id": 63,
+      "slug": "zighy-de-stress",
+      "title": "Zighy De-stress",
+      "amount": "37,901.16",
+      "time": "180 min",
+      "type": "Body Services",
+      "description": "Sensory Hot Stone Massage Scalp Massage Aromatherapy Bath"
+    },
+    {
+      "id": 64,
+      "slug": "zighy-detoxifier",
+      "title": "Zighy Detoxifier",
+      "amount": "51,084.17",
+      "time": "240 min",
+      "type": "Body Services",
+      "description": "Detox Bath with fragrances of lemongrass, cedar wood and geranium Detox Scrub & Wrap Detox Massage Foot Acupressure Tonic spa juice"
+    },
+    {
+      "id": 65,
+      "slug": "zighy-energiser",
+      "title": "Zighy Energiser",
+      "amount": "41,196.91",
+      "time": "180 min",
+      "type": "Body Services",
+      "description": "Signature Scrub Energizer Massage Personalized Yoga Session"
+    },
+    {
+      "id": 66,
+      "slug": "zighy-romance",
+      "title": "Zighy Romance",
+      "amount": "84,041.70",
+      "time": "150 min",
+      "type": "Combination",
+      "description": "Aphrodite Bath Signature Massage Signature Facial Sparkling Wine & Chocolate"
     }
   ]
 }
