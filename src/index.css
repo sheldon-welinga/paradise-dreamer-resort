@@ -735,17 +735,55 @@ a {
   margin-bottom: 0;
 }
 
+.accomodation .suite-toggler {
+  display: none;
+}
+
 @media screen and (max-width: 920px) {
   .accomodation .accomodation-suite-lists {
-    flex-direction: column;
+    padding: 0.5rem;
+    padding-top: 0;
+    max-height: 2.8rem;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.3s linear;
+  }
+
+  .accomodation .accomodation-suite-lists,
+  .accomodation .accomodation-suite-lists .suite,
+  .accomodation .suite-toggler {
+    display: block;
   }
 
   .accomodation .accomodation-suite-lists .suite p {
-    margin: 1rem;
+    margin: 0.3rem 0;
+    padding: 0.5rem;
   }
 
-  .accomodation .suite p:last-child {
-    margin-bottom: 0;
+  .accomodation .suite-toggler {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    top: 15px;
+    right: 0.5rem;
+    border-top: 2px solid var(--lightBlack);
+    border-right: 2px solid var(--lightBlack);
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .accomodation .accomodation-suite-lists.open {
+    max-height: 20rem;
+  }
+
+  .accomodation .accomodation-suite-lists.open .suite-toggler {
+    transform: rotate(135deg);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .accomodation .accomodation-suite-lists .suite p {
+    font-size: 0.95rem;
   }
 }
 
@@ -1443,6 +1481,36 @@ a {
   padding: 0;
 }
 
+.spa-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-top: 1px solid var(--lightBlack);
+  border-bottom: 1px solid var(--lightBlack);
+}
+
+.spa-header a {
+  font-size: 1rem;
+  display: inline-flex;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  font-family: serif;
+  color: var(--lightBlack);
+  transition: all 0.3s ease-in-out;
+}
+
+.spa-header a:hover {
+  color: var(--maroon);
+}
+
+.spa-header .spa-toggler {
+  display: none;
+}
+
 .spa .spa-body {
   padding: 0.5rem;
 }
@@ -1540,6 +1608,50 @@ a {
 
   .spa .spa-section-four p {
     padding-right: initial;
+  }
+
+  .spa-header {
+    display: block;
+    max-height: 2.2rem;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height 0.3s linear;
+  }
+
+  .spa-header a {
+    width: 100%;
+    justify-content: center;
+    padding: 0.5rem;
+    margin: 2px 0;
+  }
+
+  .spa-header.open {
+    max-height: 10rem;
+  }
+
+  .spa-header .spa-toggler {
+    display: block;
+    width: 12px;
+    height: 12px;
+    top: 12px;
+    right: 1rem;
+    position: absolute;
+    z-index: 10;
+    border-top: 2px solid var(--lightBlack);
+    border-left: 2px solid var(--lightBlack);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .spa-header.open .spa-toggler {
+    transform: rotate(225deg);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .spa-header a {
+    justify-content: flex-start;
+    font-size: 0.9rem;
   }
 }
 
@@ -1927,10 +2039,11 @@ a {
   margin: 1rem;
 }
 
-.treatments .treatments-section-two .search-bar {
+.treatments .treatments-section-two .search-bar form {
   display: flex;
   align-items: center;
   margin: 1rem 0;
+  width: 100%;
 }
 
 .treatments .treatments-section-two .search-bar .form-control,
@@ -1939,6 +2052,38 @@ a {
   margin-right: 1rem;
   display: inline-flex;
   padding: 0.8rem;
+  color: var(--lightBlack);
+}
+
+.treatments .treatments-section-two .search-bar .form-group > div {
+  position: relative;
+  display: flex;
+}
+
+.treatments .treatments-section-two .search-bar .form-group label {
+  padding-bottom: 0.2rem;
+  display: inline-flex;
+}
+
+.treatments .treatments-section-two .search-bar .form-group > div input {
+  width: 120px;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.treatments .treatments-section-two .form-group > div input:last-child {
+  margin-left: 0.5rem;
+}
+
+.treatments .treatments-section-two .form-group > div::before {
+  content: "";
+  height: 2px;
+  width: 10px;
+  background-color: var(--lightBlack);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 123px;
+  position: absolute;
 }
 
 .treatments .treatments-section-two .search-bar select,
@@ -1964,7 +2109,14 @@ a {
   outline: none;
 }
 
-.treatments .treatments-section-two .search-bar .single-treatment {
+.treatments .treatment-error .main-error {
+  color: rgb(226, 67, 67);
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+}
+
+.single-treatment {
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
   padding: 1rem 0.3rem;
@@ -2031,15 +2183,34 @@ a {
   }
 
   .single-treatment,
-  .treatments .treatments-section-two .search-bar {
+  .treatments .treatments-section-two .search-bar form {
     flex-direction: column;
   }
 
   .single-treatment .link a,
   .treatments .treatments-section-two .search-bar .form-control,
   .treatments .treatments-section-two .search-bar form,
-  .treatments .treatments-section-two .search-bar select {
+  .treatments .treatments-section-two .search-bar select,
+  .treatments .treatments-section-two .search-bar .form-group {
     width: 100%;
+  }
+
+  .treatments .treatments-section-two .search-bar .form-group > div {
+    background-color: var(--maroon);
+    padding-left: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .treatments .treatments-section-two .search-bar .form-group > div input {
+    width: 100%;
+    border: none;
+    padding: 0.5rem;
+  }
+
+  .treatments .treatments-section-two .form-group > div::before {
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
   }
 
   .treatments .treatments-section-two .search-bar form {
@@ -2048,13 +2219,23 @@ a {
 
   .treatments .treatments-section-two .search-bar .form-control,
   .treatments .treatments-section-two .search-bar select {
-    margin-right: 0;
+    margin: 0.5rem 0;
+    /* margin-right: 0; */
   }
 }
 
 @media screen and (max-width: 400px) {
   .treatments .treatments-section-one .content h2 {
     font-size: 1.7rem;
+  }
+
+  .treatments .treatments-section-two .search-bar .form-group > div {
+    flex-direction: column;
+    padding-right: 0.5rem;
+  }
+
+  .treatments .treatments-section-two .form-group > div input:last-child {
+    margin-left: 0;
   }
 }
 

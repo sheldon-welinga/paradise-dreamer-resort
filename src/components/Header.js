@@ -1,8 +1,35 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { useEffect } from "react";
+import { Link, withRouter } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  /*
+  useEffect(() => {
+    // const url = props.location.pathname;
+    // console.log(props);
+
+    if (url === "/") {
+      document.title = `theparadisedreamer`;
+    } else if (
+      url === "/" ||
+      url === "/accomodation" ||
+      url === "/accomodation/:slug" ||
+      url === "/experiences" ||
+      url === "/experiences/:slug" ||
+      url === "/spa" ||
+      url === "/dinning" ||
+      url === "/contact"
+    ) {
+      document.title = `theparadisedreamer | ${
+        props.location.pathname.split("/")[1]
+      }`;
+    } else {
+      document.title = "errorpage";
+    }
+  });
+
+  */
 
   const toggleNavigation = () => setIsOpen(!isOpen);
 
@@ -64,4 +91,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

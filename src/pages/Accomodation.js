@@ -76,6 +76,15 @@ const Accomodation = (props) => {
     props.history.push("/accomodation/small-suites");
   };
 
+  //Toggle accomodation nav open and close on media screen <=768px
+  const toggleNavOpen = (e) => {
+    if (e.target.parentElement.classList.contains("open")) {
+      e.target.parentElement.classList.remove("open");
+    } else {
+      e.target.parentElement.classList.add("open");
+    }
+  };
+
   return (
     <>
       <StyledHero className="accomodation-header">
@@ -99,6 +108,7 @@ const Accomodation = (props) => {
           <div className="suite">
             <p onClick={handleSmallSuites}>Small Suites</p>
           </div>
+          <span className="suite-toggler" onClick={toggleNavOpen}></span>
         </div>
         <div className="accomodation-content">
           <p>

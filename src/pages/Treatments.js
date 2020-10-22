@@ -12,6 +12,9 @@ class Treatments extends Component {
       error: "",
       types: [],
       treatmentType: "All Treatments",
+      search: "",
+      min: 0,
+      max: 0,
     };
   }
 
@@ -23,6 +26,7 @@ class Treatments extends Component {
     }
   };
 
+  //fetch data from the database
   fetchData = async () => {
     try {
       const response = await fetch("/data.json");
@@ -36,15 +40,19 @@ class Treatments extends Component {
     }
   };
 
+  //get all treatments and update the state
   getTreatments = async () => {
     const data = await this.fetchData();
+
+    const allAmounts = data
+      .map((item) => parseFloat(item.amount.split(",").join("")).toFixed(2))
+      .sort((a, b) => a - b);
 
     this.setState({
       treatments: data,
       types: [...data.map((treatment) => treatment.type)],
+      max: allAmounts[allAmounts.length - 1],
     });
-
-    // console.log(data);
   };
 
   componentDidMount() {
@@ -54,28 +62,86 @@ class Treatments extends Component {
     this.getTreatments();
   }
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value,
-    });
-
+  //filter Treatment data
+  filterTreatment = () => {
     this.fetchData().then((data) => {
-      if (this.state.treatmentType === "All Treatments") {
-        this.setState({
-          treatments: data,
-        });
-      } else {
-        this.setState({
-          treatments: data.filter(
-            (treatment) => treatment.type === this.state.treatmentType
-          ),
-        });
+      const { search, treatmentType, min, max } = this.state;
+      parseFloat(min);
+      parseFloat(max);
+
+      let tempTreatments = [...data];
+
+      let link = `/spa/treatments?`;
+
+      const treatmentTypeLink = treatmentType
+        .toLowerCase()
+        .split(" ")
+        .join("+");
+
+      const searchLink = search.toLowerCase().split(" ").join("+");
+
+      // if (treatmentType === "All Treatments") {
+      //   link += `treatment-type=${treatmentTypeLink}`;
+      // }
+
+      //filter by treatment type
+      if (treatmentType !== "All Treatments") {
+        tempTreatments = tempTreatments.filter(
+          (treatment) => treatment.type === treatmentType
+        );
       }
+      link += `treatment-type=${treatmentTypeLink}`;
+
+      //filter by search
+      if (search) {
+        tempTreatments = tempTreatments.filter((treatment) =>
+          treatment.title.toLowerCase().includes(search.toLowerCase())
+        );
+        link += `&search=${searchLink}`;
+      }
+
+      //filter by minimum amount
+      tempTreatments = tempTreatments.filter(
+        (treatment) => parseFloat(treatment.amount.split(",").join("")) >= min
+      );
+      if (min > 0) link += `&min-amount=${min}`;
+
+      // filter by  maximum amount
+      tempTreatments = tempTreatments.filter(
+        (treatment) => parseFloat(treatment.amount.split(",").join("")) <= max
+      );
+      if (max > 0) link += `&max-amount=${max}`;
+
+      //change state
+      this.setState({
+        treatments: tempTreatments,
+      });
+
+      //push the search props
+      this.props.history.push(link);
     });
   };
 
+  //handleData change
+  handleChange = (e) => {
+    this.setState(
+      {
+        [e.target.id]: e.target.value,
+      },
+      this.filterTreatment
+    );
+  };
+
   render() {
-    const { loading, error, treatments, treatmentType } = this.state;
+    const {
+      loading,
+      error,
+      treatments,
+      treatmentType,
+      search,
+      max,
+      min,
+    } = this.state;
 
     let allTypes = ["All Treatments", ...new Set(this.state.types)];
 
@@ -111,20 +177,47 @@ class Treatments extends Component {
                 id="search"
                 placeholder="Search for a treatment"
                 className="form-control"
+                value={search}
+                onChange={this.handleChange}
               />
+              <select
+                name="treatmentType"
+                id="treatmentType"
+                value={treatmentType}
+                onChange={this.handleChange}
+              >
+                {allTypes.map((item, index) => (
+                  <option key={index} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+
+              <div className="form-group">
+                <label htmlFor="amount">Treatment Amount in Kshs.</label>
+                <div>
+                  <input
+                    type="text"
+                    name="min-amount"
+                    id="min"
+                    placeholder="Min amount"
+                    value={min}
+                    className="form-control"
+                    onChange={this.handleChange}
+                  />
+
+                  <input
+                    type="text"
+                    name="max-amount"
+                    id="max"
+                    placeholder="Max amount"
+                    value={max}
+                    className="form-control"
+                    onChange={this.handleChange}
+                  />
+                </div>
+              </div>
             </form>
-            <select
-              name="treatmentType"
-              id="treatmentType"
-              value={treatmentType}
-              onChange={this.handleChange}
-            >
-              {allTypes.map((item, index) => (
-                <option key={index} value={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
           </div>
           <div className="content">
             All spa treatment prices are subject to government tax and service
@@ -140,13 +233,27 @@ class Treatments extends Component {
             </div>
           ) : (
             <>
-              {treatments.map((treatment) => (
-                <SingleTreatment
-                  key={treatment.id}
-                  toggleClose={this.toggleClose}
-                  treatment={treatment}
-                />
-              ))}
+              {treatments.length ? (
+                treatments.map((treatment) => (
+                  <SingleTreatment
+                    key={treatment.id}
+                    toggleClose={this.toggleClose}
+                    treatment={treatment}
+                  />
+                ))
+              ) : (
+                <div className="error treatment-error">
+                  <p className="main-error">
+                    Oops!!! No such treatment found for "{search}".
+                  </p>
+                  <p>- Check your spelling for typing errors</p>
+                  <p>- Try searching with short and simple keywords</p>
+                  <p>
+                    - Try searching more general terms - you can then filter the
+                    search results
+                  </p>
+                </div>
+              )}
             </>
           )}
         </div>
