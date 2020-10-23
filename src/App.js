@@ -19,6 +19,8 @@ import SingleRoom from "./pages/SingleRoom";
 import SPA from "./pages/SPA";
 import SingleWellness from "./pages/SingleWellness";
 import Treatments from "./pages/Treatments";
+import BookTreatment from "./pages/BookTreatment";
+import GuestInformation from "./pages/GuestInformation";
 
 const App = () => {
   return (
@@ -55,6 +57,16 @@ const App = () => {
           component={SingleWellness}
         />
         <Route exact path="/spa/treatments" component={Treatments} />
+        <Route
+          exact
+          path="/spa/treatments/book-treatment/:slug"
+          component={BookTreatment}
+        />
+        <Route
+          exact
+          path="/spa/treatments/guest-information"
+          component={GuestInformation}
+        />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/datepicker" component={DatePicker} />
         <Route component={ErrorPage} />

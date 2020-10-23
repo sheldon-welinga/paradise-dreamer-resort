@@ -169,6 +169,11 @@ a {
 
 /* ---------------------End of Loading-------------------------- */
 
+@media screen and (max-width: 450px) {
+  .btn {
+    font-size: 0.9rem;
+  }
+}
 /* --------------End of Globals ----------------------------- */
 /* ---------------------------Error Page------------------------ */
 .error {
@@ -2238,6 +2243,272 @@ a {
     margin-left: 0;
   }
 }
-
 /* --------------------------End of Treatment------------------------------ */
+
+/* -------------------------Book Treatment--------------------------------- */
+.book-treatment {
+  padding: 2rem;
+}
+
+.book-treatment .book-treatment-section-one {
+  padding: 1rem 0;
+}
+
+.book-treatment .book-treatment-section-one h6,
+.book-treatment .book-treatment-section-one a {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.book-treatment .book-treatment-section-one h2 {
+  font-size: 1.4rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 4px;
+  line-height: 1.8rem;
+  color: #000;
+  padding: 1rem 0;
+  text-transform: uppercase;
+}
+
+.book-treatment .book-treatment-section-one a {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  letter-spacing: 1.5px;
+  padding: 0.3rem;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.book-treatment .book-treatment-section-one a::before {
+  content: "";
+  height: 10px;
+  width: 10px;
+  top: 50%;
+  left: 5px;
+  display: block;
+  position: absolute;
+  border-top: 2px solid var(--lightBlack);
+  border-left: 2px solid var(--lightBlack);
+  transform: rotate(-45deg) translateY(-50%);
+  pointer-events: all;
+}
+
+.book-treatment .book-treatment-section-one a:hover {
+  color: var(--maroon);
+}
+
+.book-treatment .book-treatment-section-one a:hover::before {
+  border-color: var(--maroon);
+}
+
+.book-treatment .book-treatment-form {
+  margin: 1rem 0;
+  max-width: 700px;
+}
+
+.book-treatment .book-treatment-form .form-group {
+  margin: 1rem 0;
+}
+
+.book-treatment-form .form-group p {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.book-treatment-form .form-group select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  color: var(--lightBlack);
+}
+
+.book-treatment-form .form-group select:focus {
+  outline: none;
+}
+
+.book-treatment-form .btn {
+  cursor: pointer;
+}
+
+/* ------------------------End of Book Treatment ----------------------------- */
+/* ------------------------Guest Information------------------------------- */
+.guest-info {
+  display: flex;
+}
+
+.guest-info .guest-information {
+  flex: 0.65;
+  padding: 1rem;
+}
+
+.guest-info .guest-appointment {
+  flex: 0.35;
+  padding: 1rem;
+}
+
+.guest-info .guest-info-header h6 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.guest-info .guest-info-header h2 {
+  font-size: 1.4rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 4px;
+  line-height: 1.8rem;
+  color: #000;
+  padding: 1rem 0;
+  text-transform: uppercase;
+}
+
+.guest-info .guest-info-form,
+.guest-info .guest-info-form .form-group {
+  margin: 1rem 0;
+}
+
+.guest-info .guest-info-form .form-group p {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.guest-info .guest-info-form .form-group .form-control {
+  max-width: 700px;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  color: var(--lightBlack);
+  outline: none;
+}
+
+.guest-info .guest-info-form .policy {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.guest-info .guest-info-form .policy p {
+  margin-left: 1rem;
+}
+
+.guest-info .guest-appointment h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-family: serif;
+  font-weight: 600;
+  color: var(--lightBlack);
+  letter-spacing: 1.5px;
+}
+
+.guest-info .guest-appointment .summary {
+  padding: 1rem;
+  padding-left: 2.5rem;
+  position: relative;
+  background-color: rgb(236, 236, 236);
+  color: var(--maroon);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  display: none;
+  transition: all 0.2s linear;
+}
+
+.guest-info .guest-appointment .summary::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+  font-size: 1.2rem;
+  transform: translateY(-50%);
+  transition: content 0.3s linear;
+}
+
+.guest-info .guest-appointment .appointment-info {
+  background-color: rgb(236, 236, 236);
+  padding: 1rem;
+  overflow: hidden;
+  transition: max-height 0.3s linear;
+}
+
+.guest-info .guest-appointment .appointment-info div {
+  margin: 1.5rem 0;
+  line-height: 1.5rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid gray;
+}
+
+.guest-info .guest-appointment .appointment-info div p {
+  color: gray;
+}
+
+.guest-info .guest-appointment .booking-info p,
+.guest-info .guest-appointment .booking-info p span {
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .guest-info {
+    flex-direction: column-reverse;
+  }
+
+  .guest-info .guest-appointment .summary {
+    display: block;
+  }
+
+  .guest-info .guest-appointment .summary::after {
+    content: "";
+    height: 1px;
+    width: 95%;
+    display: block;
+    background-color: gray;
+    position: absolute;
+    left: 2.5%;
+    bottom: -0.2rem;
+  }
+
+  .guest-info .guest-appointment .appointment-info .resort-address {
+    border-top: none;
+  }
+
+  .guest-info .guest-appointment .appointment-info {
+    padding-top: 0;
+    margin-top: 0;
+    max-height: 0;
+  }
+
+  .guest-info .guest-appointment .summary.open::before {
+    content: "\2013";
+  }
+
+  .guest-info .guest-appointment .summary.open + .appointment-info {
+    max-height: 100vh;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .guest-info {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+
+  .guest-info .guest-info-form .form-group p,
+  .guest-info .guest-info-form .form-group .form-control,
+  .book-treatment-form .form-group select,
+  .book-treatment-form .form-group select option {
+    font-size: 0.9rem;
+  }
+
+  .guest-info .guest-info-header h6,
+  .guest-info .guest-info-form .policy p {
+    font-size: 0.8rem;
+  }
+
+  .guest-info .guest-info-header h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* ----------------------End of Guest Information--------------------------- */
 /* -------------------------End of SPA----------------------------------- */
