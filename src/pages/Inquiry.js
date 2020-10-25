@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { counterCheckerForClasses } from "../functions/checkerFucntions";
 
 class Inquiry extends Component {
   constructor(props) {
@@ -7,14 +8,54 @@ class Inquiry extends Component {
     this.state = {
       isOpen: true,
       practitionerName: "",
+      title: "Title",
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
     };
   }
+
+  //handle input value change
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  };
 
   //toggle Open
   toggleOpen = () => {
     this.setState({
       isOpen: !this.state.isOpen,
     });
+  };
+
+  //Handle form submission
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formGroups = [...document.querySelectorAll(".form-group")];
+
+    const counter = counterCheckerForClasses(
+      formGroups,
+      "invalid-error",
+      "success",
+      "textarea",
+      "Title"
+    );
+
+    if (counter >= formGroups.length - 1) {
+      console.log(this.state);
+
+      this.setState({
+        practitionerName: "",
+        title: "Title",
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+      });
+    }
   };
 
   componentDidMount() {
@@ -27,7 +68,15 @@ class Inquiry extends Component {
   }
 
   render() {
-    const { practitionerName, isOpen } = this.state;
+    const {
+      practitionerName,
+      isOpen,
+      title,
+      firstName,
+      lastName,
+      email,
+      message,
+    } = this.state;
 
     return (
       <div className="page-height inquiry">
@@ -49,9 +98,15 @@ class Inquiry extends Component {
               </div>
             )}
 
-            <form>
+            <form onSubmit={this.handleSubmit}>
               <div className="form-group">
-                <select name="title" id="title" className="form-control">
+                <select
+                  name="title"
+                  id="title"
+                  className="form-control"
+                  value={title}
+                  onChange={this.handleChange}
+                >
                   <option value="Title">Title</option>
                   <option value="Mr">Mr.</option>
                   <option value="Mrs">Mrs.</option>
@@ -67,6 +122,8 @@ class Inquiry extends Component {
                   id="firstName"
                   placeholder="First Name"
                   className="form-control"
+                  value={firstName}
+                  onChange={this.handleChange}
                 />
               </div>
               <div className="form-group">
@@ -76,6 +133,8 @@ class Inquiry extends Component {
                   id="lastName"
                   placeholder="Last Name"
                   className="form-control"
+                  value={lastName}
+                  onChange={this.handleChange}
                 />
               </div>
               <div className="form-group">
@@ -85,9 +144,11 @@ class Inquiry extends Component {
                   id="email"
                   placeholder="Email"
                   className="form-control"
+                  value={email}
+                  onChange={this.handleChange}
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group textarea">
                 <textarea
                   name="message"
                   id="message"
@@ -95,6 +156,8 @@ class Inquiry extends Component {
                   rows="6"
                   placeholder="Message"
                   className="form-control"
+                  value={message}
+                  onChange={this.handleChange}
                 ></textarea>
               </div>
               <button className="btn btn-primary" type="submit">

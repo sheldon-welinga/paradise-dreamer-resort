@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Loading from "../components/Loading";
+import { counterCheckerForClasses } from "../functions/checkerFucntions";
 
 class GuestInformation extends Component {
   constructor(props) {
@@ -43,36 +44,19 @@ class GuestInformation extends Component {
     }
   };
 
-  classChecker = (element, classToBeChecked, classToBeAdded) => {
-    if (element.classList.contains(classToBeChecked)) {
-      element.classList.remove(classToBeChecked);
-      element.classList.add(classToBeAdded);
-    } else {
-      element.classList.add(classToBeAdded);
-    }
-  };
-
   //Handle form submission
   handleSubmit = (e) => {
     e.preventDefault();
 
     const formGroups = [...document.querySelectorAll(".form-group")];
-    let counter = 0;
 
-    for (let i = 0; i < formGroups.length; i++) {
-      if (!formGroups[i].classList.contains("specialCode")) {
-        if (
-          formGroups[i].lastElementChild.value.trim() !== "" &&
-          formGroups[i].lastElementChild.value !== "Select gender"
-        ) {
-          counter += 1;
-
-          this.classChecker(formGroups[i], "invalid-error", "success");
-        } else {
-          this.classChecker(formGroups[i], "success", "invalid-error");
-        }
-      }
-    }
+    let counter = counterCheckerForClasses(
+      formGroups,
+      "invalid-error",
+      "success",
+      "specialCode",
+      "Select gender"
+    );
 
     if (!this.state.check) {
       document.querySelector(".policy").classList.add("invalid-error");

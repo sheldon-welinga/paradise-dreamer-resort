@@ -2680,6 +2680,7 @@ a {
 
 .inquiry .form-group {
   margin: 1rem 0;
+  position: relative;
 }
 
 .inquiry .form-group .form-control,
@@ -2687,9 +2688,30 @@ a {
   max-width: 650px;
   width: 100%;
   padding: 0.7rem 1rem;
+  margin-bottom: 0.5rem;
   color: var(--lightBlack);
   outline: none;
   border: 1px solid gray;
+}
+
+.inquiry .form-group:not(.textarea).invalid-error::after {
+  content: "This field cannot be empty";
+  display: block;
+  position: absolute;
+  height: 2px;
+  bottom: 5px;
+  z-index: 10;
+  color: var(--error);
+}
+
+.inquiry .form-group:not(.textarea).invalid-error .form-control {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.inquiry .form-group.success .form-control {
+  border-color: var(--success);
+  color: var(--success);
 }
 
 .inquiry .form-group textarea {
