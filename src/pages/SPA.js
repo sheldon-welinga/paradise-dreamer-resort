@@ -63,7 +63,9 @@ const SPA = () => {
         <div className="spa-header">
           <Link to="/spa/personalized-wellness">Personalized Wellness</Link>
           <Link to="/spa/treatments">Treatments</Link>
-          <Link to="/spa/visiting-practitioners">Visiting Practitioners</Link>
+          <Link to="/spa/visiting-practitioners-calendar">
+            Visiting Practitioners
+          </Link>
           <span className="spa-toggler" onClick={toggleNavOpen}></span>
         </div>
 

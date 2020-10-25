@@ -18,6 +18,8 @@
   --black: #1c1616;
   --lightBlack: #110f0fd5;
   --yellow: #fbff05;
+  --error: rgb(226, 67, 67);
+  --success: #10a128;
 }
 
 .page-height {
@@ -2369,6 +2371,7 @@ a {
 .guest-info .guest-info-form,
 .guest-info .guest-info-form .form-group {
   margin: 1rem 0;
+  position: relative;
 }
 
 .guest-info .guest-info-form .form-group p {
@@ -2382,12 +2385,56 @@ a {
   padding: 0.7rem 1rem;
   color: var(--lightBlack);
   outline: none;
+  border: 1px solid gray;
+}
+
+.guest-info .guest-info-form .form-group.invalid-error .form-control {
+  border-color: rgb(226, 67, 67);
+  color: rgb(226, 67, 67);
+}
+
+.guest-info .guest-info-form .form-group.invalid-error p {
+  color: rgb(226, 67, 67);
+}
+
+.guest-info
+  .guest-info-form
+  .form-group.invalid-error:not(.specialCode)::after {
+  content: "This field cannot be empty";
+  display: block;
+  position: absolute;
+  height: 2px;
+  bottom: -2px;
+  z-index: 10;
+  color: rgb(226, 67, 67);
+}
+
+.guest-info .guest-info-form .form-group.success .form-control {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.guest-info .guest-info-form .form-group.success p {
+  color: var(--success);
+}
+
+.guest-info .guest-info-form .form-group.sucess::after {
+  display: none;
 }
 
 .guest-info .guest-info-form .policy {
   display: flex;
   align-items: center;
   margin: 1rem 0;
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.guest-info .guest-info-form .policy.invalid-error::before {
+  content: "Please check this field to continue";
+  position: absolute;
+  top: -17px;
+  color: var(--error);
 }
 
 .guest-info .guest-info-form .policy p {
@@ -2509,6 +2556,218 @@ a {
     font-size: 1.2rem;
   }
 }
-
 /* ----------------------End of Guest Information--------------------------- */
+
+/* ------------------------Visiting Practitioners ------------------------- */
+.practitioners .practitioners-header h6,
+.inquiry .inquiry-header h6 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.practitioners .practitioners-header h2,
+.inquiry .inquiry-header h2 {
+  font-size: 1.4rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 4px;
+  line-height: 1.8rem;
+  color: #000;
+  padding: 1rem 0;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.practitioners .single-practitioner {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.practitioners .single-practitioner .image {
+  flex: 0.42;
+  padding: 1rem;
+}
+
+.practitioners .single-practitioner .image img {
+  max-height: 60vh;
+  min-height: 45vh;
+}
+
+.practitioners .single-practitioner .content {
+  flex: 0.58;
+  padding: 1rem;
+}
+
+.practitioners .single-practitioner .content h2 {
+  font-size: 1.4rem;
+  font-family: serif;
+  color: var(--lightBlack);
+  margin-bottom: 5px;
+  letter-spacing: 1.5px;
+}
+
+.practitioners .single-practitioner .content h5 {
+  font-weight: 500;
+  font-size: 1.05rem;
+  font-family: sans-serif;
+  color: var(--lightBlack);
+}
+
+.practitioners .single-practitioner .content p,
+.inquiry .inquiry-header p {
+  letter-spacing: 1.2px;
+  padding: 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .practitioners .single-practitioner {
+    flex-direction: column;
+  }
+
+  .practitioners .single-practitioner .image img {
+    min-height: inherit;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .practitioners .practitioners-header h2,
+  .practitioners .single-practitioner .content h2 {
+    font-size: 1.2rem;
+  }
+
+  .practitioners .single-practitioner .image,
+  .practitioners .single-practitioner .content,
+  .inquiry .main-inquiry,
+  .inquiry .contact-inquiry {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+/* --------------------------End of Visiting Practitioners------------------ */
+
+/* ---------------------------------Inquiry ---------------------------------- */
+.inquiry {
+  display: flex;
+}
+
+.inquiry .main-inquiry {
+  flex: 0.7;
+  padding: 1rem;
+}
+
+.inquiry .contact-inquiry {
+  flex: 0.3;
+  padding: 1rem;
+}
+
+.inquiry .inquiry-form .form-header {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.inquiry .inquiry-form .form-header h5 {
+  font-size: 1.3rem;
+  font-family: serif;
+  margin-bottom: 1rem;
+}
+
+.inquiry .inquiry-form .form-header p {
+  color: var(--lightBlack);
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+
+.inquiry .form-group {
+  margin: 1rem 0;
+}
+
+.inquiry .form-group .form-control,
+.inquiry .form-group select option {
+  max-width: 650px;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  color: var(--lightBlack);
+  outline: none;
+  border: 1px solid gray;
+}
+
+.inquiry .form-group textarea {
+  resize: none;
+}
+
+.inquiry .contact-inquiry h5 {
+  font-family: serif;
+  text-transform: uppercase;
+  color: var(--lightBlack);
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+}
+
+.inquiry .contact-inquiry div {
+  line-height: 1.5rem;
+  margin-top: 1rem;
+}
+
+.inquiry .contact-inquiry div p {
+  color: var(--maroon);
+}
+
+@media screen and (max-width: 768px) {
+  .inquiry {
+    flex-direction: column-reverse;
+  }
+
+  .inquiry .contact-inquiry {
+    max-height: 3.2rem;
+    overflow: hidden;
+    transition: max-height 0.3s linear;
+  }
+
+  .inquiry .contact-inquiry h5 {
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    background-color: rgb(240, 240, 240);
+    align-items: center;
+    width: 100%;
+  }
+
+  .inquiry .contact-inquiry h5::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    display: block;
+    position: absolute;
+    left: 0.5rem;
+    border-top: 2px solid var(--lightBlack);
+    border-left: 2px solid var(--lightBlack);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .inquiry .contact-inquiry.open {
+    max-height: 20rem;
+  }
+
+  .inquiry .contact-inquiry.open h5::before {
+    transform: rotate(225deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .inquiry .inquiry-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .inquiry .main-inquiry,
+  .inquiry .contact-inquiry {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* ----------------------------------End of Inquiry--------------------------- */
 /* -------------------------End of SPA----------------------------------- */

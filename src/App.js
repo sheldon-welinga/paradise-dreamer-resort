@@ -21,6 +21,8 @@ import SingleWellness from "./pages/SingleWellness";
 import Treatments from "./pages/Treatments";
 import BookTreatment from "./pages/BookTreatment";
 import GuestInformation from "./pages/GuestInformation";
+import Practitioners from "./pages/Practitioners";
+import Inquiry from "./pages/Inquiry";
 
 const App = () => {
   return (
@@ -66,6 +68,16 @@ const App = () => {
           exact
           path="/spa/treatments/guest-information"
           component={GuestInformation}
+        />
+        <Route
+          exact
+          path="/spa/visiting-practitioners-calendar"
+          component={Practitioners}
+        />
+        <Route
+          exact
+          path="/spa/visiting-practitioners-calendar/inquiry"
+          component={Inquiry}
         />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/datepicker" component={DatePicker} />
