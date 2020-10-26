@@ -6,7 +6,6 @@ const ExperiencesHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
-    document.querySelector(".active").style.order = 1;
   };
 
   return (

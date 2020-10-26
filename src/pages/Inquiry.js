@@ -55,6 +55,8 @@ class Inquiry extends Component {
         email: "",
         message: "",
       });
+
+      this.props.history.push("/spa/visiting-practitioners-calendar");
     }
   };
 

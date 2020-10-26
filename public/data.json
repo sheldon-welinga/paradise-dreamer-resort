@@ -2072,5 +2072,151 @@
       "image": "/images/practitioner-5.jpg",
       "alternative": "Male practitioner massaging a woman"
     }
+  ],
+  "gallery": [
+    {
+      "image": "/images/accomodation-1.jpg",
+      "featured": true,
+      "title": "Accomodation-1",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-2.jpg",
+      "featured": true,
+      "title": "Accomodation-2",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-3.jpg",
+      "featured": false,
+      "title": "Accomodation-3",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-4.jpg",
+      "featured": false,
+      "title": "Accomodation-4",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-5.jpg",
+      "featured": false,
+      "title": "Accomodation-5",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-6.jpg",
+      "featured": false,
+      "title": "Accomodation-6",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-7.jpg",
+      "featured": false,
+      "title": "Accomodation-7",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-8.jpg",
+      "featured": false,
+      "title": "Accomodation-8",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-9.jpg",
+      "featured": true,
+      "title": "Accomodation-9",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-10.jpg",
+      "featured": false,
+      "title": "Accomodation-10",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-11.jpg",
+      "featured": false,
+      "title": "Accomodation-11",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-12.jpg",
+      "featured": false,
+      "title": "Accomodation-12",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-13.jpg",
+      "featured": false,
+      "title": "Accomodation-13",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-14.jpg",
+      "featured": false,
+      "title": "Accomodation-14",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-15.jpg",
+      "featured": false,
+      "title": "Accomodation-15",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-16.jpg",
+      "featured": false,
+      "title": "Accomodation-16",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-17.jpg",
+      "featured": false,
+      "title": "Accomodation-17",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/accomodation-18.jpg",
+      "featured": false,
+      "title": "Accomodation-18",
+      "type": "rooms-and-suites"
+    },
+    {
+      "image": "/images/spa.jpg",
+      "featured": true,
+      "title": "Spa",
+      "type": "prince-spa"
+    },
+    {
+      "image": "/images/spa-1.jpg",
+      "featured": false,
+      "title": "Spa-1",
+      "type": "prince-spa"
+    },
+    {
+      "image": "/images/spa-2.jpg",
+      "featured": false,
+      "title": "Spa-2",
+      "type": "prince-spa"
+    },
+    {
+      "image": "/images/spa-3.jpg",
+      "featured": true,
+      "title": "Spa-3",
+      "type": "prince-spa"
+    },
+    {
+      "image": "/images/spa-4.jpg",
+      "featured": false,
+      "title": "Spa-4",
+      "type": "prince-spa"
+    },
+    {
+      "image": "/images/spa-5.jpg",
+      "featured": false,
+      "title": "Spa-5",
+      "type": "prince-spa"
+    }
   ]
 }

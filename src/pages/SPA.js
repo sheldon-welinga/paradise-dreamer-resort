@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SpaHeader from "../components/SpaHeader";
 import { StyledHero } from "../components/Styled";
 import TreatmentHighlights from "../components/TreatmentHighlights";
 
@@ -16,15 +17,6 @@ const SPA = () => {
       e.target.classList.remove("open");
     } else {
       e.target.classList.add("open");
-    }
-  };
-
-  const toggleNavOpen = (e) => {
-    // console.log(e.target.parentElement);
-    if (e.target.parentElement.classList.contains("open")) {
-      e.target.parentElement.classList.remove("open");
-    } else {
-      e.target.parentElement.classList.add("open");
     }
   };
 
@@ -60,15 +52,7 @@ const SPA = () => {
             for over 13 years.
           </p>
         </div>
-        <div className="spa-header">
-          <Link to="/spa/personalized-wellness">Personalized Wellness</Link>
-          <Link to="/spa/treatments">Treatments</Link>
-          <Link to="/spa/visiting-practitioners-calendar">
-            Visiting Practitioners
-          </Link>
-          <span className="spa-toggler" onClick={toggleNavOpen}></span>
-        </div>
-
+        <SpaHeader />
         {/*-------------Section One-------------------*/}
         <div className="spa-section-one">
           <div className="content">

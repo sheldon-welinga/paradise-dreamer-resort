@@ -1,22 +1,35 @@
 import React, { useEffect, useState } from "react";
+import Loading from "../components/Loading";
+import SpaHeader from "../components/SpaHeader";
 import { StyledHero } from "../components/Styled";
 import WellnessItem from "../components/WellnessItem";
 
 const PersonalizedWellness = () => {
   const [wellness, setWellness] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getData = async () => {
-      const response = await fetch("/data.json");
-      const data = await response.json();
+      try {
+        const response = await fetch("/data.json");
+        const data = await response.json();
 
-      setWellness(data.wellness);
+        setWellness(data.wellness);
+        setLoading(false);
+      } catch (err) {
+        console.log(err.message);
+      }
     };
 
     getData();
   }, []);
 
-  if (!wellness) return <div className="page-height">Loading...</div>;
+  if (!wellness)
+    return (
+      <div className="page-height">
+        <Loading />
+      </div>
+    );
 
   return (
     <div className="page-height wellness">
@@ -25,6 +38,7 @@ const PersonalizedWellness = () => {
           <h4>Personalized Wellness</h4>
         </div>
       </StyledHero>
+      <SpaHeader />
       <div className="wellness-section-one">
         <h2>Paradise Dreamer Intergrated Wellness</h2>
         <h4>Our wellness pillars</h4>
@@ -36,9 +50,11 @@ const PersonalizedWellness = () => {
         </p>
       </div>
       <div className="wellness-section-two">
-        {wellness.map((item) => (
-          <WellnessItem data={item} key={item.id} />
-        ))}
+        {loading ? (
+          <Loading />
+        ) : (
+          wellness.map((item) => <WellnessItem data={item} key={item.id} />)
+        )}
       </div>
     </div>
   );

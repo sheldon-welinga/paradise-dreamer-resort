@@ -643,6 +643,7 @@ a {
   flex: 0.5;
   width: 100%;
   padding: 1rem;
+  /* margin: 1rem 0; */
 }
 
 .resort-post .fa-cutlery,
@@ -695,6 +696,93 @@ a {
 }
 
 /* -----------------------End of Resort Section ------------------ */
+/* ============================================================= */
+/* -------------------------- Gallery Section--------------------*/
+.gallery-section .title {
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  letter-spacing: 1.5px;
+  padding: 0.5rem 0;
+}
+
+.gallery .gallery-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.gallery .gallery-header p {
+  padding: 0.5rem;
+  margin: 0.5rem 0.2rem;
+  min-width: 60px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  color: var(--lightBlack);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.gallery .gallery-header p:hover,
+.gallery .gallery-header p.active {
+  background-color: var(--maroon);
+  color: var(--white);
+}
+
+.gallery .gallery-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 1rem;
+  margin: 1rem;
+  padding: 0 1rem;
+}
+
+.gallery .gallery-body.featured {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.gallery .gallery-body .single-gallery {
+  position: relative;
+  cursor: pointer;
+}
+
+.gallery .gallery-body .single-gallery img {
+  height: 37vh;
+}
+
+.gallery .gallery-body .single-gallery p {
+  position: absolute;
+  bottom: 1rem;
+  left: 10px;
+  /* background-color: #0a8ee0; */
+  width: 95%;
+  overflow: hidden;
+}
+
+.gallery .gallery-body .single-gallery p span {
+  display: block;
+  width: 100%;
+  color: var(--white);
+  font-size: 1.2rem;
+  letter-spacing: 1.1px;
+  z-index: 10;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery .gallery-body .single-gallery:hover p span {
+  transform: translateY(0%);
+}
+
+/* ------------------------End of Gallery Section---------------- */
+/* ============================================================= */
 /* ------------------------End of Home ------------------------ */
 
 /* --------------------------Accomodation----------------------- */
@@ -989,6 +1077,7 @@ a {
   height: 50vh;
   min-width: 100%;
   width: 100%;
+  transform: translateX(-100%);
   transition: all 0.3s ease-in-out;
 }
 
@@ -1263,14 +1352,14 @@ a {
 .experiences .experiences-header .active::after {
   content: "";
   width: 50%;
-  height: 1.6px;
+  height: 1.5px;
   background-color: var(--maroon);
   display: block;
   position: absolute;
   bottom: 5px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 450px) {
   .experiences .experiences-header {
     height: 8vh;
     overflow-y: hidden;
@@ -1295,6 +1384,10 @@ a {
     right: 1rem;
   }
 
+  .experiences .experiences-header .active::after {
+    display: none;
+  }
+
   .experiences .experiences-header span::after {
     content: "";
     width: 10px;
@@ -1307,6 +1400,11 @@ a {
     transform: rotate(45deg);
     pointer-events: all;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .experiences .experiences-header.show-experience-header span::after {
+    transform: rotate(-135deg);
   }
 }
 
@@ -2496,6 +2594,19 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+  .book-treatment {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .book-treatment .book-treatment-section-one h6 {
+    font-size: 0.8rem;
+  }
+
+  .book-treatment .book-treatment-section-one h2 {
+    font-size: 1.1rem;
+  }
+
   .guest-info {
     flex-direction: column-reverse;
   }

@@ -1,4 +1,6 @@
 import React from "react";
+
+import Gallery from "../components/Gallery";
 import HomeSlider from "../components/HomeSlider";
 import ResortSection from "../components/ResortSection";
 import WelcomeHome from "../components/WelcomeHome";
@@ -9,9 +11,9 @@ const Home = () => {
       <HomeSlider />
       <WelcomeHome />
       <ResortSection />
-      <div>
-        Gallery with featured images..... To be added. Also add button with view
-        more to show all gallery
+      <div className="gallery-section">
+        <h2 className="title">Gallery</h2>
+        <Gallery featuredClass="featured" />
       </div>
     </div>
   );

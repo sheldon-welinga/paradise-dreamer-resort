@@ -22,10 +22,14 @@ class BookTreatment extends Component {
 
   //Fetch data
   fetchData = async () => {
-    const response = await fetch("/data.json");
-    const data = await response.json();
+    try {
+      const response = await fetch("/data.json");
+      const data = await response.json();
 
-    return data.treatments;
+      return data.treatments;
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   //handle onChange functions of the select boxes

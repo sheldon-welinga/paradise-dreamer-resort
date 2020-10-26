@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Loading from "../components/Loading";
 import SingleTreatment from "../components/SingleTreatment";
+import SpaHeader from "../components/SpaHeader";
 
 class Treatments extends Component {
   constructor(props) {
@@ -168,6 +169,7 @@ class Treatments extends Component {
             />
           </div>
         </div>
+        <SpaHeader />
         <div className="treatments-section-two">
           <div className="search-bar">
             <form>

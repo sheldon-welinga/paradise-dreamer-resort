@@ -23,6 +23,7 @@ import BookTreatment from "./pages/BookTreatment";
 import GuestInformation from "./pages/GuestInformation";
 import Practitioners from "./pages/Practitioners";
 import Inquiry from "./pages/Inquiry";
+import ErrorBoundary from "./ErrorBoundary";
 
 const App = () => {
   return (
@@ -32,7 +33,13 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/accomodation" component={Accomodation} />
         <Route exact path="/accomodation/:type" component={Accomodation} />
-        <Route exact path="/accomodation/:type/:slug" component={SingleRoom} />
+        <ErrorBoundary>
+          <Route
+            exact
+            path="/accomodation/:type/:slug"
+            component={SingleRoom}
+          />
+        </ErrorBoundary>
         <Route
           exact
           path="/accomodation/:type/:slug/amenities"
