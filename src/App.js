@@ -23,7 +23,8 @@ import BookTreatment from "./pages/BookTreatment";
 import GuestInformation from "./pages/GuestInformation";
 import Practitioners from "./pages/Practitioners";
 import Inquiry from "./pages/Inquiry";
-import ErrorBoundary from "./ErrorBoundary";
+// import ErrorBoundary from "./ErrorBoundary";
+import OurGallery from "./pages/OurGallery";
 
 const App = () => {
   return (
@@ -33,13 +34,7 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/accomodation" component={Accomodation} />
         <Route exact path="/accomodation/:type" component={Accomodation} />
-        <ErrorBoundary>
-          <Route
-            exact
-            path="/accomodation/:type/:slug"
-            component={SingleRoom}
-          />
-        </ErrorBoundary>
+        <Route exact path="/accomodation/:type/:slug" component={SingleRoom} />
         <Route
           exact
           path="/accomodation/:type/:slug/amenities"
@@ -65,6 +60,7 @@ const App = () => {
           path="/spa/personalized-wellness/:slug"
           component={SingleWellness}
         />
+        <Route exact path="/spa/booking-inquiry" component={Inquiry} />
         <Route exact path="/spa/treatments" component={Treatments} />
         <Route
           exact
@@ -86,6 +82,7 @@ const App = () => {
           path="/spa/visiting-practitioners-calendar/inquiry"
           component={Inquiry}
         />
+        <Route exact path="/our-gallery" component={OurGallery} />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/datepicker" component={DatePicker} />
         <Route component={ErrorPage} />

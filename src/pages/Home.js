@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Gallery from "../components/Gallery";
 import HomeSlider from "../components/HomeSlider";
@@ -14,6 +15,11 @@ const Home = () => {
       <div className="gallery-section">
         <h2 className="title">Gallery</h2>
         <Gallery featuredClass="featured" />
+        <div className="browse-gallery">
+          <Link className="btn btn-primary" to="/our-gallery">
+            Browse our gallery
+          </Link>
+        </div>
       </div>
     </div>
   );

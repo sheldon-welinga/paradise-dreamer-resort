@@ -80,7 +80,10 @@ const SPA = () => {
                     treatment or a bespoke multi-day program specific to your
                     needs.
                   </p>
-                  <Link to="/spa/booking" className="btn btn-primary">
+                  <Link
+                    to="/spa/booking-inquiry?title=wellness+screening"
+                    className="btn btn-primary"
+                  >
                     Book a consultation
                   </Link>
                 </div>
@@ -100,7 +103,10 @@ const SPA = () => {
                     performance and reduces the risk of injury and ensures that
                     your body is aligned.
                   </p>
-                  <Link to="/spa/booking" className="btn btn-primary">
+                  <Link
+                    to="/spa/booking-inquiry?title=movement+efficiency+test"
+                    className="btn btn-primary"
+                  >
                     Book a consultation
                   </Link>
                 </div>

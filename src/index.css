@@ -338,7 +338,8 @@ a {
   display: inline-block;
 }
 
-.header .header-nav li:hover a {
+.header .header-nav li:hover a,
+.header .header-nav .nav-link a.active {
   color: var(--orange);
 }
 
@@ -354,7 +355,7 @@ a {
   cursor: pointer;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 970px) {
   .toggle-collapse {
     display: block;
   }
@@ -374,7 +375,7 @@ a {
   .header .header-nav .nav-menu {
     display: block;
     padding-bottom: 5px;
-    height: 0;
+    max-height: 0;
     overflow: hidden;
     transition: all 0.3s linear;
   }
@@ -403,7 +404,7 @@ a {
   }
 
   .header .header-nav .nav-menu.show-nav {
-    height: 250px;
+    max-height: 500px;
   }
 }
 
@@ -425,6 +426,13 @@ a {
 /* --------------------------Home----------------------------- */
 .home {
   padding: 0;
+}
+
+.home .browse-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 /* ---------------------------Home Slider--------------------- */
@@ -745,7 +753,7 @@ a {
 }
 
 .gallery .gallery-body.featured {
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
 .gallery .gallery-body .single-gallery {
@@ -755,6 +763,10 @@ a {
 
 .gallery .gallery-body .single-gallery img {
   height: 37vh;
+}
+
+.gallery .gallery-body.featured .single-gallery img {
+  height: 30vh;
 }
 
 .gallery .gallery-body .single-gallery p {
@@ -777,8 +789,34 @@ a {
   transition: transform 0.3s ease-in-out;
 }
 
+.gallery .gallery-body.featured .single-gallery p span {
+  font-size: 1rem;
+}
+
 .gallery .gallery-body .single-gallery:hover p span {
   transform: translateY(0%);
+}
+
+.our-gallery {
+  padding: 0;
+}
+
+.our-gallery .our-gallery-header {
+  min-height: 20vh;
+  background-color: var(--maroon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.our-gallery .our-gallery-header h4 {
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  text-align: center;
 }
 
 /* ------------------------End of Gallery Section---------------- */
@@ -1609,7 +1647,7 @@ a {
 }
 
 .spa-header a:hover {
-  color: var(--maroon);
+  color: var(--orange);
 }
 
 .spa-header .spa-toggler {

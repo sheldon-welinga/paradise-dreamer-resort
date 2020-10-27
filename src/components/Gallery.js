@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import Loading from "../components/Loading";
 
 class Gallery extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      loading: true,
       gallery: [],
       featuredGallery: [],
       featuredClass: this.props.featuredClass,
@@ -34,7 +36,7 @@ class Gallery extends Component {
 
   //filter data and update the state
   filterData = async (slug) => {
-    let data = await this.fetchData();
+    const data = await this.fetchData();
     let filteredGallery = [];
 
     if (this.state.featuredClass) {
@@ -73,19 +75,21 @@ class Gallery extends Component {
       this.fetchData().then((data) => {
         this.setState({
           featuredGallery: data.filter((item) => item.featured),
+          loading: false,
         });
       });
     } else {
       this.fetchData().then((data) => {
         this.setState({
           gallery: data,
+          loading: false,
         });
       });
     }
   }
 
   render() {
-    const { gallery, featuredClass, featuredGallery } = this.state;
+    const { gallery, featuredClass, featuredGallery, loading } = this.state;
 
     return (
       <div className="gallery">
@@ -97,38 +101,42 @@ class Gallery extends Component {
           <p id="rooms-and-suites">Rooms &amp; Suites</p>
           <p id="dining">Dining</p>
           <p id="conference">Conference</p>
-          <p>Reception</p>
-          <p>Swimming Pool</p>
-          <p>The Hotel</p>
+          <p id="reception">Reception</p>
+          <p id="swimming-pool">Swimming Pool</p>
+          <p id="the-hotel">The Hotel</p>
         </div>
         <div
           className={featuredClass ? "gallery-body featured" : "gallery-body"}
         >
-          {featuredClass
-            ? featuredGallery.map((item, index) => (
-                <div className="single-gallery" key={index}>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="img-responsive"
-                  />
-                  <p>
-                    <span>{item.title}</span>
-                  </p>
-                </div>
-              ))
-            : gallery.map((item, index) => (
-                <div className="single-gallery" key={index}>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="img-responsive"
-                  />
-                  <p>
-                    <span>{item.title}</span>
-                  </p>
-                </div>
-              ))}
+          {loading ? (
+            <Loading />
+          ) : featuredClass ? (
+            featuredGallery.map((item, index) => (
+              <div className="single-gallery" key={index}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="img-responsive"
+                />
+                <p>
+                  <span>{item.title}</span>
+                </p>
+              </div>
+            ))
+          ) : (
+            gallery.map((item, index) => (
+              <div className="single-gallery" key={index}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="img-responsive"
+                />
+                <p>
+                  <span>{item.title}</span>
+                </p>
+              </div>
+            ))
+          )}
         </div>
       </div>
     );
