@@ -2,9 +2,9 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Amenities from "./pages/Amenities";
-import Calendar from "./components/Calendar";
+// import Calendar from "./calendar-backed-up/Calendar";
 // import CalendarWidget from "./components/CalendarWidget";
-import DatePicker from "./components/DatePicker";
+// import DatePicker from "./calendar-backed-up/DatePicker";
 import Family from "./components/Family";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -14,7 +14,7 @@ import Accomodation from "./pages/Accomodation";
 import ErrorPage from "./pages/ErrorPage";
 import Experiences from "./pages/Experiences";
 import Home from "./pages/Home";
-import Rates from "./pages/Rates";
+// import Rates from "./pages/Rates";
 import SingleRoom from "./pages/SingleRoom";
 import SPA from "./pages/SPA";
 import SingleWellness from "./pages/SingleWellness";
@@ -25,6 +25,8 @@ import Practitioners from "./pages/Practitioners";
 import Inquiry from "./pages/Inquiry";
 // import ErrorBoundary from "./ErrorBoundary";
 import OurGallery from "./pages/OurGallery";
+import Reservation from "./pages/Reservation";
+import Calendar from "./Calendar";
 
 const App = () => {
   return (
@@ -40,7 +42,7 @@ const App = () => {
           path="/accomodation/:type/:slug/amenities"
           component={Amenities}
         />
-        <Route exact path="/rates" component={Rates} />
+        <Route exact path="/plan-your-stay" component={Reservation} />
         <Route exact path="/experiences" component={Experiences} />
         <Route exact path="/experiences/adventure" component={Experiences} />
         <Route exact path="/experiences/family" component={Family} />
@@ -84,7 +86,7 @@ const App = () => {
         />
         <Route exact path="/our-gallery" component={OurGallery} />
         <Route exact path="/calendar" component={Calendar} />
-        <Route exact path="/datepicker" component={DatePicker} />
+        {/* <Route exact path="/datepicker" component={DatePicker} /> */}
         <Route component={ErrorPage} />
       </Switch>
       <Footer />

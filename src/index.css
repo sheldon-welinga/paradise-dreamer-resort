@@ -17,6 +17,7 @@
   --orange: #ff2419;
   --black: #1c1616;
   --lightBlack: #110f0fd5;
+  --lightGray: #cccccc;
   --yellow: #fbff05;
   --error: rgb(226, 67, 67);
   --success: #10a128;
@@ -930,53 +931,53 @@ a {
 }
 
 /* ----------------------Accomodation Suites-------------------- */
-.accomodation-suites .suite {
+.suite {
   display: flex;
   margin: 1rem 0;
 }
 
-.accomodation-suites .suite > div {
+.suite > div {
   flex: 0.5;
   padding: 10px;
   letter-spacing: 2px;
 }
 
-.accomodation-suites .suite .image {
+.suite .image {
   padding-left: 0;
 }
 
-.accomodation-suites .suite .image img {
+.suite .image img {
   max-height: 60vh;
   width: 100%;
   object-fit: cover;
 }
 
-.accomodation-suites .suite .info .info-title {
+.suite .info .info-title {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
 
-.accomodation-suites .suite .info .info-title a {
+.suite .info .info-title a {
   font-size: 1.1rem;
   text-transform: uppercase;
   color: var(--darkMaroon);
 }
 
-.accomodation-suites .suite .info .info-title .arrow {
+.suite .info .info-title .arrow {
   font-size: 1.4rem;
 }
 
-.accomodation-suites .suite .info p {
+.suite .info p {
   margin: 1.5rem 0;
   line-height: 1.5rem;
 }
 
-.accomodation-suites .suite .info .btn-outline {
+.suite .info .btn-outline {
   margin-left: 1rem;
 }
 
-.accomodation-suites .suite .info .btn {
+.suite .info .btn {
   font-size: 0.8rem;
   padding: 12px 10px;
 }
@@ -989,17 +990,17 @@ a {
 }
 
 @media screen and (max-width: 920px) {
-  .accomodation-suites .suite {
+  .suite {
     flex-direction: column;
   }
 
-  .accomodation-suites .suite .image {
+  .suite .image {
     max-height: 50vh;
     overflow: hidden;
     object-fit: cover;
   }
 
-  .accomodation-suites .suite .image img {
+  .suite .image img {
     max-height: 50vh;
     width: 100%;
     object-fit: cover;
@@ -1007,13 +1008,13 @@ a {
 }
 
 @media screen and (max-width: 374px) {
-  .accomodation-suites .suite .info .btn-container {
+  .suite .info .btn-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .accomodation-suites .suite .info .btn {
+  .suite .info .btn {
     margin-left: 0;
   }
 }
@@ -2941,4 +2942,158 @@ a {
 }
 
 /* ----------------------------------End of Inquiry--------------------------- */
-/* -------------------------End of SPA----------------------------------- */
+/* -------------------------------End of SPA----------------------------------- */
+/* -----------------------------------Reservation------------------------------- */
+.reservation {
+  padding: 0;
+}
+
+.reservation-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+  background-color: var(--maroon);
+}
+
+.reservation-steps p {
+  color: var(--lightGray);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.8rem;
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+.reservation-steps p::before {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-flex;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--lightGray);
+  color: var(--lightGray);
+}
+
+.reservation-steps p.success-steps {
+  color: var(--white);
+}
+
+.reservation-steps p.success-steps::before {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.reservation-steps p:nth-child(1)::before {
+  content: "1";
+}
+
+.reservation-steps p:nth-child(2)::before {
+  content: "2";
+}
+
+.reservation-steps p:nth-child(3)::before {
+  content: "3";
+}
+
+.reservation-steps p:nth-child(4)::before {
+  content: "4";
+}
+
+.reservation-search-rooms {
+  padding: 1rem;
+}
+
+.reservation-search-rooms form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.reservation-search-rooms .form-group,
+.reservation-search-rooms .btn-container {
+  position: relative;
+  margin: 0.5rem 1rem;
+}
+
+.reservation-search-rooms .btn {
+  border-radius: 0;
+  width: 100%;
+  margin-top: 0;
+  cursor: pointer;
+}
+
+.reservation-search-rooms .form-group .form-control {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--lightBlack);
+  outline: none;
+  border: 1px solid gray;
+}
+
+.reservation-search-rooms .form-group select option {
+  height: 100px;
+}
+
+.reservation-search-rooms .form-group .calendar {
+  position: absolute;
+}
+
+.reservation-search-rooms .form-group.invalid-error .form-control {
+  border-color: rgb(226, 67, 67);
+  color: rgb(226, 67, 67);
+}
+
+.reservation-search-rooms .form-group.invalid-error:not(.promo-code)::after {
+  content: "This field cannot be empty";
+  display: block;
+  position: absolute;
+  height: 2px;
+  bottom: -2px;
+  z-index: 10;
+  color: rgb(226, 67, 67);
+}
+.reservation-search-rooms .form-group.success .form-control {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+@media screen and (max-width: 768px) {
+  .reservation-steps {
+    display: none;
+  }
+
+  .reservation-search-rooms {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .reservation-search-rooms form {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .reservation-search-rooms .form-group .form-control,
+  .reservation-search-rooms .form-group .form-control option {
+    font-size: 0.9rem;
+  }
+}
+/* ------------------------------------Reservation Suite---------------------------- */
+.reservation-suite{
+  display: flex;
+}
+
+
+/* -----------------------------End of Reservation Suite------------------------------ */
+
+/* -------------------------------End of Reservation----------------------------- */
