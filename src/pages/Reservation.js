@@ -99,7 +99,7 @@ class Reservation extends Component {
         adults,
         children,
         loading: false,
-        reservationRooms: data.filter((item) => item.id === 1),
+        // reservationRooms: data.filter((item) => item.id === 1),
       });
     });
   };
@@ -264,34 +264,9 @@ class Reservation extends Component {
           </form>
         </div>
         <div className="reservation-rooms">
-          {/* <div className="suite">
-            <div className="image">
-              <img src={reservationRooms.image} alt={reservationRooms.title} className="img-responsive" />
-            </div>
-            <div className="info">
-              <div className="info-title">
-                <h2>{reservationRooms.title}</h2>
-              </div>
-              <p>{reservationRooms.description}</p>
-              <p>{reservationRooms.size}</p>
-              <p>{reservationRooms.occupancy}</p>
-              <div className="btn-container">
-                <Link to="/plan-your-stay" className="btn btn-primary">
-                  Check rates
-                </Link>
-                <Link
-                  to={`/accomodation/${type}/${slug}`}
-                  className="btn btn-outline"
-                >
-                  Details
-                </Link>
-              </div>
-            </div>
-          </div> */}
           {loading ? (
             <Loading />
           ) : (
-            reservationRooms.length &&
             reservationRooms.map((room) => (
               <ReservationSuite key={room.id} room={room} />
             ))

@@ -7,7 +7,7 @@ const ReservationSuite = (props) => {
   console.log(views.length);
 
   return (
-    <div className="suite reservation-suite">
+    <div className="reservation-suite">
       <div className="image">
         <img src={image} alt={title} className="img-responsive" />
       </div>
@@ -21,25 +21,25 @@ const ReservationSuite = (props) => {
             <p>{views}</p>
           </div>
           <div>
-            <h6>Bed Options</h6>
-            <p>{description}</p>
-          </div>
-          <div>
             <h6>Room Size</h6>
             <p>{size}</p>
           </div>
-        </div>
-        <div className="btn-container">
-          <button type="button" className="btn btn-primary">
-            Select Room
-          </button>
+          <div>
+            <h6>Bed Options</h6>
+            <p>{description}</p>
+          </div>
         </div>
       </div>
-      <div className="price">
-        <p>
-          from <span>Kshs. 25,000</span>
-        </p>
-        <p>average per night</p>
+      <div className="info-price">
+        <div className="price">
+          <p>
+            from <span>Kshs. 25,000</span>
+          </p>
+          <p>average per night</p>
+        </div>
+        <button type="button" className="btn btn-primary">
+          Select Room
+        </button>
       </div>
     </div>
   );
