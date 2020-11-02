@@ -74,6 +74,7 @@ class ReservationRoom extends Component {
     localStorage.setItem("bookingInfo", JSON.stringify(storageItems));
 
     //link to the last page for confirming your stay
+    this.props.history.push("/confirm-your-stay");
   };
 
   render() {

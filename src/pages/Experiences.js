@@ -20,7 +20,7 @@ const Experiences = () => {
             migratory bird species are frequent visitors. On land, the dry
             tropical forest protects a rich coastal ecosystem.
           </p>
-          <Link to="/experiences" className="btn btn-primary">
+          <Link to="/plan-your-stay" className="btn btn-primary">
             Make a reservation
           </Link>
         </div>

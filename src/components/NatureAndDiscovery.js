@@ -17,7 +17,7 @@ const NatureAndDiscovery = () => {
             Discovery Centre. Environmental programmes for all ages focus on the
             discovery and conservation of the surrounding indigenous wildlife.
           </p>
-          <Link to="/experiences" className="btn btn-primary">
+          <Link to="/plan-your-stay" className="btn btn-primary">
             Make a reservation
           </Link>
         </div>
