@@ -136,9 +136,16 @@ class Reservation extends Component {
         this.setState({
           reservationRooms: filtered,
         });
-
-        // console.log(filtered);
       });
+
+      const bookingDetails = {
+        checkIn: this.state.checkInDate,
+        checkOut: this.state.checkOutDate,
+        adults: this.state.adult,
+        children: this.state.child,
+      };
+
+      localStorage.setItem("bookingInfo", JSON.stringify(bookingDetails));
 
       this.props.history.push(
         `/plan-your-stay?checkin=${checkInDate}&checkout=${checkOutDate}&room=1&adults=${splittedAdult}&children=${splittedChild}&promocode=${promoCode}`

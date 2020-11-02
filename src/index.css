@@ -2944,7 +2944,8 @@ a {
 /* ----------------------------------End of Inquiry--------------------------- */
 /* -------------------------------End of SPA----------------------------------- */
 /* -----------------------------------Reservation------------------------------- */
-.reservation {
+.reservation,
+.reservation-room {
   padding: 0;
 }
 
@@ -3002,10 +3003,6 @@ a {
 
 .reservation-steps p:nth-child(3)::before {
   content: "3";
-}
-
-.reservation-steps p:nth-child(4)::before {
-  content: "4";
 }
 
 .reservation-search-rooms {
@@ -3158,6 +3155,7 @@ a {
   align-self: flex-end;
   border-radius: 0;
   margin-right: 1rem;
+  cursor: pointer;
 }
 
 .reservation-suite .info-price > div p {
@@ -3242,5 +3240,191 @@ a {
   }
 }
 /* -----------------------------End of Reservation Suite------------------------------ */
+/* ---------------------------Reservation Room--------------------------------------- */
+.reservation-room .header-top,
+.reservation-room .header-top div,
+.reservation-room .header-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.reservation-room .header-top div {
+  padding: 0;
+}
+
+.reservation-room .header-top {
+  border-bottom: 1px solid var(--lightGray);
+}
+
+.reservation-room .header-top a {
+  margin: 0.3rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0;
+  font-size: 0.9rem;
+  min-width: 160px;
+}
+
+.reservation-room .header-top p,
+.reservation-room .header-bottom p {
+  background-color: var(--lightGray);
+  padding: 0.7rem 0.8rem;
+  margin: 0.3rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border: 1px solid var(--lightGray);
+  min-width: 85px;
+}
+
+.reservation-room > h2 {
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--lightBlack);
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.reservation-room .package-room {
+  padding: 1rem;
+}
+
+.reservation-room .package {
+  display: flex;
+  margin: 1rem 0;
+  border: 1px solid var(--lightGray);
+}
+
+.reservation-room .package .image {
+  flex: 0.3;
+  max-width: 300px;
+  object-fit: cover;
+}
+
+.reservation-room .package .image img {
+  min-height: 25vh;
+  max-height: 30vh;
+}
+
+.reservation-room .package .info-price {
+  flex: 0.2;
+  padding: 0.5rem;
+  width: 100%;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reservation-room .package .info-price > div {
+  text-align: right;
+}
+
+.reservation-room .package .info-price .btn {
+  border-radius: 0;
+  margin: 0;
+  align-self: flex-end;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.reservation-room .package .info-price span {
+  font-weight: bold;
+}
+
+.reservation-room .package .info-price p {
+  line-height: 1.3rem;
+}
+
+.reservation-room .package .content {
+  flex: 0.5;
+  padding: 0.5rem 1rem;
+}
+
+.reservation-room .package .content h2 {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  color: var(--lightBlack);
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.reservation-room .extras {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.reservation-room .extras p span {
+  font-weight: bold;
+  color: var(--lightBlack);
+}
+
+@media screen and (max-width: 768px) {
+  .reservation-room .header-top {
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .reservation-room .header-top div,
+  .reservation-room .header-bottom {
+    display: block;
+  }
+
+  .reservation-room .header-top p,
+  .reservation-room .header-bottom p {
+    padding: 0.5rem;
+    margin: 0;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .reservation-room .package {
+    display: block;
+  }
+
+  .reservation-room .package .image {
+    max-width: 100%;
+  }
+
+  .reservation-room .package .image img {
+    max-height: 30vh;
+  }
+
+  .reservation-room .package .content {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .reservation-room .package .info-price {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .reservation-room .header-top {
+    display: block;
+  }
+
+  .reservation-room .package .info-price {
+    flex-direction: column;
+  }
+
+  .reservation-room .header-top a,
+  .reservation-room .package .info-price > div,
+  .reservation-room .package .info-price .btn {
+    width: 100%;
+  }
+
+  .reservation-room .package .info-price > div {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* --------------------------------End of Reservation Room------------------------------ */
 
 /* -------------------------------End of Reservation----------------------------- */

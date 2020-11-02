@@ -27,6 +27,7 @@ import Inquiry from "./pages/Inquiry";
 import OurGallery from "./pages/OurGallery";
 import Reservation from "./pages/Reservation";
 import Calendar from "./Calendar";
+import ReservationRoom from "./pages/ReservationRoom";
 
 const App = () => {
   return (
@@ -43,6 +44,7 @@ const App = () => {
           component={Amenities}
         />
         <Route exact path="/plan-your-stay" component={Reservation} />
+        <Route exact path="/choose-your-room" component={ReservationRoom} />
         <Route exact path="/experiences" component={Experiences} />
         <Route exact path="/experiences/adventure" component={Experiences} />
         <Route exact path="/experiences/family" component={Family} />

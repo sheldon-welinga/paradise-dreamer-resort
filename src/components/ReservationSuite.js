@@ -1,10 +1,14 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 const ReservationSuite = (props) => {
-  const { image, title, description, size, views } = props.room;
+  const { image, title, description, size, views, price } = props.room;
 
-  //   let splittedView =
-  console.log(views.length);
+  const handleClick = () => {
+    localStorage.setItem("room", JSON.stringify(props.room));
+
+    props.history.push("/choose-your-room");
+  };
 
   return (
     <div className="reservation-suite">
@@ -33,11 +37,11 @@ const ReservationSuite = (props) => {
       <div className="info-price">
         <div className="price">
           <p>
-            from <span>Kshs. 25,000</span>
+            from <span>Kshs. {price}</span>
           </p>
           <p>average per night</p>
         </div>
-        <button type="button" className="btn btn-primary">
+        <button type="button" onClick={handleClick} className="btn btn-primary">
           Select Room
         </button>
       </div>
@@ -45,4 +49,4 @@ const ReservationSuite = (props) => {
   );
 };
 
-export default ReservationSuite;
+export default withRouter(ReservationSuite);
