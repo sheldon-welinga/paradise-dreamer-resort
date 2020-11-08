@@ -120,7 +120,7 @@ class SingleRoom extends Component {
         <StyledHero image={image} />
         <div className="single-room-content">
           <p>{content}</p>
-          <Link to="/rates" className="btn btn-default">
+          <Link to="/plan-your-stay" className="btn btn-default">
             Check Rates
           </Link>
         </div>

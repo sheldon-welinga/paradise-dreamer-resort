@@ -182,18 +182,20 @@ class Treatments extends Component {
                 value={search}
                 onChange={this.handleChange}
               />
-              <select
-                name="treatmentType"
-                id="treatmentType"
-                value={treatmentType}
-                onChange={this.handleChange}
-              >
-                {allTypes.map((item, index) => (
-                  <option key={index} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
+              <div className="select">
+                <select
+                  name="treatmentType"
+                  id="treatmentType"
+                  value={treatmentType}
+                  onChange={this.handleChange}
+                >
+                  {allTypes.map((item, index) => (
+                    <option key={index} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </div>
 
               <div className="form-group">
                 <label htmlFor="amount">Treatment Amount in Kshs.</label>

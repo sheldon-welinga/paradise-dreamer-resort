@@ -161,11 +161,6 @@ const Calendar = (props) => {
           nextMonthStart++;
         }
 
-        //check if today's date and add today class to column
-        if (column.dataset.date.trim() === todayFormatted.trim()) {
-          column.classList.add("today");
-        }
-
         checkDates(column);
 
         //append column to row
@@ -182,6 +177,10 @@ const Calendar = (props) => {
     const dataSetDate = new Date(dataSetValue);
     const todayStringDate = new Date(todayFormatted);
 
+    if (dataSetDate.toDateString() === todayStringDate.toDateString()) {
+      col.classList.add("today");
+    }
+
     if (dataSetDate < todayStringDate) {
       col.classList.add("prev-dates");
     } else {
@@ -196,7 +195,6 @@ const Calendar = (props) => {
   //get prev month
   const getPrevMonth = (e) => {
     e.preventDefault();
-    // document.querySelector(".calendar-header-top").innerHTML = "";
     selected = new Date(selected.getFullYear(), selected.getMonth() - 1, 1);
     renderCalendar(this);
   };

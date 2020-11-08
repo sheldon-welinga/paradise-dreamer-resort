@@ -169,7 +169,7 @@ class GuestInformation extends Component {
                       onChange={this.handleChange}
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group select">
                     <p>Gender*</p>
                     <select
                       name="gender"

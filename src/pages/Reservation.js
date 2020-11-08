@@ -219,7 +219,7 @@ class Reservation extends Component {
               )}
             </div>
 
-            <div className="form-group">
+            <div className="form-group select">
               <select
                 name="adult"
                 id="adult"
@@ -235,7 +235,7 @@ class Reservation extends Component {
                   ))}
               </select>
             </div>
-            <div className="form-group">
+            <div className="form-group select">
               <select
                 name="child"
                 id="child"

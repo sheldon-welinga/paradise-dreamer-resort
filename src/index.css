@@ -95,6 +95,46 @@ a {
   color: var(--white);
 }
 
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  position: relative;
+}
+
+.select::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  transform: rotate(225deg);
+  margin-top: -7px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  pointer-events: none;
+}
+
+/* .select::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  top: 50%;
+  right: 0.5rem;
+  z-index: 10;
+  transform: translateY(-100%) rotate(225deg);
+  position: absolute;
+  border-top: 2px solid var(--lightBlack);
+  border-left: 2px solid var(--lightBlack);
+} */
+
 /* --------------------------Accordion--------------------- */
 .accordion .accordion-list {
   border-top: 1px solid gray;
@@ -2197,6 +2237,14 @@ a {
   display: inline-flex;
   padding: 0.8rem;
   color: var(--lightBlack);
+  background-color: var(--white);
+  border: 1px solid var(--lightBlack);
+}
+
+.treatments .treatments-section-two .select::after {
+  left: 0.6rem;
+  border-top-color: var(--lightGray);
+  border-left-color: var(--lightGray);
 }
 
 .treatments .treatments-section-two .search-bar .form-group > div {
@@ -2335,7 +2383,8 @@ a {
   .treatments .treatments-section-two .search-bar .form-control,
   .treatments .treatments-section-two .search-bar form,
   .treatments .treatments-section-two .search-bar select,
-  .treatments .treatments-section-two .search-bar .form-group {
+  .treatments .treatments-section-two .search-bar .form-group,
+  .treatments .treatments-section-two .select {
     width: 100%;
   }
 
@@ -2449,6 +2498,17 @@ a {
   max-width: 700px;
 }
 
+.book-treatment .select {
+  max-width: 700px;
+}
+
+.book-treatment .select::after {
+  right: 0.5rem;
+  margin-top: 2px;
+  border-top-color: var(--lightBlack);
+  border-left-color: var(--lightBlack);
+}
+
 .book-treatment .book-treatment-form .form-group {
   margin: 1rem 0;
 }
@@ -2462,6 +2522,7 @@ a {
   width: 100%;
   padding: 0.7rem 1rem;
   color: var(--lightBlack);
+  border: 1px solid gray;
 }
 
 .book-treatment-form .form-group select:focus {
@@ -2523,6 +2584,17 @@ a {
   color: var(--lightBlack);
   outline: none;
   border: 1px solid gray;
+}
+
+.guest-info .select {
+  max-width: 700px;
+}
+
+.guest-info .select::after {
+  right: 0.5rem;
+  margin-top: 2px;
+  border-top-color: var(--lightBlack);
+  border-left-color: var(--lightBlack);
 }
 
 .guest-info .guest-info-form .form-group.invalid-error .form-control {
@@ -2840,8 +2912,20 @@ a {
   padding: 0.7rem 1rem;
   margin-bottom: 0.5rem;
   color: var(--lightBlack);
+  background-color: var(--white);
   outline: none;
   border: 1px solid gray;
+}
+
+.inquiry .select {
+  max-width: 650px;
+}
+
+.inquiry .select::after {
+  right: 0.5rem;
+  margin-top: -10px;
+  border-top-color: var(--lightBlack);
+  border-left-color: var(--lightBlack);
 }
 
 .inquiry .form-group:not(.textarea).invalid-error::after {
@@ -3037,8 +3121,11 @@ a {
   border: 1px solid gray;
 }
 
-.reservation-search-rooms .form-group select option {
-  height: 100px;
+.reservation-search-rooms .select::after {
+  right: 0.5rem;
+  margin-top: -10px;
+  border-top-color: var(--lightBlack);
+  border-left-color: var(--lightBlack);
 }
 
 .reservation-search-rooms .form-group .calendar {

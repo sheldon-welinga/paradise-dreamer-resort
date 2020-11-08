@@ -255,7 +255,7 @@ class BookTreatment extends Component {
                   <option value={guest}>{guest}</option>
                 </select>
               </div>
-              <div className="form-group">
+              <div className="form-group select">
                 <p>Treatment 1</p>
                 <select
                   name="treatment"
@@ -274,7 +274,7 @@ class BookTreatment extends Component {
                   ))}
                 </select>
               </div>
-              <div className="form-group">
+              <div className="form-group select">
                 <p>Therapist Preference</p>
                 <select
                   name="therapist"
@@ -287,7 +287,7 @@ class BookTreatment extends Component {
                   <option value="Female">Female</option>
                 </select>
               </div>
-              <div className="form-group">
+              <div className="form-group select">
                 <p>Date</p>
                 <select
                   name="date"
@@ -303,7 +303,7 @@ class BookTreatment extends Component {
                     ))}
                 </select>
               </div>
-              <div className="form-group">
+              <div className="form-group select">
                 <p>Time</p>
                 <select
                   name="time"

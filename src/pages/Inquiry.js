@@ -101,7 +101,7 @@ class Inquiry extends Component {
             )}
 
             <form onSubmit={this.handleSubmit}>
-              <div className="form-group">
+              <div className="form-group select">
                 <select
                   name="title"
                   id="title"
