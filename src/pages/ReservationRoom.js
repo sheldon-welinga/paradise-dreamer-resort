@@ -70,6 +70,8 @@ class ReservationRoom extends Component {
     const storageItems = JSON.parse(localStorage.getItem("bookingInfo"));
 
     storageItems.packagePrice = chosenPrice;
+    storageItems.beds = `${this.state.kingbed} and ${this.state.queenbed}`;
+    storageItems.roomName = this.state.roomName;
 
     localStorage.setItem("bookingInfo", JSON.stringify(storageItems));
 

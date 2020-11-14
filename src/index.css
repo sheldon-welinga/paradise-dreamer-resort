@@ -3513,5 +3513,243 @@ select::-ms-expand {
 }
 
 /* --------------------------------End of Reservation Room------------------------------ */
+/* -------------------------------Reservation Confirm------------------------------------- */
+.reservation-confirm {
+  padding: 0;
+}
+
+.reservation-confirm .main-reservation-section {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.main-reservation-section .reservation-summary {
+  flex: 0.3;
+  padding: 0.5rem;
+}
+
+.main-reservation-section .reservation-form {
+  flex: 0.7;
+  padding: 0.5rem;
+}
+
+.main-reservation-section .title {
+  color: var(--lightBlack);
+  text-transform: uppercase;
+  padding: 1rem 0;
+  text-align: center;
+  font: 400 1.3rem "Playfair Display", Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+}
+
+.reservation-summary .content,
+.reservation-summary .top-details {
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid var(--lightGray);
+}
+
+.reservation-summary .top-details {
+  border: 1px solid var(--lightGray);
+  background-color: #fffddb;
+}
+
+.reservation-summary .top-details .room-name,
+.reservation-summary p span {
+  font-weight: bold;
+}
+
+.reservation-summary p span {
+  padding-left: 0.5rem;
+  width: 150px;
+}
+
+.reservation-summary p {
+  padding: 0.45rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reservation-summary .top-details .partition {
+  border-top: 1px solid var(--lightGray);
+}
+
+.reservation-summary .tax-details {
+  border-bottom: 1px solid var(--lightGray);
+  margin-bottom: 1rem;
+}
+
+.reservation-summary .room-total p:last-child {
+  font-size: 1.2rem;
+}
+
+/* ----------------Reservation Confirm Form----------------------- */
+.reservation-form .form-heading {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: var(--maroon);
+  color: var(--white);
+}
+
+.reservation-form .form-group {
+  display: flex;
+  border: 1px solid var(--lightGray);
+  border-top: none;
+}
+
+.reservation-form .form-group .label {
+  flex: 0.3;
+  min-width: 195px;
+}
+
+.reservation-form .form-group .input-field {
+  flex: 0.7;
+}
+
+.reservation-form .form-group .credit-card {
+  display: flex;
+}
+
+.reservation-form .form-group .credit-card > div {
+  flex: 0.5;
+}
+
+.reservation-form .form-group .label label {
+  width: 100%;
+  height: 100%;
+  padding: 0.6rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.reservation-form .form-group select {
+  cursor: pointer;
+}
+
+.reservation-form .select::after {
+  right: 0.5rem;
+  margin-top: -10px;
+}
+
+.reservation-form .form-group .form-control {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-left: 1px solid var(--lightGray);
+  padding: 0.5rem;
+  outline: none;
+}
+
+.reservation-form .form-group input::-webkit-outer-spin-button,
+.reservation-form .form-group input::-webkit-inner-spin-button,
+.reservation-form .form-group input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.reservation-form .terms,
+.reservation-form .consent {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.reservation-form .terms p,
+.reservation-form .consent p {
+  margin-left: 1rem;
+}
+
+.reservation-form .btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reservation-form .btn-container .btn {
+  border-radius: 0;
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.reservation-form .accepted-cards {
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  padding: 0.5rem;
+  border: 1px solid var(--lightGray);
+  border-top: none;
+}
+
+.reservation-form .accepted-cards .card {
+  max-width: 40px;
+  max-height: 27px;
+  display: inline-flex;
+  margin: 0 0.2rem;
+}
+
+.reservation-form .accepted-cards span {
+  margin-right: 1rem;
+}
+
+.reservation-confirm .cost-estimation {
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* ---------------End of Reservation Confirm Form ---------------- */
+
+@media screen and (min-width: 769px) and (max-width: 1090px) {
+  .reservation-summary p {
+    display: block;
+  }
+
+  .reservation-summary p span {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-reservation-section,
+  .reservation-form .form-group {
+    flex-direction: column;
+  }
+
+  .reservation-form .form-heading {
+    margin: 0.5rem 0;
+  }
+
+  .reservation-form .form-group {
+    border: none;
+    margin-bottom: 1rem;
+  }
+
+  .reservation-form .form-group .label label {
+    padding: 0;
+  }
+
+  .reservation-form .form-group .form-control,
+  .reservation-form .accepted-cards {
+    border: 1px solid var(--lightGray);
+  }
+
+  .reservation-form .btn-container .btn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .reservation-summary p {
+    display: block;
+  }
+
+  .reservation-summary p span {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+}
+
+/* -----------------------------End of Reservation Confirm--------------------------------- */
 
 /* -------------------------------End of Reservation----------------------------- */
