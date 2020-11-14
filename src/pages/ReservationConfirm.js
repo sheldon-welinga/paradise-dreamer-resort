@@ -17,8 +17,33 @@ class ReservationConfirm extends Component {
       roomTax: "",
       stateTax: "",
       roomTotal: "",
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      email: "",
+      confirmEmail: "",
+      country: "",
+      countries: [],
+      cardName: "",
+      cardNumber: "",
+      expiryMonth: "",
+      monthsArray: [],
+      expiryYear: "",
+      yearsArray: [],
     };
   }
+
+  //fetch countries
+  fetchCountries = async () => {
+    try {
+      const response = await fetch("/data.json");
+      const data = await response.json();
+
+      return data.countries;
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   componentDidMount() {
     const bookingInfo = JSON.parse(localStorage.getItem("bookingInfo"));
@@ -41,6 +66,25 @@ class ReservationConfirm extends Component {
         Number(stateTax.split(",").join(""))
       ).toLocaleString("en-US", { maximumFractionDigits: 2 });
 
+      this.fetchCountries().then((data) => {
+        this.setState({ countries: data });
+      });
+
+      const currentYear = new Date().getFullYear();
+      let yearsArray = ["Year"];
+      let monthsArray = ["Month"];
+
+      for (let year = currentYear; year < currentYear + 20; year++) {
+        yearsArray = [...yearsArray, year];
+      }
+
+      for (let i = 1; i <= 12; i++) {
+        let month = `${i < 10 ? `0${i}` : i}`;
+        monthsArray = [...monthsArray, month];
+      }
+
+      // console.log(monthsArray);
+
       this.setState({
         adults: bookingInfo.adults,
         checkIn: new Date(bookingInfo.checkIn).toDateString(),
@@ -52,9 +96,24 @@ class ReservationConfirm extends Component {
         roomTax,
         stateTax,
         roomTotal,
+        monthsArray,
+        yearsArray,
       });
     }
   }
+
+  //handle input change
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  //handle form submission for confirming reservation booking
+  handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   render() {
     const {
       adults,
@@ -67,6 +126,19 @@ class ReservationConfirm extends Component {
       roomTax,
       stateTax,
       roomTotal,
+      firstName,
+      lastName,
+      phoneNumber,
+      email,
+      confirmEmail,
+      country,
+      countries,
+      cardName,
+      cardNumber,
+      expiryMonth,
+      monthsArray,
+      expiryYear,
+      yearsArray,
     } = this.state;
 
     return (
@@ -117,7 +189,7 @@ class ReservationConfirm extends Component {
           </div>
           <div className="reservation-form">
             <h2 className="title">Confirm Your Stay</h2>
-            <form>
+            <form onSubmit={this.handleSubmit}>
               <div className="form-heading">Guest Details</div>
               {/* form group */}
               <div className="form-group">
@@ -130,6 +202,8 @@ class ReservationConfirm extends Component {
                     name="firstName"
                     id="firstName"
                     className="form-control"
+                    value={firstName}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -145,6 +219,8 @@ class ReservationConfirm extends Component {
                     name="lastName"
                     id="lastName"
                     className="form-control"
+                    value={lastName}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -160,6 +236,8 @@ class ReservationConfirm extends Component {
                     name="phoneNumber"
                     id="phoneNumber"
                     className="form-control"
+                    value={phoneNumber}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -175,6 +253,8 @@ class ReservationConfirm extends Component {
                     name="email"
                     id="email"
                     className="form-control"
+                    value={email}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -190,6 +270,8 @@ class ReservationConfirm extends Component {
                     name="confirmEmail"
                     id="confirmEmail"
                     className="form-control"
+                    value={confirmEmail}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -200,8 +282,17 @@ class ReservationConfirm extends Component {
                   <label htmlFor="country">Country/Region*</label>
                 </div>
                 <div className="input-field select">
-                  <select name="country" id="country" className="form-control">
-                    <option>Kenya</option>
+                  <select
+                    name="country"
+                    id="country"
+                    className="form-control"
+                    value={country}
+                    onChange={this.handleChange}
+                  >
+                    {countries &&
+                      countries.map((country, index) => (
+                        <option key={index}>{country.name}</option>
+                      ))}
                   </select>
                 </div>
               </div>
@@ -218,6 +309,8 @@ class ReservationConfirm extends Component {
                     name="cardName"
                     id="cardName"
                     className="form-control"
+                    value={cardName}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -233,6 +326,8 @@ class ReservationConfirm extends Component {
                     name="cardNumber"
                     id="cardNumber"
                     className="form-control"
+                    value={cardNumber}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -248,17 +343,27 @@ class ReservationConfirm extends Component {
                       name="expiryMonth"
                       id="expiryMonth"
                       className="form-control"
+                      value={expiryMonth}
+                      onChange={this.handleChange}
                     >
-                      <option>Month</option>
+                      {monthsArray &&
+                        monthsArray.map((month, index) => (
+                          <option key={index}>{month}</option>
+                        ))}
                     </select>
                   </div>
                   <div className="inline-input-field select">
                     <select
                       name="expiryYear"
-                      id="epiryYear"
+                      id="expiryYear"
                       className="form-control"
+                      value={expiryYear}
+                      onChange={this.handleChange}
                     >
-                      <option>Year</option>
+                      {yearsArray &&
+                        yearsArray.map((year, index) => (
+                          <option key={index}>{year}</option>
+                        ))}
                     </select>
                   </div>
                 </div>
