@@ -121,9 +121,11 @@ const Calendar = (props) => {
             //increate current month counter by 1
             column.setAttribute(
               "data-date",
-              `${selected.getFullYear()}-${selected.getMonth() + 1}-${
-                x < 10 ? `0${x}` : x
-              }`
+              `${selected.getFullYear()}-${
+                selected.getMonth() + 1 < 10
+                  ? `0${selected.getMonth() + 1}`
+                  : selected.getMonth() + 1
+              }-${x < 10 ? `0${x}` : x}`
             );
             numberEl.innerHTML = x;
             x++;
@@ -135,9 +137,11 @@ const Calendar = (props) => {
           //increase current month counter by 1
           column.setAttribute(
             "data-date",
-            `${selected.getFullYear()}-${selected.getMonth() + 1}-${
-              x < 10 ? `0${x}` : x
-            }`
+            `${selected.getFullYear()}-${
+              selected.getMonth() + 1 < 10
+                ? `0${selected.getMonth() + 1}`
+                : selected.getMonth() + 1
+            }-${x < 10 ? `0${x}` : x}`
           );
           numberEl.innerHTML = x;
           x++;
@@ -154,9 +158,13 @@ const Calendar = (props) => {
               selected.getMonth() + 2 === 13
                 ? selected.getFullYear() + 1
                 : selected.getFullYear()
-            }-${selected.getMonth() + 2 === 13 ? 1 : selected.getMonth() + 2}-${
-              nextMonthStart < 10 ? `0${nextMonthStart}` : nextMonthStart
-            }`
+            }-${
+              selected.getMonth() + 2 === 13
+                ? `0${1}`
+                : selected.getMonth() + 2 < 10
+                ? `0${selected.getMonth() + 2}`
+                : selected.getMonth() + 2
+            }-${nextMonthStart < 10 ? `0${nextMonthStart}` : nextMonthStart}`
           );
           nextMonthStart++;
         }
@@ -226,10 +234,6 @@ const Calendar = (props) => {
   useEffect(() => {
     renderCalendar();
   });
-  //display calendar
-  // componentDidMount() {
-  //   this.renderCalendar();
-  // }
 
   return (
     <div className="calendar" data-calendar>

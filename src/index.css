@@ -220,7 +220,7 @@ select::-ms-expand {
 /* --------------End of Globals ----------------------------- */
 /* ---------------------------Error Page------------------------ */
 .error {
-  color: rgb(226, 67, 67);
+  color: var(--error);
   padding: 1rem;
   text-align: center;
 }
@@ -2302,7 +2302,7 @@ select::-ms-expand {
 }
 
 .treatments .treatment-error .main-error {
-  color: rgb(226, 67, 67);
+  color: var(--error);
   font-weight: bold;
   letter-spacing: 1.5px;
   margin-bottom: 1rem;
@@ -2598,12 +2598,12 @@ select::-ms-expand {
 }
 
 .guest-info .guest-info-form .form-group.invalid-error .form-control {
-  border-color: rgb(226, 67, 67);
-  color: rgb(226, 67, 67);
+  border-color: var(--error);
+  color: var(--error);
 }
 
 .guest-info .guest-info-form .form-group.invalid-error p {
-  color: rgb(226, 67, 67);
+  color: var(--error);
 }
 
 .guest-info
@@ -2615,7 +2615,7 @@ select::-ms-expand {
   height: 2px;
   bottom: -2px;
   z-index: 10;
-  color: rgb(226, 67, 67);
+  color: var(--error);
 }
 
 .guest-info .guest-info-form .form-group.success .form-control {
@@ -3132,20 +3132,36 @@ select::-ms-expand {
   position: absolute;
 }
 
-.reservation-search-rooms .form-group.invalid-error .form-control {
-  border-color: rgb(226, 67, 67);
-  color: rgb(226, 67, 67);
+.reservation-search-rooms .form-group.invalid-error,
+.reservation-search-rooms .form-group.checkout-error {
+  margin-bottom: 1.3rem;
 }
 
-.reservation-search-rooms .form-group.invalid-error:not(.promo-code)::after {
+.reservation-search-rooms .form-group.invalid-error .form-control::placeholder {
+  color: var(--error);
+}
+
+.reservation-search-rooms .form-group.invalid-error .form-control,
+.reservation-search-rooms .form-group.checkout-error .form-control {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.reservation-search-rooms .form-group.invalid-error:not(.promo-code)::after,
+.reservation-search-rooms .form-group.checkout-error::after {
   content: "This field cannot be empty";
   display: block;
   position: absolute;
   height: 2px;
-  bottom: -2px;
+  bottom: 4px;
   z-index: 10;
-  color: rgb(226, 67, 67);
+  color: var(--error);
 }
+
+.reservation-search-rooms .form-group.checkout-error::after {
+  content: "Checkout  date cannot be before checkin date";
+}
+
 .reservation-search-rooms .form-group.success .form-control {
   border-color: var(--success);
   color: var(--success);
@@ -3641,11 +3657,57 @@ select::-ms-expand {
   outline: none;
 }
 
+.reservation-confirm .inputs,
+.reservation-confirm .terms,
+.reservation-confirm .consent {
+  position: relative;
+}
+
+.reservation-confirm .inputs.invalid-error .form-control {
+  border: 1px solid;
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.reservation-confirm .terms.invalid-error::after,
+.reservation-confirm .consent.invalid-error::after {
+  content: "Please check this field to continue";
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  color: var(--error);
+  z-index: 10;
+}
+
+.reservation-confirm .inputs.inline-input-field.invalid-error::after {
+  border-color: var(--error);
+}
+
+.reservation-confirm .inputs:not(.inline-input-field).invalid-error::before {
+  content: "!";
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  color: var(--error);
+}
+
+/* .reservation-confirm .inputs.success .form-control {
+  border-color: var(--lightGray);
+  color: var(--lightGray);
+} */
+
 .reservation-form .form-group input::-webkit-outer-spin-button,
 .reservation-form .form-group input::-webkit-inner-spin-button,
 .reservation-form .form-group input[type="number"] {
   -webkit-appearance: none;
   -moz-appearance: textfield;
+}
+
+.reservation-form input[type="checkbox"] {
+  cursor: pointer;
 }
 
 .reservation-form .terms,
@@ -3672,6 +3734,7 @@ select::-ms-expand {
 
 .reservation-form .accepted-cards {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   font-style: italic;
   padding: 0.5rem;
@@ -3693,6 +3756,10 @@ select::-ms-expand {
 .reservation-confirm .cost-estimation {
   padding: 1rem;
   margin-bottom: 3rem;
+}
+
+.reservation-confirm .asterisk {
+  padding: 1rem 0;
 }
 
 /* ---------------End of Reservation Confirm Form ---------------- */
@@ -3741,6 +3808,10 @@ select::-ms-expand {
 @media screen and (max-width: 360px) {
   .reservation-summary p {
     display: block;
+  }
+
+  .reservation-form .accepted-cards span {
+    width: 100%;
   }
 
   .reservation-summary p span {

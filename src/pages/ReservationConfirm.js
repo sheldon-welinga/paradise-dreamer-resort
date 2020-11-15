@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ReservationSteps from "../components/ReservationSteps";
+import { counterCheckerForReservationConfirm } from "../functions/checkerFucntions";
+import {
+  mastercardVerify,
+  visaCardVerify,
+} from "../functions/creditCardsVerification";
 
 class ReservationConfirm extends Component {
   constructor(props) {
@@ -13,6 +18,7 @@ class ReservationConfirm extends Component {
       checkIn: "",
       checkOut: "",
       roomName: "",
+      roomId: "",
       packagePrice: "",
       roomTax: "",
       stateTax: "",
@@ -30,6 +36,8 @@ class ReservationConfirm extends Component {
       monthsArray: [],
       expiryYear: "",
       yearsArray: [],
+      checkTerms: false,
+      checkConsent: false,
     };
   }
 
@@ -83,13 +91,12 @@ class ReservationConfirm extends Component {
         monthsArray = [...monthsArray, month];
       }
 
-      // console.log(monthsArray);
-
       this.setState({
         adults: bookingInfo.adults,
         checkIn: new Date(bookingInfo.checkIn).toDateString(),
         checkOut: new Date(bookingInfo.checkOut).toDateString(),
         roomName: bookingInfo.roomName,
+        roomId: bookingInfo.roomId,
         children: bookingInfo.children,
         beds: bookingInfo.beds,
         packagePrice: bookingInfo.packagePrice,
@@ -109,9 +116,88 @@ class ReservationConfirm extends Component {
     });
   };
 
+  //handle terms checkbox change
+  handleCheckTerms = () => {
+    this.setState({
+      checkTerms: !this.state.checkTerms,
+    });
+  };
+
+  //handle terms checkbox change
+  handleCheckConsent = () => {
+    this.setState({
+      checkConsent: !this.state.checkConsent,
+    });
+  };
+
   //handle form submission for confirming reservation booking
   handleSubmit = (e) => {
     e.preventDefault();
+
+    const inputFields = [...document.querySelectorAll(".inputs")];
+
+    const counter = counterCheckerForReservationConfirm(
+      inputFields,
+      "invalid-error",
+      "success",
+      "promo-code",
+      "Month",
+      "Year"
+    );
+
+    const details = {
+      adults: this.state.adults,
+      children: this.state.children,
+      roomName: this.state.roomName,
+      roomId: this.state.roomId,
+      checkIn: this.state.checkIn,
+      checkOut: this.state.checkOut,
+      roomPrice: this.state.packagePrice,
+      roomTax: this.state.roomTax,
+      stateTax: this.state.stateTax,
+      roomTotal: this.state.roomTotal,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      phoneNumber: this.state.phoneNumber,
+      email: this.state.email,
+      country: this.state.country,
+      cardName: this.state.cardName,
+      cardNumber: this.state.cardNumber,
+      cardExpiryMonth: this.state.expiryMonth,
+      cardExpiryYear: this.state.expiryYear,
+    };
+
+    if (!this.state.checkTerms) {
+      document.querySelector(".terms").classList.add("invalid-error");
+    } else {
+      document.querySelector(".terms").classList.remove("invalid-error");
+    }
+
+    if (!this.state.checkConsent) {
+      document.querySelector(".consent").classList.add("invalid-error");
+    } else {
+      document.querySelector(".consent").classList.remove("invalid-error");
+    }
+
+    if (this.state.email !== this.state.confirmEmail) {
+      document.getElementById("confirm-email").classList.add("invalid-error");
+    } else if (
+      //validate the credit cards
+      !(
+        this.state.cardNumber.match(visaCardVerify) ||
+        this.state.cardNumber.match(mastercardVerify)
+      )
+    ) {
+      document.getElementById("confirm-card").classList.add("invalid-error");
+    } else {
+      if (
+        counter >= inputFields.length &&
+        this.state.checkTerms &&
+        this.state.checkConsent
+      ) {
+        console.log(details);
+      }
+    }
   };
 
   render() {
@@ -139,6 +225,8 @@ class ReservationConfirm extends Component {
       monthsArray,
       expiryYear,
       yearsArray,
+      checkTerms,
+      checkConsent,
     } = this.state;
 
     return (
@@ -189,6 +277,9 @@ class ReservationConfirm extends Component {
           </div>
           <div className="reservation-form">
             <h2 className="title">Confirm Your Stay</h2>
+            <div className="asterisk">
+              * asterisk indicates a required field
+            </div>
             <form onSubmit={this.handleSubmit}>
               <div className="form-heading">Guest Details</div>
               {/* form group */}
@@ -196,7 +287,7 @@ class ReservationConfirm extends Component {
                 <div className="label">
                   <label htmlFor="firstName">First Name*</label>
                 </div>
-                <div className="input-field">
+                <div className="input-field inputs">
                   <input
                     type="text"
                     name="firstName"
@@ -213,7 +304,7 @@ class ReservationConfirm extends Component {
                 <div className="label">
                   <label htmlFor="lastName">Last Name*</label>
                 </div>
-                <div className="input-field">
+                <div className="input-field inputs">
                   <input
                     type="text"
                     name="lastName"
@@ -230,7 +321,7 @@ class ReservationConfirm extends Component {
                 <div className="label">
                   <label htmlFor="phoneNumber">Phone Number*</label>
                 </div>
-                <div className="input-field">
+                <div className="input-field inputs">
                   <input
                     type="tel"
                     name="phoneNumber"
@@ -247,7 +338,7 @@ class ReservationConfirm extends Component {
                 <div className="label">
                   <label htmlFor="email">Email Address*</label>
                 </div>
-                <div className="input-field">
+                <div className="input-field inputs">
                   <input
                     type="text"
                     name="email"
@@ -264,7 +355,7 @@ class ReservationConfirm extends Component {
                 <div className="label">
                   <label htmlFor="confirmEmail">Confirm Email Address*</label>
                 </div>
-                <div className="input-field">
+                <div className="input-field inputs" id="confirm-email">
                   <input
                     type="text"
                     name="confirmEmail"
@@ -281,7 +372,7 @@ class ReservationConfirm extends Component {
                 <div className="label">
                   <label htmlFor="country">Country/Region*</label>
                 </div>
-                <div className="input-field select">
+                <div className="input-field select inputs">
                   <select
                     name="country"
                     id="country"
@@ -303,7 +394,7 @@ class ReservationConfirm extends Component {
                 <div className="label">
                   <label htmlFor="cardName">Name on Card*</label>
                 </div>
-                <div className="input-field">
+                <div className="input-field inputs">
                   <input
                     type="text"
                     name="cardName"
@@ -320,7 +411,7 @@ class ReservationConfirm extends Component {
                 <div className="label">
                   <label htmlFor="cardNumber">Credit Card Number*</label>
                 </div>
-                <div className="input-field">
+                <div className="input-field inputs" id="confirm-card">
                   <input
                     type="number"
                     name="cardNumber"
@@ -338,7 +429,7 @@ class ReservationConfirm extends Component {
                   <label>Credit Card Expiry Date*</label>
                 </div>
                 <div className="input-field credit-card">
-                  <div className="inline-input-field select">
+                  <div className="inline-input-field select inputs">
                     <select
                       name="expiryMonth"
                       id="expiryMonth"
@@ -352,7 +443,7 @@ class ReservationConfirm extends Component {
                         ))}
                     </select>
                   </div>
-                  <div className="inline-input-field select">
+                  <div className="inline-input-field select inputs">
                     <select
                       name="expiryYear"
                       id="expiryYear"
@@ -372,17 +463,17 @@ class ReservationConfirm extends Component {
               <div className="accepted-cards">
                 <span>Accepted Cards</span>
                 <img
-                  src="https://www.casinonewsdaily.com/wp-content/uploads/2015/08/visa-card-logo.jpg"
+                  src="/images/visacard.jpg"
                   alt="visa card"
                   className="img-responsive card"
                 />
                 <img
-                  src="https://lh3.googleusercontent.com/proxy/TB_Lv61b5HPEkzpOvAa2UNH2ZXfo5qix0_M9A700zV4D4BjjPK5Mck_2bUYiohU4USZBzmekOls_vFbBGD7rBhMIBf9OvJyPLFUuitOwTTy-8z38zXOiGSYbPag6JfXjfAclfQ"
+                  src="/images/mastercard.png"
                   alt="master card"
                   className="img-responsive card"
                 />
                 <img
-                  src="https://www.sketchappsources.com/resources/source-image/PayPalCard.png"
+                  src="/images/paypalcard.png"
                   alt="paypal card"
                   className="img-responsive card"
                 />
@@ -394,6 +485,8 @@ class ReservationConfirm extends Component {
                   name="checkTerms"
                   id="checkTerms"
                   className="form-control"
+                  value={checkTerms}
+                  onChange={this.handleCheckTerms}
                 />
                 <p>
                   I have read &amp; accepted the{" "}
@@ -403,9 +496,11 @@ class ReservationConfirm extends Component {
               <div className="consent">
                 <input
                   type="checkbox"
-                  name="checkConcent"
+                  name="checkConsent"
                   id="checkConsent"
                   className="form-control"
+                  value={checkConsent}
+                  onChange={this.handleCheckConsent}
                 />
                 <p>
                   I consent to Paradise Dreamer sending me electronic

@@ -56,4 +56,37 @@ const counterCheckerForClasses = (
   return counter;
 };
 
-export { classChecker, counterCheckerForClasses };
+const counterCheckerForReservationConfirm = (
+  array,
+  classToBeChecked,
+  classToBeAdded,
+  classToBeExcluded,
+  containValue1,
+  containValue2
+) => {
+  let counter = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (!array[i].classList.contains(classToBeExcluded)) {
+      if (
+        array[i].lastElementChild.value.trim() !== "" &&
+        array[i].lastElementChild.value !== containValue1 &&
+        array[i].lastElementChild.value !== containValue2
+      ) {
+        counter += 1;
+
+        classChecker(array[i], classToBeChecked, classToBeAdded);
+      } else {
+        classChecker(array[i], classToBeAdded, classToBeChecked);
+      }
+    }
+  }
+
+  return counter;
+};
+
+export {
+  classChecker,
+  counterCheckerForClasses,
+  counterCheckerForReservationConfirm,
+};

@@ -81,10 +81,6 @@ class Treatments extends Component {
 
       const searchLink = search.toLowerCase().split(" ").join("+");
 
-      // if (treatmentType === "All Treatments") {
-      //   link += `treatment-type=${treatmentTypeLink}`;
-      // }
-
       //filter by treatment type
       if (treatmentType !== "All Treatments") {
         tempTreatments = tempTreatments.filter(

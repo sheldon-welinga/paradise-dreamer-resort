@@ -99,7 +99,6 @@ class Reservation extends Component {
         adults,
         children,
         loading: false,
-        // reservationRooms: data.filter((item) => item.id === 1),
       });
     });
   };
@@ -126,30 +125,43 @@ class Reservation extends Component {
       "none"
     );
 
-    if (counter >= formGroups.length - 1) {
-      this.fetchData().then((data) => {
-        const filtered = data.filter(
-          (item) =>
-            item.children >= splittedChild && item.adults >= splittedAdult
-        );
+    const elem = document.getElementById("checkout");
 
-        this.setState({
-          reservationRooms: filtered,
+    if (checkOutDate < checkInDate) {
+      if (elem.classList.contains("success")) {
+        elem.classList.remove("success");
+      }
+
+      elem.classList.add("checkout-error");
+      this.setState({ reservationRooms: [] });
+    } else {
+      elem.classList.remove("checkout-error");
+
+      if (counter >= formGroups.length - 1) {
+        this.fetchData().then((data) => {
+          const filtered = data.filter(
+            (item) =>
+              item.children >= splittedChild && item.adults >= splittedAdult
+          );
+
+          this.setState({
+            reservationRooms: filtered,
+          });
         });
-      });
 
-      const bookingDetails = {
-        checkIn: this.state.checkInDate,
-        checkOut: this.state.checkOutDate,
-        adults: this.state.adult,
-        children: this.state.child,
-      };
+        const bookingDetails = {
+          checkIn: this.state.checkInDate,
+          checkOut: this.state.checkOutDate,
+          adults: this.state.adult,
+          children: this.state.child,
+        };
 
-      localStorage.setItem("bookingInfo", JSON.stringify(bookingDetails));
+        localStorage.setItem("bookingInfo", JSON.stringify(bookingDetails));
 
-      this.props.history.push(
-        `/plan-your-stay?checkin=${checkInDate}&checkout=${checkOutDate}&room=1&adults=${splittedAdult}&children=${splittedChild}&promocode=${promoCode}`
-      );
+        this.props.history.push(
+          `/plan-your-stay?checkin=${checkInDate}&checkout=${checkOutDate}&room=1&adults=${splittedAdult}&children=${splittedChild}&promocode=${promoCode}`
+        );
+      }
     }
   };
 
@@ -187,16 +199,14 @@ class Reservation extends Component {
                 onChange={this.onChangeCheckInDate}
                 onFocus={this.handleCheckInFocus}
               />
-              {checkIn ? (
+              {checkIn && (
                 <Calendar
                   selectedDate={checkInDate}
                   onChangeDate={this.onChangeCheckInDate}
                 />
-              ) : (
-                ""
               )}
             </div>
-            <div className="form-group">
+            <div className="form-group" id="checkout">
               <input
                 type="text"
                 name="checkOut"
@@ -209,13 +219,11 @@ class Reservation extends Component {
                 onChange={this.onChangeCheckOutDate}
                 onFocus={this.handleCheckOutFocus}
               />
-              {checkOut ? (
+              {checkOut && (
                 <Calendar
                   selectedDate={checkOutDate}
                   onChangeDate={this.onChangeCheckOutDate}
                 />
-              ) : (
-                ""
               )}
             </div>
 

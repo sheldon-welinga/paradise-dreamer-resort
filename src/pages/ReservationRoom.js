@@ -17,6 +17,7 @@ class ReservationRoom extends Component {
       queenbed: "",
       price: "",
       breakfast: "",
+      roomId: "",
     };
   }
 
@@ -55,6 +56,7 @@ class ReservationRoom extends Component {
         adults: bookingInfo.adults,
         children: bookingInfo.children,
         breakfast: room.breakFastPrice,
+        roomId: room.id,
       });
 
       //   console.log(room);
@@ -72,6 +74,7 @@ class ReservationRoom extends Component {
     storageItems.packagePrice = chosenPrice;
     storageItems.beds = `${this.state.kingbed} and ${this.state.queenbed}`;
     storageItems.roomName = this.state.roomName;
+    storageItems.roomId = this.state.roomId;
 
     localStorage.setItem("bookingInfo", JSON.stringify(storageItems));
 

@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-// import { useCallback } from "react";
-// import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
 import { StyledHero, ImageSlide } from "../components/Styled";
-// import ErrorPage from "./ErrorPage";
 
 let counter = 1;
 const clientWidthSize = 100;
@@ -16,8 +13,6 @@ class SingleRoom extends Component {
     this.state = {
       room: {},
       roomSlug: this.props.match.params.slug,
-      // counter: 1,
-      // clientWidthSize: 100,
     };
   }
 
@@ -38,11 +33,6 @@ class SingleRoom extends Component {
       console.log(err);
     }
   };
-
-  // const [room, setRoom] = useState({});
-  // const roomSlug = props.match.params.slug;
-  // let counter = 1;
-  // const clientWidthSize = 100;
 
   sliderTransionend = (slide, images) => {
     if (images[counter].id) {
