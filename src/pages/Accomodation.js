@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Loading from "../components/Loading";
 import { StyledHero } from "../components/Styled";
 import Suite from "../components/Suite";
+import { API_URL } from "../configure";
 
 class Accomodation extends Component {
   constructor(props) {
@@ -17,10 +18,11 @@ class Accomodation extends Component {
   //fetch data from the database/API
   getData = async () => {
     try {
-      const response = await fetch("/data.json");
+      const response = await fetch(`${API_URL}/accomodation-rooms/get-rooms`);
+
       const data = await response.json();
 
-      return data.accomodation;
+      return data;
     } catch (err) {
       console.log(err.message);
     }
@@ -40,6 +42,7 @@ class Accomodation extends Component {
 
   getRoomDetails = async () => {
     const data = await this.getData();
+    // console.log(DATA)
 
     this.setState({
       rooms: data.filter((room) => room.featured),
@@ -117,7 +120,7 @@ class Accomodation extends Component {
             {loading ? (
               <Loading />
             ) : rooms.length ? (
-              rooms.map((room) => <Suite key={room.id} room={room} />)
+              rooms.map((room) => <Suite key={room._id} room={room} />)
             ) : (
               <Loading />
             )}

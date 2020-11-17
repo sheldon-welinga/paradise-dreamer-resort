@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
+import { API_URL } from "../configure";
 
 class BookTreatment extends Component {
   constructor(props) {
@@ -23,10 +24,10 @@ class BookTreatment extends Component {
   //Fetch data
   fetchData = async () => {
     try {
-      const response = await fetch("/data.json");
+      const response = await fetch(`${API_URL}/treatments/`);
       const data = await response.json();
 
-      return data.treatments;
+      return data;
     } catch (err) {
       console.log(err.message);
     }
@@ -265,7 +266,7 @@ class BookTreatment extends Component {
                 >
                   {treatments.map((treatment) => (
                     <option
-                      key={treatment.id}
+                      key={treatment._id}
                       value={`${treatment.title} (KES ${treatment.amount}, ${treatment.time})`}
                     >
                       {treatment.title} (KES {treatment.amount},{" "}

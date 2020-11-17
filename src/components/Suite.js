@@ -1,6 +1,7 @@
 import React from "react";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { IMG_URL } from "../configure";
 
 const Suite = (props) => {
   const { image, title, description, size, occupancy, type, slug } = props.room;
@@ -8,7 +9,11 @@ const Suite = (props) => {
   return (
     <div className="suite">
       <div className="image">
-        <img src={image} alt={title} className="img-responsive" />
+        <img
+          src={`${IMG_URL}${image}`}
+          alt={title}
+          className="img-responsive"
+        />
       </div>
       <div className="info">
         <div className="info-title">

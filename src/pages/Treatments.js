@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Loading from "../components/Loading";
 import SingleTreatment from "../components/SingleTreatment";
 import SpaHeader from "../components/SpaHeader";
+import { API_URL } from "../configure";
 
 class Treatments extends Component {
   constructor(props) {
@@ -30,10 +31,10 @@ class Treatments extends Component {
   //fetch data from the database
   fetchData = async () => {
     try {
-      const response = await fetch("/data.json");
+      const response = await fetch(`${API_URL}/treatments/`);
       const data = await response.json();
 
-      return data.treatments;
+      return data;
     } catch (err) {
       return this.setState({
         error: err.message,
@@ -79,7 +80,7 @@ class Treatments extends Component {
         .split(" ")
         .join("+");
 
-      const searchLink = search.toLowerCase().split(" ").join("+");
+      const searchLink = search.trim().toLowerCase().split(" ").join("+");
 
       //filter by treatment type
       if (treatmentType !== "All Treatments") {
@@ -236,7 +237,7 @@ class Treatments extends Component {
               {treatments.length ? (
                 treatments.map((treatment) => (
                   <SingleTreatment
-                    key={treatment.id}
+                    key={treatment._id}
                     toggleClose={this.toggleClose}
                     treatment={treatment}
                   />

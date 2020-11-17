@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
 import { StyledHero, ImageSlide } from "../components/Styled";
+import { API_URL, IMG_URL } from "../configure";
 
 let counter = 1;
 const clientWidthSize = 100;
@@ -19,12 +20,10 @@ class SingleRoom extends Component {
   //get data
   getRoomDetails = async () => {
     try {
-      const response = await fetch("/data.json");
+      const response = await fetch(`${API_URL}/accomodation-rooms/get-rooms`);
       const data = await response.json();
 
-      const singleRoom = data.accomodation.find(
-        (room) => room.slug === this.state.roomSlug
-      );
+      const singleRoom = data.find((room) => room.slug === this.state.roomSlug);
 
       this.setState({
         room: singleRoom,
@@ -107,7 +106,7 @@ class SingleRoom extends Component {
             Back to Accomodation
           </Link>
         </div>
-        <StyledHero image={image} />
+        <StyledHero image={`${IMG_URL}${image}`} />
         <div className="single-room-content">
           <p>{content}</p>
           <Link to="/plan-your-stay" className="btn btn-default">
@@ -121,27 +120,27 @@ class SingleRoom extends Component {
               <ImageSlide
                 className="slide slide3"
                 id="lastClone"
-                img={gallery ? gallery[2] : ""}
+                img={gallery ? `${IMG_URL}${gallery[2]}` : ""}
               />
               <ImageSlide
                 className="slide"
                 id="slide1"
-                img={gallery ? gallery[0] : ""}
+                img={gallery ? `${IMG_URL}${gallery[0]}` : ""}
               />
               <ImageSlide
                 className="slide"
                 id="slide2"
-                img={gallery ? gallery[1] : ""}
+                img={gallery ? `${IMG_URL}${gallery[1]}` : ""}
               />
               <ImageSlide
                 className="slide"
                 id="slide3"
-                img={gallery ? gallery[2] : ""}
+                img={gallery ? `${IMG_URL}${gallery[2]}` : ""}
               />
               <ImageSlide
                 className="slide"
                 id="firstClone"
-                img={gallery ? gallery[0] : ""}
+                img={gallery ? `${IMG_URL}${gallery[0]}` : ""}
               />
             </div>
             <div className="btn-container">
