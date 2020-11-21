@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Loading from "../components/Loading";
 import { counterCheckerForClasses } from "../functions/checkerFucntions";
+import { API_URL } from "../configure";
 
 class GuestInformation extends Component {
   constructor(props) {
@@ -10,8 +11,11 @@ class GuestInformation extends Component {
       loading: true,
       amount: "",
       treatment: "",
+      treatmentId: "",
+      therapist: "",
       date: "",
       time: "",
+      maxTimeCount: 0,
       firstName: "",
       lastName: "",
       email: "",
@@ -19,6 +23,8 @@ class GuestInformation extends Component {
       phone: "",
       specialCode: "",
       check: false,
+      success: "",
+      error: "",
     };
   }
 
@@ -45,7 +51,7 @@ class GuestInformation extends Component {
   };
 
   //Handle form submission
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
     const formGroups = [...document.querySelectorAll(".form-group")];
@@ -66,24 +72,56 @@ class GuestInformation extends Component {
 
     if (counter >= formGroups.length - 1 && this.state.check) {
       //  Link to backend API for processing Treatment Booking
-      console.log(this.state);
+      try {
+        // console.log(this.state);
 
-      //reset the localStorage
-      localStorage.removeItem("bookTreatmentDetails");
+        const configureOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.state),
+        };
 
-      //reset the state to it's original format
-      this.setState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        gender: "Select gender",
-        phone: "",
-        specialCode: "",
-        check: false,
-      });
+        const response = await fetch(
+          `${API_URL}/book-treatment/new`,
+          configureOptions
+        );
 
-      //redirect back to the treatments page
-      this.props.history.push("/spa/treatments");
+        // if (!response.ok) throw Error(`Oops!! ${response.statusText}`);
+
+        const responseMsg = await response.json();
+
+        // console.log(responseMsg);
+        this.setState({
+          error: responseMsg.error,
+          success: responseMsg.message,
+        });
+
+        if (this.state.success) {
+          setTimeout(() => {
+            //reset the localStorage
+            localStorage.removeItem("bookTreatmentDetails");
+
+            //redirect back to the treatments page
+            this.props.history.push("/spa/treatments");
+          }, 7000);
+        }
+
+        //reset the state to it's original format
+        this.setState({
+          firstName: "",
+          lastName: "",
+          email: "",
+          gender: "Select gender",
+          phone: "",
+          specialCode: "",
+          check: false,
+        });
+      } catch (err) {
+        // console.log(err.message);
+        this.setState({ error: err.message });
+      }
     }
   };
 
@@ -100,11 +138,21 @@ class GuestInformation extends Component {
         time: bookingDetails.time,
         treatment: bookingDetails.treatment,
         amount: bookingDetails.amount,
+        therapist: bookingDetails.therapist,
+        treatmentId: bookingDetails.treatmentId,
+        maxTimeCount: bookingDetails.maxTimeCount,
         loading: false,
       });
     }
 
     // console.log(amount);
+  }
+
+  componentWillUnmount() {
+    // fix Warning: Can't perform a React state update on an unmounted component
+    this.setState = (state, callback) => {
+      return;
+    };
   }
 
   render() {
@@ -121,6 +169,8 @@ class GuestInformation extends Component {
       phone,
       specialCode,
       check,
+      error,
+      success,
     } = this.state;
 
     return (
@@ -134,6 +184,8 @@ class GuestInformation extends Component {
                 <h6>Paradise Dreamer Booking</h6>
                 <h2>Guest Information</h2>
               </div>
+              {error && <div className="error">{error}</div>}
+              {success && <div className="main-success">{success}</div>}
               <div className="guest-info-form">
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">

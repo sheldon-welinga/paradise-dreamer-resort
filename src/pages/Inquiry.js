@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { counterCheckerForClasses } from "../functions/checkerFucntions";
+import { API_URL } from "../configure";
 
 class Inquiry extends Component {
   constructor(props) {
@@ -13,6 +14,8 @@ class Inquiry extends Component {
       lastName: "",
       email: "",
       message: "",
+      error: "",
+      success: "",
     };
   }
 
@@ -31,7 +34,7 @@ class Inquiry extends Component {
   };
 
   //Handle form submission
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
     const formGroups = [...document.querySelectorAll(".form-group")];
@@ -45,10 +48,34 @@ class Inquiry extends Component {
     );
 
     if (counter >= formGroups.length - 1) {
-      console.log(this.state);
+      try {
+        const configOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.state),
+        };
+
+        //send to backeend for processing and return the result i.e message or error
+        const response = await fetch(`${API_URL}/inquiries/new`, configOptions);
+
+        if (response.ok) {
+          const responseMsg = await response.json();
+
+          this.setState({ success: responseMsg.message });
+
+          //To be added later to a notification div or a toastify
+          console.log(responseMsg.message);
+        } else {
+          throw Error(`Oops!! ${response.statusText}`);
+        }
+      } catch (err) {
+        this.setState({ error: err.message });
+        // return err.message;
+      }
 
       this.setState({
-        practitionerName: "",
         title: "Title",
         firstName: "",
         lastName: "",
@@ -56,7 +83,9 @@ class Inquiry extends Component {
         message: "",
       });
 
-      this.props.history.push("/spa/visiting-practitioners-calendar");
+      setTimeout(() => {
+        this.setState({ success: "", error: "" });
+      }, 7000);
     }
   };
 
@@ -78,6 +107,8 @@ class Inquiry extends Component {
       lastName,
       email,
       message,
+      error,
+      success,
     } = this.state;
 
     return (
@@ -92,7 +123,10 @@ class Inquiry extends Component {
               as we can.
             </p>
           </div>
+
           <div className="inquiry-form">
+            {error && <div className="error">{error}</div>}
+            {success && <div className="main-success">{success}</div>}
             {practitionerName && (
               <div className="form-header">
                 <h5>Your Selection</h5>

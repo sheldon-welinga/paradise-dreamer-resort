@@ -151,7 +151,7 @@ const SPA = () => {
         </div>
         <div className="spa-section-three">
           <h2>Treament Highlights</h2>
-          <Link to="/spa/treatments">All treamments</Link>
+          <Link to="/spa/treatments">All treatments</Link>
           <TreatmentHighlights />
         </div>
         <div className="spa-section-four">

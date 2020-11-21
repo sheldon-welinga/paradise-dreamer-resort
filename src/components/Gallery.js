@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Loading from "../components/Loading";
+import { API_URL, IMG_URL } from "../configure";
 
 class Gallery extends Component {
   constructor(props) {
@@ -15,10 +16,10 @@ class Gallery extends Component {
 
   //fetch data from database/API
   fetchData = async () => {
-    const response = await fetch("/data.json");
+    const response = await fetch(`${API_URL}/gallery/`);
     const data = await response.json();
 
-    return data.gallery;
+    return data;
   };
 
   //handle button click
@@ -114,7 +115,7 @@ class Gallery extends Component {
             featuredGallery.map((item, index) => (
               <div className="single-gallery" key={index}>
                 <img
-                  src={item.image}
+                  src={`${IMG_URL}${item.image}`}
                   alt={item.title}
                   className="img-responsive"
                 />
@@ -127,7 +128,7 @@ class Gallery extends Component {
             gallery.map((item, index) => (
               <div className="single-gallery" key={index}>
                 <img
-                  src={item.image}
+                  src={`${IMG_URL}${item.image}`}
                   alt={item.title}
                   className="img-responsive"
                 />

@@ -37,6 +37,20 @@ a {
   object-fit: cover;
 }
 
+.error {
+  background-color: var(--error);
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
+}
+
+.main-success {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--success);
+  color: var(--white);
+}
+
 .btn {
   display: inline-flex;
   justify-content: center;
@@ -219,12 +233,6 @@ select::-ms-expand {
 }
 /* --------------End of Globals ----------------------------- */
 /* ---------------------------Error Page------------------------ */
-.error {
-  color: var(--error);
-  padding: 1rem;
-  text-align: center;
-}
-
 .error-page {
   display: flex;
   align-items: center;
@@ -2928,7 +2936,11 @@ select::-ms-expand {
   border-left-color: var(--lightBlack);
 }
 
-.inquiry .form-group:not(.textarea).invalid-error::after {
+.inquiry .select.invalid-error::after {
+  border-color: var(--error);
+}
+
+.inquiry .form-group:not(.textarea).invalid-error::before {
   content: "This field cannot be empty";
   display: block;
   position: absolute;
@@ -2941,6 +2953,10 @@ select::-ms-expand {
 .inquiry .form-group:not(.textarea).invalid-error .form-control {
   border-color: var(--error);
   color: var(--error);
+}
+
+.inquiry .select.success::after {
+  border-color: var(--success);
 }
 
 .inquiry .form-group.success .form-control {

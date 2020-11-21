@@ -11,6 +11,7 @@ class BookTreatment extends Component {
       loading: true,
       treatments: [],
       treatment: "Aphrodite Bath, 2 People (KES 13,228.08, 30 min)",
+      treatmentId: "",
       guest: "One Guest",
       therapist: "Anyone",
       dates: [],
@@ -18,6 +19,7 @@ class BookTreatment extends Component {
       times: [],
       time: "Select time",
       amount: "",
+      maxTimeCount: 0,
     };
   }
 
@@ -190,6 +192,8 @@ class BookTreatment extends Component {
         date: this.state.date,
         time: this.state.time,
         amount: this.state.amount,
+        treatmentId: this.state.treatmentId,
+        maxTimeCount: this.state.times.length,
       };
 
       localStorage.setItem("bookTreatmentDetails", JSON.stringify(details));
@@ -219,6 +223,7 @@ class BookTreatment extends Component {
         treatment: `${foundTreatment.title} (KES ${foundTreatment.amount}, ${foundTreatment.time})`,
         times,
         amount: foundTreatment.amount,
+        treatmentId: foundTreatment._id,
       });
     });
 

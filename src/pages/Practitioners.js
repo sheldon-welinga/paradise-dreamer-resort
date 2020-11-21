@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SinglePractitioner from "../components/SinglePractitioner";
 import Loading from "../components/Loading";
 import SpaHeader from "../components/SpaHeader";
+import { API_URL } from "../configure";
 
 class Practitioners extends Component {
   constructor(props) {
@@ -15,10 +16,10 @@ class Practitioners extends Component {
 
   fetchData = async () => {
     try {
-      const response = await fetch("/data.json");
+      const response = await fetch(`${API_URL}/practitioner/`);
       const data = await response.json();
 
-      return data.practitioners;
+      return data;
     } catch (err) {
       console.log(err.message);
     }
@@ -47,7 +48,7 @@ class Practitioners extends Component {
               practitioners.map((practitioner) => (
                 <SinglePractitioner
                   practitioner={practitioner}
-                  key={practitioner.id}
+                  key={practitioner._id}
                 />
               ))
             )}
