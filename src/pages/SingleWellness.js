@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Loading from "../components/Loading";
 import ErrorPage from "./ErrorPage";
+import { API_URL, IMG_URL } from "../configure";
 
 class SingleWellness extends Component {
   constructor(props) {
@@ -16,10 +17,10 @@ class SingleWellness extends Component {
 
   //Function to get all the data for wellness
   getData = async () => {
-    const response = await fetch("/data.json");
+    const response = await fetch(`${API_URL}/wellness`);
     const data = await response.json();
 
-    return data.wellness;
+    return data;
   };
 
   //Get the single page data
@@ -83,14 +84,14 @@ class SingleWellness extends Component {
           </div>
           <div className="image">
             <img
-              src={images[1].image}
+              src={`${IMG_URL}${images[1].image}`}
               alt={images[1].alternative}
               className="img-responsive"
             />
           </div>
           <div className="other-image">
             <img
-              src={images[2].image}
+              src={`${IMG_URL}${images[2].image}`}
               alt={images[2].alternative}
               className="img-responsive"
             />
@@ -99,7 +100,7 @@ class SingleWellness extends Component {
         <div className="single-wellness-section-two">
           <div className="image">
             <img
-              src={images[3].image}
+              src={`${IMG_URL}${images[3].image}`}
               alt={images[3].alternative}
               className="img-responsive"
             />
@@ -115,7 +116,8 @@ class SingleWellness extends Component {
         </div>
         <div className="single-wellness-section-three">
           <h2>{singlePageInfo.sectionThree.title}</h2>
-          {singlePageInfo.sectionThree.accordion ? (
+          {singlePageInfo.sectionThree.accordion &&
+          singlePageInfo.sectionThree.accordion.length ? (
             <div className="accordion">
               {singlePageInfo.sectionThree.accordion.map((item, index) => (
                 <div className="accordion-list" key={index}>

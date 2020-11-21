@@ -1,4 +1,5 @@
 import React from "react";
+import { IMG_URL } from "../configure";
 
 const TreatmentHighlights = () => {
   let counter = 0,
@@ -39,7 +40,7 @@ const TreatmentHighlights = () => {
         <div className="treatment-slide">
           <div className="image">
             <img
-              src="/images/treatment-1.jpg"
+              src={`${IMG_URL}/images/treatment-1.jpg`}
               alt="woman hair massage and treatment"
               className="img-responsive"
             />
@@ -59,7 +60,7 @@ const TreatmentHighlights = () => {
         <div className="treatment-slide">
           <div className="image">
             <img
-              src="/images/treatment-2.jpg"
+              src={`${IMG_URL}/images/treatment-2.jpg`}
               alt="room with bathtab"
               className="img-responsive"
             />
@@ -80,7 +81,7 @@ const TreatmentHighlights = () => {
         <div className="treatment-slide">
           <div className="image">
             <img
-              src="/images/treatment-3.jpg"
+              src={`${IMG_URL}/images/treatment-3.jpg`}
               alt="man with bowl"
               className="img-responsive"
             />
@@ -103,7 +104,7 @@ const TreatmentHighlights = () => {
         <div className="treatment-slide">
           <div className="image">
             <img
-              src="/images/treatment-4.jpg"
+              src={`${IMG_URL}/images/treatment-4.jpg`}
               alt="room with relaxing beds"
               className="img-responsive"
             />

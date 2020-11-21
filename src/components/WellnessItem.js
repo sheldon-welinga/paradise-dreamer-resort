@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { IMG_URL } from "../configure";
 
 const WellnessItem = ({ data }) => {
   const { images, slug, title, content } = data;
@@ -9,7 +10,11 @@ const WellnessItem = ({ data }) => {
   return (
     <div className="wellness-single-item">
       <div className="image">
-        <img src={image} alt={alternative} className="img-responsive" />
+        <img
+          src={`${IMG_URL}${image}`}
+          alt={alternative}
+          className="img-responsive"
+        />
       </div>
       <div className="content">
         <h2>{title}</h2>

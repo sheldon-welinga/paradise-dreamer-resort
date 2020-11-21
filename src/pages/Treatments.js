@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Loading from "../components/Loading";
 import SingleTreatment from "../components/SingleTreatment";
 import SpaHeader from "../components/SpaHeader";
-import { API_URL } from "../configure";
+import { API_URL, IMG_URL } from "../configure";
 
 class Treatments extends Component {
   constructor(props) {
@@ -160,7 +160,7 @@ class Treatments extends Component {
           </div>
           <div className="image">
             <img
-              src="/images/treatment-5.jpeg"
+              src={`${IMG_URL}/images/treatment-5.jpeg`}
               alt="Woman sleeping"
               className="img-responsive"
             />

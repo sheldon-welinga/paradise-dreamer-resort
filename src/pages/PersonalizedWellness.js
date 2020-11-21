@@ -3,6 +3,7 @@ import Loading from "../components/Loading";
 import SpaHeader from "../components/SpaHeader";
 import { StyledHero } from "../components/Styled";
 import WellnessItem from "../components/WellnessItem";
+import { API_URL, IMG_URL } from "../configure";
 
 const PersonalizedWellness = () => {
   const [wellness, setWellness] = useState([]);
@@ -11,10 +12,10 @@ const PersonalizedWellness = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch("/data.json");
+        const response = await fetch(`${API_URL}/wellness`);
         const data = await response.json();
 
-        setWellness(data.wellness);
+        setWellness(data);
         setLoading(false);
       } catch (err) {
         console.log(err.message);
@@ -33,7 +34,7 @@ const PersonalizedWellness = () => {
 
   return (
     <div className="page-height wellness">
-      <StyledHero image="/images/wellness-2.jpg">
+      <StyledHero image={`${IMG_URL}/images/wellness-2.jpg`}>
         <div className="overlay">
           <h4>Personalized Wellness</h4>
         </div>

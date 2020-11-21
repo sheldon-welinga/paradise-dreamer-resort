@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SpaHeader from "../components/SpaHeader";
 import { StyledHero } from "../components/Styled";
 import TreatmentHighlights from "../components/TreatmentHighlights";
+import { IMG_URL } from "../configure";
 
 const SPA = () => {
   const toggleOpen = (e) => {
@@ -22,7 +23,7 @@ const SPA = () => {
 
   return (
     <div className="page-height spa">
-      <StyledHero image="/images/spa.jpg">
+      <StyledHero image={`${IMG_URL}/images/spa.jpg`}>
         <div className="overlay">
           <h4>Wellness &amp; Spa</h4>
           <p>Rejuvenate your senses</p>
@@ -115,7 +116,7 @@ const SPA = () => {
           </div>
           <div className="image">
             <img
-              src="/images/spa-4.jpg"
+              src={`${IMG_URL}/images/spa-4.jpg`}
               alt="woman sitted"
               className="img-responsive"
             />
@@ -127,7 +128,7 @@ const SPA = () => {
         <div className="spa-section-two">
           <div className="image">
             <img
-              src="/images/spa-5.jpg"
+              src={`${IMG_URL}/images/spa-5.jpg`}
               alt="woman being massaged"
               className="img-responsive"
             />
