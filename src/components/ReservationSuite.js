@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { IMG_URL } from "../configure";
 
 const ReservationSuite = (props) => {
   const { image, title, description, size, views, price } = props.room;
@@ -13,7 +14,11 @@ const ReservationSuite = (props) => {
   return (
     <div className="reservation-suite">
       <div className="image">
-        <img src={image} alt={title} className="img-responsive" />
+        <img
+          src={`${IMG_URL}${image}`}
+          alt={title}
+          className="img-responsive"
+        />
       </div>
       <div className="info">
         <div className="info-title">

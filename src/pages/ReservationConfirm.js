@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ReservationSteps from "../components/ReservationSteps";
+import { API_URL } from "../configure";
 import { counterCheckerForReservationConfirm } from "../functions/checkerFucntions";
 import {
   mastercardVerify,
@@ -38,16 +39,18 @@ class ReservationConfirm extends Component {
       yearsArray: [],
       checkTerms: false,
       checkConsent: false,
+      success: "",
+      error: "",
     };
   }
 
   //fetch countries
   fetchCountries = async () => {
     try {
-      const response = await fetch("/data.json");
+      const response = await fetch(`${API_URL}/countries/`);
       const data = await response.json();
 
-      return data.countries;
+      return data;
     } catch (err) {
       console.log(err);
     }
@@ -131,7 +134,7 @@ class ReservationConfirm extends Component {
   };
 
   //handle form submission for confirming reservation booking
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
     const inputFields = [...document.querySelectorAll(".inputs")];
@@ -145,7 +148,7 @@ class ReservationConfirm extends Component {
       "Year"
     );
 
-    const details = {
+    const submissionDetails = {
       adults: this.state.adults,
       children: this.state.children,
       roomName: this.state.roomName,
@@ -195,7 +198,29 @@ class ReservationConfirm extends Component {
         this.state.checkTerms &&
         this.state.checkConsent
       ) {
-        console.log(details);
+        try {
+          const configOptions = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(submissionDetails),
+          };
+
+          const response = await fetch(
+            `${API_URL}/reservations/new`,
+            configOptions
+          );
+
+          const responseMsg = await response.json();
+
+          this.setState({
+            success: responseMsg.message,
+            error: responseMsg.error,
+          });
+        } catch (err) {
+          console.log(err);
+        }
       }
     }
   };
@@ -227,6 +252,8 @@ class ReservationConfirm extends Component {
       yearsArray,
       checkTerms,
       checkConsent,
+      success,
+      error,
     } = this.state;
 
     return (
@@ -241,7 +268,8 @@ class ReservationConfirm extends Component {
                 {checkIn.slice(4)} - {checkOut.slice(4)}
               </p>
               <p>
-                1 Room - {adults} {children && `& ${children}`}
+                1 Room - {adults}{" "}
+                {children.split(" ")[0] > 0 && `& ${children}`}
               </p>
             </div>
             <div className="room-summary-details">
@@ -277,6 +305,8 @@ class ReservationConfirm extends Component {
           </div>
           <div className="reservation-form">
             <h2 className="title">Confirm Your Stay</h2>
+            {error && <div className="error">{error}</div>}
+            {success && <div className="main-success">{success}</div>}
             <div className="asterisk">
               * asterisk indicates a required field
             </div>

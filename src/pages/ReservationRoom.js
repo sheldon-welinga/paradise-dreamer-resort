@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ReservationSteps from "../components/ReservationSteps";
+import { IMG_URL } from "../configure";
 
 class ReservationRoom extends Component {
   constructor(props) {
@@ -56,7 +57,7 @@ class ReservationRoom extends Component {
         adults: bookingInfo.adults,
         children: bookingInfo.children,
         breakfast: room.breakFastPrice,
-        roomId: room.id,
+        roomId: room._id,
       });
 
       //   console.log(room);
@@ -124,7 +125,7 @@ class ReservationRoom extends Component {
           <div className="package">
             <div className="image">
               <img
-                src={images[0]}
+                src={`${IMG_URL}${images[0]}`}
                 alt="nightly resort credit"
                 className="img-responsive"
               />
@@ -155,7 +156,11 @@ class ReservationRoom extends Component {
           {/* ---------Package two--------- */}
           <div className="package">
             <div className="image">
-              <img src={images[1]} alt="room rate" className="img-responsive" />
+              <img
+                src={`${IMG_URL}${images[1]}`}
+                alt="room rate"
+                className="img-responsive"
+              />
             </div>
             <div className="content">
               <h2>Room rate</h2>
@@ -185,7 +190,7 @@ class ReservationRoom extends Component {
           <div className="package">
             <div className="image">
               <img
-                src={images[2]}
+                src={`${IMG_URL}${images[2]}`}
                 alt="bed and breakfast"
                 className="img-responsive"
               />

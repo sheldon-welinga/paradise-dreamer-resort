@@ -3,6 +3,7 @@ import Calendar from "../Calendar";
 import Loading from "../components/Loading";
 import ReservationSteps from "../components/ReservationSteps";
 import ReservationSuite from "../components/ReservationSuite";
+import { API_URL } from "../configure";
 import { counterCheckerForClasses } from "../functions/checkerFucntions";
 
 class Reservation extends Component {
@@ -29,10 +30,10 @@ class Reservation extends Component {
   //fetch data from database/api endpoint
   fetchData = async () => {
     try {
-      const response = await fetch("/data.json");
+      const response = await fetch(`${API_URL}/accomodation-rooms/get-rooms`);
       const data = await response.json();
 
-      return data.accomodation;
+      return data;
     } catch (err) {
       console.log(err.message);
     }
@@ -283,7 +284,7 @@ class Reservation extends Component {
             <Loading />
           ) : (
             reservationRooms.map((room) => (
-              <ReservationSuite key={room.id} room={room} />
+              <ReservationSuite key={room._id} room={room} />
             ))
           )}
         </div>
