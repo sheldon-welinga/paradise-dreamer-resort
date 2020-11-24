@@ -20,6 +20,7 @@ class BookTreatment extends Component {
       time: "Select time",
       amount: "",
       maxTimeCount: 0,
+      error: "",
     };
   }
 
@@ -31,7 +32,9 @@ class BookTreatment extends Component {
 
       return data;
     } catch (err) {
-      console.log(err.message);
+      this.setState({
+        error: err.message,
+      });
     }
   };
 
@@ -203,29 +206,35 @@ class BookTreatment extends Component {
   };
 
   componentDidMount() {
-    this.fetchData().then((data) => {
-      const foundTreatment = data.find(
-        (item) => item.slug === this.props.match.params.slug
-      );
+    this.fetchData()
+      .then((data) => {
+        const foundTreatment = data.find(
+          (item) => item.slug === this.props.match.params.slug
+        );
 
-      const otherTreatments = data.filter(
-        (item) => item.slug !== foundTreatment.slug
-      );
+        const otherTreatments = data.filter(
+          (item) => item.slug !== foundTreatment.slug
+        );
 
-      const allTreatments = [foundTreatment, ...otherTreatments];
+        const allTreatments = [foundTreatment, ...otherTreatments];
 
-      let initTime = Number(foundTreatment.time.split(" ")[0]);
-      let times = this.timerCheck(initTime);
+        let initTime = Number(foundTreatment.time.split(" ")[0]);
+        let times = this.timerCheck(initTime);
 
-      this.setState({
-        loading: false,
-        treatments: allTreatments,
-        treatment: `${foundTreatment.title} (KES ${foundTreatment.amount}, ${foundTreatment.time})`,
-        times,
-        amount: foundTreatment.amount,
-        treatmentId: foundTreatment._id,
+        this.setState({
+          loading: false,
+          treatments: allTreatments,
+          treatment: `${foundTreatment.title} (KES ${foundTreatment.amount}, ${foundTreatment.time})`,
+          times,
+          amount: foundTreatment.amount,
+          treatmentId: foundTreatment._id,
+        });
+      })
+      .catch((err) => {
+        this.setState({
+          error: err.message,
+        });
       });
-    });
 
     this.getDates();
   }
@@ -241,6 +250,7 @@ class BookTreatment extends Component {
       date,
       times,
       time,
+      error,
     } = this.state;
 
     return (
@@ -250,7 +260,9 @@ class BookTreatment extends Component {
           <h2>Book Your Treatment</h2>
           <Link to="/spa/treatments">Back to treatments list</Link>
         </div>
-        {loading ? (
+        {error ? (
+          <div className="error">{error}</div>
+        ) : loading ? (
           <Loading />
         ) : (
           <div className="book-treatment-form">
