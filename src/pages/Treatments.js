@@ -44,18 +44,24 @@ class Treatments extends Component {
 
   //get all treatments and update the state
   getTreatments = async () => {
-    const data = await this.fetchData();
+    try {
+      const data = await this.fetchData();
 
-    const allAmounts = data
-      .map((item) => parseFloat(item.amount.split(",").join("")).toFixed(2))
-      .sort((a, b) => a - b);
+      const allAmounts = data
+        .map((item) => parseFloat(item.amount.split(",").join("")).toFixed(2))
+        .sort((a, b) => a - b);
 
-    this.setState({
-      treatments: data,
-      types: [...data.map((treatment) => treatment.type)],
-      max: allAmounts[allAmounts.length - 1],
-      loading: false,
-    });
+      this.setState({
+        treatments: data,
+        types: [...data.map((treatment) => treatment.type)],
+        max: allAmounts[allAmounts.length - 1],
+        loading: false,
+      });
+    } catch (err) {
+      this.setState({
+        error: err.message,
+      });
+    }
   };
 
   componentDidMount() {

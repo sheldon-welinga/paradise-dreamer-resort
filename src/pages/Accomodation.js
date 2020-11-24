@@ -12,6 +12,7 @@ class Accomodation extends Component {
     this.state = {
       loading: true,
       rooms: [],
+      error: "",
     };
   }
 
@@ -24,19 +25,25 @@ class Accomodation extends Component {
 
       return data;
     } catch (err) {
-      console.log(err.message);
+      this.setState({ error: err.message });
     }
   };
 
   //check if the room type exists
   checkRoom = async () => {
-    const data = await this.getData();
-    const roomType = this.props.match.params;
+    try {
+      const data = await this.getData();
+      const roomType = this.props.match.params;
 
-    const foundType = data.find((room) => room.type === roomType);
+      const foundType = data.find((room) => room.type === roomType);
 
-    if (!foundType) {
-      this.props.history.push("/accomodation");
+      if (!foundType) {
+        this.props.history.push("/accomodation");
+      }
+    } catch (err) {
+      this.setState({
+        error: err.message,
+      });
     }
   };
 
@@ -61,14 +68,20 @@ class Accomodation extends Component {
 
   //Handle button click for the links of accomodation
   handleClick = async (e) => {
-    const data = await this.getData();
+    try {
+      const data = await this.getData();
 
-    this.setState({
-      rooms: data.filter((room) => room.type === e.target.id),
-      loading: false,
-    });
+      this.setState({
+        rooms: data.filter((room) => room.type === e.target.id),
+        loading: false,
+      });
 
-    this.props.history.push(`/accomodation/${e.target.id}`);
+      this.props.history.push(`/accomodation/${e.target.id}`);
+    } catch (err) {
+      this.setState({
+        error: err.message,
+      });
+    }
   };
 
   componentDidMount() {
@@ -82,7 +95,7 @@ class Accomodation extends Component {
   }
 
   render() {
-    const { rooms, loading } = this.state;
+    const { rooms, loading, error } = this.state;
 
     return (
       <>
@@ -117,7 +130,9 @@ class Accomodation extends Component {
             </p>
           </div>
           <div className="accomodation-suites">
-            {loading ? (
+            {error ? (
+              <div className="error">{error}</div>
+            ) : loading ? (
               <Loading />
             ) : rooms.length ? (
               rooms.map((room) => <Suite key={room._id} room={room} />)
