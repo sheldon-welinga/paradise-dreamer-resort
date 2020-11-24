@@ -24,6 +24,7 @@ class Reservation extends Component {
       child: "0 Child",
       children: [],
       reservationRooms: [],
+      error: "",
     };
   }
 
@@ -35,7 +36,9 @@ class Reservation extends Component {
 
       return data;
     } catch (err) {
-      console.log(err.message);
+      this.setState({
+        error: err.message,
+      });
     }
   };
 
@@ -79,29 +82,35 @@ class Reservation extends Component {
   };
 
   setOptionsValues = () => {
-    this.fetchData().then((data) => {
-      const maxAdults = Math.max(...data.map((item) => item.adults));
-      const maxChildren = Math.max(...data.map((item) => item.children));
+    this.fetchData()
+      .then((data) => {
+        const maxAdults = Math.max(...data.map((item) => item.adults));
+        const maxChildren = Math.max(...data.map((item) => item.children));
 
-      let adults = [];
-      let children = [];
+        let adults = [];
+        let children = [];
 
-      for (let i = 1; i <= maxAdults; i++) {
-        let addedAdult = `${i} ${i <= 1 ? "Adult" : "Adults"}`;
-        adults = [...adults, addedAdult];
-      }
+        for (let i = 1; i <= maxAdults; i++) {
+          let addedAdult = `${i} ${i <= 1 ? "Adult" : "Adults"}`;
+          adults = [...adults, addedAdult];
+        }
 
-      for (let j = 0; j <= maxChildren; j++) {
-        let addedChild = `${j} ${j <= 1 ? "Child" : "Children"}`;
-        children = [...children, addedChild];
-      }
+        for (let j = 0; j <= maxChildren; j++) {
+          let addedChild = `${j} ${j <= 1 ? "Child" : "Children"}`;
+          children = [...children, addedChild];
+        }
 
-      this.setState({
-        adults,
-        children,
-        loading: false,
+        this.setState({
+          adults,
+          children,
+          loading: false,
+        });
+      })
+      .catch((err) => {
+        this.setState({
+          error: err.message,
+        });
       });
-    });
   };
 
   componentDidMount() {
@@ -139,16 +148,22 @@ class Reservation extends Component {
       elem.classList.remove("checkout-error");
 
       if (counter >= formGroups.length - 1) {
-        this.fetchData().then((data) => {
-          const filtered = data.filter(
-            (item) =>
-              item.children >= splittedChild && item.adults >= splittedAdult
-          );
+        this.fetchData()
+          .then((data) => {
+            const filtered = data.filter(
+              (item) =>
+                item.children >= splittedChild && item.adults >= splittedAdult
+            );
 
-          this.setState({
-            reservationRooms: filtered,
+            this.setState({
+              reservationRooms: filtered,
+            });
+          })
+          .catch((err) => {
+            this.setState({
+              error: err.message,
+            });
           });
-        });
 
         const bookingDetails = {
           checkIn: this.state.checkInDate,
@@ -179,6 +194,7 @@ class Reservation extends Component {
       children,
       promoCode,
       reservationRooms,
+      error,
     } = this.state;
 
     // console.log(reservationRooms);
@@ -280,7 +296,9 @@ class Reservation extends Component {
           </form>
         </div>
         <div className="reservation-rooms">
-          {loading ? (
+          {error ? (
+            <div className="error">{error}</div>
+          ) : loading ? (
             <Loading />
           ) : (
             reservationRooms.map((room) => (
