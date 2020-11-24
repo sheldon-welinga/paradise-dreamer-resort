@@ -54,13 +54,11 @@ class Treatments extends Component {
       treatments: data,
       types: [...data.map((treatment) => treatment.type)],
       max: allAmounts[allAmounts.length - 1],
+      loading: false,
     });
   };
 
   componentDidMount() {
-    this.setState({
-      loading: false,
-    });
     this.getTreatments();
   }
 

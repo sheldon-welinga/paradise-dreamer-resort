@@ -2309,6 +2309,10 @@ select::-ms-expand {
   outline: none;
 }
 
+.treatments .treatment-error {
+  background-color: var(--white);
+}
+
 .treatments .treatment-error .main-error {
   color: var(--error);
   font-weight: bold;
