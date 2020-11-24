@@ -52,7 +52,9 @@ class ReservationConfirm extends Component {
 
       return data;
     } catch (err) {
-      console.log(err);
+      this.setState({
+        error: err.message,
+      });
     }
   };
 
@@ -219,7 +221,9 @@ class ReservationConfirm extends Component {
             error: responseMsg.error,
           });
         } catch (err) {
-          console.log(err);
+          this.setState({
+            error: err.message,
+          });
         }
       }
     }
