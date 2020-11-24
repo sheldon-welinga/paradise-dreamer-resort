@@ -48,13 +48,19 @@ class Accomodation extends Component {
   };
 
   getRoomDetails = async () => {
-    const data = await this.getData();
-    // console.log(DATA)
+    try {
+      const data = await this.getData();
+      // console.log(DATA)
 
-    this.setState({
-      rooms: data.filter((room) => room.featured),
-      loading: false,
-    });
+      this.setState({
+        rooms: data.filter((room) => room.featured),
+        loading: false,
+      });
+    } catch (err) {
+      this.setState({
+        error: err.message,
+      });
+    }
   };
 
   //Toggle accomodation nav open and close on media screen <=768px
