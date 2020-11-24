@@ -1963,6 +1963,10 @@ select::-ms-expand {
   padding: 0;
 }
 
+.wellness .error {
+  margin-bottom: 3rem;
+}
+
 .wellness .wellness-section-one {
   padding: 2rem 1rem;
   width: 70%;

@@ -8,6 +8,7 @@ import { API_URL, IMG_URL } from "../configure";
 const PersonalizedWellness = () => {
   const [wellness, setWellness] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const getData = async () => {
@@ -18,7 +19,7 @@ const PersonalizedWellness = () => {
         setWellness(data);
         setLoading(false);
       } catch (err) {
-        console.log(err.message);
+        setError(err.message);
       }
     };
 
@@ -50,13 +51,17 @@ const PersonalizedWellness = () => {
           feel immediate, real benefits however long you stay.
         </p>
       </div>
-      <div className="wellness-section-two">
-        {loading ? (
-          <Loading />
-        ) : (
-          wellness.map((item) => <WellnessItem data={item} key={item.id} />)
-        )}
-      </div>
+      {error ? (
+        <div className="error">{error}</div>
+      ) : (
+        <div className="wellness-section-two">
+          {loading ? (
+            <Loading />
+          ) : (
+            wellness.map((item) => <WellnessItem data={item} key={item.id} />)
+          )}
+        </div>
+      )}
     </div>
   );
 };
