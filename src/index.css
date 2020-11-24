@@ -1077,6 +1077,10 @@ select::-ms-expand {
   overflow-x: hidden;
 }
 
+.single-room .error {
+  margin-top: -15rem;
+}
+
 .single-room .single-room-header {
   background-color: var(--maroon);
   min-height: 13vh;
