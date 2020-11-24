@@ -11,6 +11,7 @@ class Practitioners extends Component {
     this.state = {
       loading: true,
       practitioners: [],
+      error: "",
     };
   }
 
@@ -21,18 +22,24 @@ class Practitioners extends Component {
 
       return data;
     } catch (err) {
-      console.log(err.message);
+      this.setState({
+        error: err.message,
+      });
     }
   };
 
   componentDidMount() {
-    this.fetchData().then((data) => {
-      this.setState({ practitioners: data, loading: false });
-    });
+    this.fetchData()
+      .then((data) => {
+        this.setState({ practitioners: data, loading: false });
+      })
+      .catch((err) => {
+        this.setState({ error: err.message });
+      });
   }
 
   render() {
-    const { practitioners, loading } = this.state;
+    const { practitioners, loading, error } = this.state;
     return (
       <>
         <SpaHeader />
@@ -42,7 +49,9 @@ class Practitioners extends Component {
             <h2>Visiting Practitioners' Calendar</h2>
           </div>
           <div className="practitioners-section">
-            {loading ? (
+            {error ? (
+              <div className="error">{error}</div>
+            ) : loading ? (
               <Loading />
             ) : (
               practitioners.map((practitioner) => (
