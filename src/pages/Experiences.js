@@ -86,7 +86,7 @@ const Experiences = () => {
             No request is too great and no detail too small. We are alo here to
             assist you before your trip begins.
           </p>
-          <Link to="/contact" className="btn btn-primary">
+          <Link to="/contact-us" className="btn btn-primary">
             Contact Us
           </Link>
         </div>

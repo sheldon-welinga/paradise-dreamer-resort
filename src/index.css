@@ -3852,3 +3852,211 @@ select::-ms-expand {
 /* -----------------------------End of Reservation Confirm--------------------------------- */
 
 /* -------------------------------End of Reservation----------------------------- */
+
+/* -------------------------------Contact Us Page---------------------------------------- */
+.contact {
+  padding: 0;
+}
+
+.contact .contact-main {
+  padding: 1rem;
+  background-color: var(--maroon);
+}
+
+.contact .contact-main > div {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-main .contact-heading p,
+.contact-main .contact-heading h2 {
+  color: var(--white);
+  text-align: center;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.contact-main .contact-heading p {
+  font-style: italic;
+}
+
+.contact-main .contact-heading h2 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.contact-main .contact-details > div {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border-top: 2px solid var(--white);
+  line-height: 1.5rem;
+}
+
+.contact-main .contact-details > div > p {
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.contact-main .contact-details .phone {
+  border-bottom: 2px solid var(--white);
+}
+
+.contact-main .contact-social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-main .contact-social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  color: var(--white);
+  margin: 0.5rem;
+}
+
+.contact-main .contact-social-icons .fa {
+  color: var(--white);
+  font-size: 1.3rem;
+}
+
+.contact-form {
+  padding: 2rem 1rem;
+  max-width: 950px;
+  margin: 2rem auto;
+}
+
+.contact-form .group-items {
+  display: flex;
+}
+
+.contact-form .group-items .form-group {
+  flex: 0.5;
+}
+
+.contact-form .group-items:first-child .form-group:first-child {
+  flex: 0.2;
+}
+
+.contact-form .group-items:first-child .form-group:nth-child(2),
+.contact-form .group-items:first-child .form-group:nth-child(3) {
+  flex: 0.4;
+}
+
+.contact-form .group-items.textarea-field > div {
+  flex: 1;
+}
+
+.contact-form .form-group {
+  margin: 0.5rem;
+  position: relative;
+}
+
+.contact-form .form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.contact-form .form-group .form-control {
+  width: 100%;
+  max-width: 440px;
+  resize: none;
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid gray;
+  color: var(--lightBlack);
+}
+
+.contact-form .form-group.select:last-child {
+  margin-right: 2rem;
+}
+
+.contact-form .form-group.select::after {
+  right: 0.8rem;
+  margin-top: 4px;
+}
+
+.contact-form .textarea-field .form-control {
+  max-width: 950px;
+}
+
+.contact-form
+  .form-group:not(.phone):not(.select):not(.field).invalid-error::before {
+  content: "!";
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 0.5rem;
+  display: block;
+  color: var(--error);
+}
+
+.contact-form .form-group.select.invalid-error::after,
+.contact-form .form-group:not(.phone).invalid-error .form-control {
+  border-color: var(--error);
+}
+
+.contact-form .form-group:not(.phone).invalid-error .form-control,
+.contact-form .form-group:not(.phone).invalid-error label {
+  color: var(--error);
+}
+
+.contact-form .form-group.success .form-control,
+.contact-form .form-group.select.success::after {
+  border-color: var(--success);
+}
+
+.contact-form .form-group.success .form-control,
+.contact-form .form-group.success label {
+  color: var(--success);
+}
+
+.contact-form .btn-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.contact-form .btn {
+  border-radius: 0;
+  min-width: 200px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-form .group-items {
+    flex-direction: column;
+  }
+
+  .contact-form .form-group .form-control {
+    max-width: 100%;
+  }
+
+  .contact-form .form-group.select:last-child {
+    margin-right: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .contact-main .contact-details > div {
+    display: block;
+  }
+
+  .contact-main .contact-details .phone {
+    display: inline;
+    width: auto;
+  }
+}
+
+/* ------------------------------End of Contact Us Page------------------------------- */

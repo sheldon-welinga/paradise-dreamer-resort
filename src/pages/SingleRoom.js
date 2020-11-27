@@ -220,7 +220,7 @@ class SingleRoom extends Component {
 
             <div className="single-room-contact">
               <p>We can help you with any questions or information.</p>
-              <Link to="/contact" className="btn btn-default">
+              <Link to="/contact-us" className="btn btn-default">
                 Contact
               </Link>
             </div>

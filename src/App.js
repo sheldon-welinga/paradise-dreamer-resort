@@ -29,6 +29,7 @@ import Reservation from "./pages/Reservation";
 import Calendar from "./Calendar";
 import ReservationRoom from "./pages/ReservationRoom";
 import ReservationConfirm from "./pages/ReservationConfirm";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
@@ -90,6 +91,7 @@ const App = () => {
         />
         <Route exact path="/our-gallery" component={OurGallery} />
         <Route exact path="/calendar" component={Calendar} />
+        <Route exact path="/contact-us" component={Contact} />
         {/* <Route exact path="/datepicker" component={DatePicker} /> */}
         <Route component={ErrorPage} />
       </Switch>
