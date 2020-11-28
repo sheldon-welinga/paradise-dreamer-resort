@@ -3934,6 +3934,11 @@ select::-ms-expand {
   margin: 2rem auto;
 }
 
+.contact .error,
+.contact .main-success {
+  margin-top: 1.5rem;
+}
+
 .contact-form .group-items {
   display: flex;
 }

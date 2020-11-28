@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { counterCheckerForReservationConfirm as contactConfirm } from "../functions/checkerFucntions";
+import { API_URL } from "../configure";
 
 class Contact extends Component {
   constructor(props) {
@@ -14,6 +15,8 @@ class Contact extends Component {
       phone: "",
       reason: "Please select a reason",
       message: "",
+      error: "",
+      success: "",
     };
   }
 
@@ -25,7 +28,7 @@ class Contact extends Component {
   };
 
   //handle form submission
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
     const formGroups = [...document.querySelectorAll(".form-group")];
@@ -40,7 +43,29 @@ class Contact extends Component {
     );
 
     if (counter >= formGroups.length - 1) {
-      console.log(this.state);
+      try {
+        const configOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.state),
+        };
+
+        const response = await fetch(
+          `${API_URL}/contact-requests/new`,
+          configOptions
+        );
+
+        const responseMsg = await response.json();
+
+        this.setState({
+          success: responseMsg.message,
+          error: responseMsg.error,
+        });
+      } catch (err) {
+        this.setState({ error: err.message });
+      }
     }
   };
 
@@ -53,6 +78,8 @@ class Contact extends Component {
       phone,
       reason,
       message,
+      error,
+      success,
     } = this.state;
 
     return (
@@ -95,6 +122,8 @@ class Contact extends Component {
             </Link>
           </div>
         </div>
+        {error && <div className="error">{error}</div>}
+        {success && <div className="main-success">{success}</div>}
         <div className="contact-form">
           <form onSubmit={this.handleSubmit}>
             <div className="group-items">
