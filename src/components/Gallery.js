@@ -11,6 +11,7 @@ class Gallery extends Component {
       gallery: [],
       featuredGallery: [],
       featuredClass: this.props.featuredClass,
+      tempGallery: [],
     };
   }
 
@@ -19,12 +20,15 @@ class Gallery extends Component {
     const response = await fetch(`${API_URL}/gallery/`);
     const data = await response.json();
 
-    return data;
+    this.setState({ tempGallery: data });
+    // return data;
   };
 
   //handle button click
   handleClick = async (e, allBtns) => {
     await e.preventDefault();
+
+    this.setState({ loading: true });
 
     await allBtns.forEach((btn) => {
       btn.classList.remove("active");
@@ -37,35 +41,40 @@ class Gallery extends Component {
 
   //filter data and update the state
   filterData = async (slug) => {
-    const data = await this.fetchData();
+    const { tempGallery } = this.state;
+
     let filteredGallery = [];
 
     if (this.state.featuredClass) {
       if (slug !== "all") {
-        filteredGallery = data.filter(
+        filteredGallery = tempGallery.filter(
           (item) => item.featured && item.type === slug
         );
       } else {
-        filteredGallery = data.filter((item) => item.featured);
+        filteredGallery = tempGallery.filter((item) => item.featured);
       }
 
       this.setState({
         featuredGallery: filteredGallery,
+        loading: false,
       });
     } else {
       if (slug !== "all") {
-        filteredGallery = data.filter((item) => item.type === slug);
+        filteredGallery = tempGallery.filter((item) => item.type === slug);
       } else {
-        filteredGallery = data;
+        filteredGallery = tempGallery;
       }
 
       this.setState({
         gallery: filteredGallery,
+        loading: false,
       });
     }
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    await this.fetchData();
+
     const allBtns = [...document.querySelectorAll(".gallery-header p")];
 
     allBtns.forEach((btn) =>
@@ -73,18 +82,14 @@ class Gallery extends Component {
     );
 
     if (this.state.featuredClass) {
-      this.fetchData().then((data) => {
-        this.setState({
-          featuredGallery: data.filter((item) => item.featured),
-          loading: false,
-        });
+      this.setState({
+        featuredGallery: this.state.tempGallery.filter((item) => item.featured),
+        loading: false,
       });
     } else {
-      this.fetchData().then((data) => {
-        this.setState({
-          gallery: data,
-          loading: false,
-        });
+      this.setState({
+        gallery: this.state.tempGallery,
+        loading: false,
       });
     }
   }

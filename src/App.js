@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 
 import Amenities from "./pages/Amenities";
 // import Calendar from "./calendar-backed-up/Calendar";
@@ -30,11 +30,29 @@ import Calendar from "./Calendar";
 import ReservationRoom from "./pages/ReservationRoom";
 import ReservationConfirm from "./pages/ReservationConfirm";
 import Contact from "./pages/Contact";
+import Login from "./admin/Login";
+import ForgotPassword from "./admin/ForgotPassword";
+import Dashboard from "./admin/Dashboard";
 
-const App = () => {
+const App = (props) => {
+  // console.log(props.location.pathname.split("/"));
+  const urlPath = props.location.pathname;
+  const url = urlPath.split("/")[1];
+
+  // if (url === "accounts") {
+  //   return <Redirect to="/accounts/login" />;
+  // }
+
+  console.log(url);
   return (
     <div>
-      <Header />
+      {url !== "accounts" && url !== "dashboard" ? (
+        <Header />
+      ) : urlPath === "/accounts" || urlPath === "/accounts/" ? (
+        <Redirect to="/accounts/login" />
+      ) : null}
+
+      {/* {url !== "dashboard" ? <Header /> : null} */}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/accomodation" component={Accomodation} />
@@ -92,12 +110,19 @@ const App = () => {
         <Route exact path="/our-gallery" component={OurGallery} />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/contact-us" component={Contact} />
+        <Route exact path="/accounts/login" component={Login} />
+        <Route
+          exact
+          path="/accounts/forgot-password"
+          component={ForgotPassword}
+        />
+        <Route exact path="/dashboard" component={Dashboard} />
         {/* <Route exact path="/datepicker" component={DatePicker} /> */}
         <Route component={ErrorPage} />
       </Switch>
-      <Footer />
+      {url !== "accounts" && url !== "dashboard" ? <Footer /> : null}
     </div>
   );
 };
 
-export default App;
+export default withRouter(App);
