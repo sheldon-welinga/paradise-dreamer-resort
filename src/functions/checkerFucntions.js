@@ -8,6 +8,12 @@ const classChecker = (element, classToBeChecked, classToBeAdded) => {
   }
 };
 
+const classRemover = (element, classToBeRemoved) => {
+  if (element.classList.contains(classToBeRemoved)) {
+    element.classList.remove(classToBeRemoved);
+  }
+};
+
 /*
 let counter = 0;
 
@@ -85,8 +91,21 @@ const counterCheckerForReservationConfirm = (
   return counter;
 };
 
+const resetCounterCheckerForClasses = (array, classToBeRemoved = "success") => {
+  let counter = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    counter += 1;
+
+    classRemover(array[i], classToBeRemoved);
+
+    return counter;
+  }
+};
+
 export {
   classChecker,
   counterCheckerForClasses,
   counterCheckerForReservationConfirm,
+  resetCounterCheckerForClasses,
 };

@@ -14,6 +14,7 @@
   --white: #ffffff;
   --blue: #022296;
   --lightBlue: #0a8ee0;
+  --lightestBlue: rgb(231, 235, 236);
   --orange: #ff2419;
   --black: #1c1616;
   --lightBlack: #110f0fd5;
@@ -21,6 +22,12 @@
   --yellow: #fbff05;
   --error: rgb(226, 67, 67);
   --success: #10a128;
+  --bg-orange: #e67d21;
+  --bg-blue: #3598dc;
+  --bg-purple: #8e44ad;
+  --bg-success: #28a745;
+  --bg-dark-maroon: #2b4570;
+  --transparentBlack: rgba(0, 0, 0, 0.2);
 }
 
 .page-height {
@@ -4067,7 +4074,8 @@ select::-ms-expand {
 
 /* -------------------------------ADMIN LOGIN PAGE------------------------------------ */
 .login,
-.forgot-password {
+.forgot-password,
+.reset-password {
   display: flex;
   min-height: 100vh;
   padding: 0;
@@ -4075,7 +4083,8 @@ select::-ms-expand {
 }
 
 .login-left-side,
-.forgot-password-left-side {
+.forgot-password-left-side,
+.reset-password-left-side {
   flex: 0.6;
   flex-direction: column;
   width: 100%;
@@ -4088,7 +4097,9 @@ select::-ms-expand {
 .login-left-side h2,
 .login-left-side .main-site,
 .forgot-password-left-side h2,
-.forgot-password-left-side .main-site {
+.forgot-password-left-side .main-site,
+.reset-password-left-side h2,
+.reset-password-left-side .main-site {
   color: var(--white);
   font-size: 1.8rem;
   width: 60%;
@@ -4098,18 +4109,21 @@ select::-ms-expand {
 }
 
 .login-left-side .main-site,
-.forgot-password-left-side .main-site {
+.forgot-password-left-side .main-site,
+.reset-password-left-side .main-site {
   font-size: 1.2rem;
   margin-top: 2rem;
 }
 
 .login-left-side .main-site .fa,
-.forgot-password-left-side .main-site .fa {
+.forgot-password-left-side .main-site .fa,
+.reset-password-left-side .main-site .fa {
   color: var(--white);
 }
 
 .login-right-side,
-.forgot-password-right-side {
+.forgot-password-right-side,
+.reset-password-right-side {
   flex: 0.4;
   flex-direction: column;
   padding: 1rem;
@@ -4119,7 +4133,8 @@ select::-ms-expand {
 }
 
 .login-right-side .title,
-.forgot-password-right-side .title {
+.forgot-password-right-side .title,
+.reset-password-right-side .title {
   text-transform: uppercase;
   font-family: "Playfair Display", Arial, Helvetica, sans-serif;
   margin-bottom: 3rem;
@@ -4128,13 +4143,15 @@ select::-ms-expand {
 }
 
 .login-right-side .form-group,
-.forgot-password-right-side .form-group {
+.forgot-password-right-side .form-group,
+.reset-password-right-side .form-group {
   margin: 0.5rem 0;
   position: relative;
 }
 
 .login-right-side .form-group .fa,
-.forgot-password-right-side .form-group .fa {
+.forgot-password-right-side .form-group .fa,
+.reset-password-right-side .form-group .fa {
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -4143,7 +4160,8 @@ select::-ms-expand {
 }
 
 .login-right-side .form-control,
-.forgot-password-right-side .form-control {
+.forgot-password-right-side .form-control,
+.reset-password-right-side .form-control {
   width: 100%;
   min-width: 28vw;
   padding: 0.5rem 1rem;
@@ -4152,8 +4170,81 @@ select::-ms-expand {
   border-radius: 5px;
 }
 
+.reset-password-right-side .form-control::-webkit-inner-spin-button,
+.reset-password-right-side .form-control::-webkit-outer-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.login-right-side .error,
+.login-right-side .main-success {
+  min-width: 28vw;
+  margin-bottom: 1rem;
+}
+
+.login-right-side .form-group.invalid-error .form-control,
+.forgot-password-right-side .form-group.invalid-error .form-control,
+.reset-password-right-side .form-group.invalid-error .form-control {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.login-right-side .form-group.invalid-error .form-control::placeholder,
+.forgot-password-right-side
+  .form-group.invalid-error
+  .form-control::placeholder,
+.login-right-side .form-group.invalid-error span,
+.forgot-password-right-side .form-group.invalid-error span,
+.reset-password-right-side .form-group.invalid-error .form-control::placeholder,
+.reset-password-right-side .form-group.invalid-error span {
+  color: var(--error);
+}
+
+.reset-password-right-side .form-group.invalid-error {
+  margin-bottom: 1.5rem;
+}
+
+.reset-password-right-side .form-group.invalid-error::after {
+  content: "This field cannot be empty";
+  display: block;
+  position: absolute;
+  height: 2px;
+  bottom: -4px;
+  z-index: 10;
+  color: var(--error);
+}
+
+.reset-password-right-side .form-group.invalid-error.password-short {
+  margin-bottom: 2rem;
+}
+
+.reset-password-right-side .form-group.invalid-error.password-short::after {
+  content: "Password must be atleast 8 characters long";
+}
+
+.reset-password-right-side .form-group.invalid-error.password-unmatch::after {
+  content: "Passwords do not match!";
+}
+
+.login-right-side .form-group.success .form-control,
+.forgot-password-right-side .form-group.success .form-control,
+.reset-password-right-side .form-group.success .form-control {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.login-right-side .form-group.success .form-control::placeholder,
+.login-right-side .form-group.success span,
+.forgot-password-right-side .form-group.success .form-control::placeholder,
+.forgot-password-right-side .form-group.success span,
+.reset-password-right-side .form-group.success .form-control::placeholder,
+.reset-password-right-side .form-group.success span {
+  color: var(--success);
+}
+
 .login-right-side .f-password,
-.forgot-password-right-side .b-login {
+.forgot-password-right-side .b-login,
+.reset-password-right-side .b-login {
   display: block;
   text-align: center;
   color: var(--maroon);
@@ -4161,7 +4252,8 @@ select::-ms-expand {
 }
 
 .login-right-side .btn,
-.forgot-password-right-side .btn {
+.forgot-password-right-side .btn,
+.reset-password-right-side .btn {
   border-radius: 0;
   display: flex;
   place-self: center;
@@ -4169,7 +4261,8 @@ select::-ms-expand {
 }
 
 .login-right-side form,
-.forgot-password-right-side form {
+.forgot-password-right-side form,
+.reset-password-right-side form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4177,20 +4270,455 @@ select::-ms-expand {
 
 @media screen and (max-width: 700px) {
   .login,
-  .forgot-password {
+  .forgot-password,
+  .reset-password {
     flex-direction: column;
   }
 
   .login-right-side .form-control,
-  .forgot-password-right-side .form-control {
+  .forgot-password-right-side .form-control,
+  .reset-password-right-side .form-control {
     min-width: 50vw;
   }
 
   .login-right-side .title,
-  .forgot-password-right-side .title {
+  .forgot-password-right-side .title,
+  .reset-password-right-side .title {
     margin-bottom: 1.5rem;
     margin-top: -1rem;
   }
 }
 
 /* ------------------------------END OF ADMIN LOGIN PAGE------------------------------ */
+
+/* -----------------------------------------DASHBOARD---------------------------------- */
+.dashboard {
+  padding: 0;
+  position: relative;
+}
+
+.dashboard .main-success {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+
+/* ---------------------------------DASHBOARD SIDEBAR------------------------------------ */
+.dashboard .sidebar {
+  max-width: 250px;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background: #fff;
+  color: var(--white);
+  position: absolute;
+  top: 0;
+  transition: max-width 0.3s ease-in-out;
+}
+
+.dashboard .sidebar .sidebar-logo::after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 1px;
+  background-color: var(--maroon);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dashboard .sidebar .sidebar-logo img {
+  width: 50px;
+  display: block;
+  margin: 0.5rem;
+  margin-left: 50%;
+  transform: translateX(-70%);
+}
+
+.dashboard .sidebar .sidebar-logo .text-icon,
+.dashboard .sidebar .sidebar-logo .text-icon span {
+  font-size: 1.3rem;
+}
+
+.dashboard .sidebar .sidebar-logo .text-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard .sidebar .sidebar-logo .text-icon span {
+  color: var(--orange);
+}
+
+.dashboard .sidebar .main-sidebar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: calc(100vh - 100px);
+}
+
+.dashboard .sidebar .sidebar-item {
+  padding: 1rem 0.5rem;
+  margin: 0.3rem 0rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--white);
+  color: var(--maroon);
+  display: block;
+}
+
+.dashboard .sidebar .sidebar-item span:last-child {
+  transition: all 0.3s ease-in-out;
+  background: var(--white);
+  color: var(--maroon);
+}
+
+.dashboard .sidebar .sidebar-item .fa {
+  margin-right: 0.5rem;
+  background: var(--white);
+  color: var(--maroon);
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboard .sidebar .sidebar-item:hover span:last-child,
+.dashboard .sidebar .sidebar-item:hover .fa,
+.dashboard .sidebar .sidebar-item:hover {
+  background: var(--maroon);
+  color: var(--white);
+}
+
+.dashboard .sidebar .sidebar-item.active::after {
+  content: "";
+  height: 0;
+  position: absolute;
+  width: 0;
+  display: block;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-right: 25px solid var(--lightestBlue);
+  right: -0.5rem;
+  top: 0;
+}
+
+.dashboard .sidebar .sidebar-item.active:hover::after {
+  display: none;
+}
+
+/* ---------------------------------END OF DASHBOARD SIDEBAR------------------------- */
+/* -----------------------------------DASHBOARD HEADER------------------------------ */
+
+.dashboard .admin-header,
+.dashboard .main-dashboard {
+  width: 100%;
+  max-width: calc(100% - 250px);
+  position: absolute;
+  top: 0;
+  min-height: 8vh;
+  transition: max-width 0.3s ease-in-out;
+}
+
+.dashboard .admin-header {
+  max-width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: var(--maroon);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 1rem;
+}
+
+.dashboard .admin-header .admin-header-left h5,
+.dashboard .admin-header .admin-header-right p {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 17px;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dashboard .admin-header .admin-header-left h5 {
+  font-size: 20px;
+  font-family: serif;
+}
+
+.dashboard .admin-header .admin-header-left .form-group {
+  width: 250px;
+  padding: 0.2rem 0.5rem;
+  /* margin-right: 0.5rem; */
+}
+
+.dashboard .admin-header .admin-header-left .form-group .form-control {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--maroon);
+  padding: 0.5rem 1rem;
+  outline: none;
+}
+
+.dashboard .admin-header .admin-header-left,
+.dashboard .admin-header .admin-header-right .header-icons,
+.dashboard .admin-header .admin-header-right .avatar,
+.dashboard .admin-header .admin-header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard .admin-header .admin-header-right .header-icons .icon-container {
+  position: relative;
+  display: block;
+  margin: 5px 1rem;
+}
+
+.dashboard .admin-header .admin-header-right .avatar {
+  flex-direction: column;
+  margin: 5px 1rem;
+}
+
+.dashboard .admin-header .admin-header-right .avatar .avatar-img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--maroon);
+  background-color: var(--white);
+  padding: 2px;
+  cursor: pointer;
+}
+
+.dashboard .admin-header .admin-header-right .sidebar-signout span {
+  color: var(--white);
+  font-size: 14px;
+}
+
+.dashboard .admin-header .admin-header-left .fa-bars,
+.dashboard .admin-header .admin-header-right .header-icons .fa,
+.dashboard .admin-header .admin-header-right .sidebar-signout .fa {
+  font-size: 17px;
+  color: var(--white);
+}
+
+.dashboard .admin-header .admin-header-left .fa-bars,
+.dashboard .admin-header .admin-header-right .header-icons .fa {
+  font-size: 20px;
+}
+
+.dashboard .admin-header .admin-header-left .fa-bars,
+.dashboard .admin-header .admin-header-right .header-icons,
+.dashboard .admin-header .admin-header-right .sidebar-signout .sidebar-item {
+  cursor: pointer;
+}
+
+.dashboard .admin-header .admin-header-right .header-icons .text-counter {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.7rem;
+  color: var(--white);
+  background-color: var(--success);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  animation: 1s ease 0s normal none infinite running wobble;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 1px 2px rgb(0 0 0 / 18%);
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-5%) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.dashboard .admin-header .admin-header-left .fa-bars {
+  margin-right: 1rem;
+}
+
+/* ---------------------------------------END OF DASHBOARD HEADER------------------------- */
+/* ------------------------------------MAIN DASHBOARD ------------------------------------- */
+
+.dashboard .main-dashboard {
+  min-height: 100vh;
+  right: 0;
+  background-color: var(--lightestBlue);
+  overflow-y: scroll;
+}
+
+.dashboard .main-dashboard .dashboard-body {
+  padding: 1rem;
+}
+
+.dashboard .main-dashboard .dashboard-body .dashboard-body-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-gap: 1rem;
+}
+
+.dashboard .main-dashboard .dashboard-body .item-styled {
+  /* max-width: 320px; */
+  height: 150px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 1px 2px rgb(0 0 0 / 18%);
+  background-color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  cursor: pointer;
+}
+
+.fa-volume-control-phone {
+  transform: rotate(-45deg);
+}
+
+.dashboard .main-dashboard .dashboard-body .item-styled .progress {
+  height: 3px;
+  background-color: var(--transparentBlack);
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: 30px !important;
+  position: relative;
+}
+
+.dashboard .main-dashboard .dashboard-body .item-styled .progress span {
+  position: absolute;
+  border-radius: 30px;
+  width: 90%;
+  height: 3px;
+  background-color: var(--white);
+}
+
+.dashboard .main-dashboard .dashboard-body .item-styled .item-styled-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dashboard .main-dashboard .item-styled-container .text-container h3,
+.dashboard .main-dashboard .item-styled-container .text-container h5 {
+  color: var(--white);
+  text-align: right;
+}
+
+.dashboard .main-dashboard .item-styled-container .text-container h3 {
+  font-size: 1.7rem;
+}
+
+.dashboard .main-dashboard .item-styled-container .text-container h5 {
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+.dashboard .main-dashboard .dashboard-body .item-styled .fa {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.dashboard .main-dashboard .dashboard-body .item-styled.bg-orange {
+  background-color: var(--bg-orange);
+}
+
+.dashboard .main-dashboard .dashboard-body .item-styled.bg-dark-maroon {
+  background-color: var(--bg-dark-maroon);
+}
+
+.dashboard .main-dashboard .dashboard-body .item-styled.bg-success {
+  background-color: var(--bg-success);
+}
+
+.dashboard .main-dashboard .dashboard-body .item-styled.bg-blue {
+  background-color: var(--bg-blue);
+}
+
+.dashboard .main-dashboard .dashboard-body .item-styled.bg-purple {
+  background-color: var(--bg-purple);
+}
+
+.dashboard .item-styled .item-styled-container .icon {
+  border-radius: 50%;
+  background-color: var(--transparentBlack);
+  height: 70px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----------------------------------END OF MAIN DASHBOARD--------------------------------- */
+
+@media screen and (max-width: 990px) {
+  .dashboard .sidebar {
+    max-width: 60px;
+  }
+
+  .dashboard .main-dashboard {
+    max-width: calc(100% - 60px);
+  }
+
+  .dashboard .sidebar .sidebar-logo img {
+    transform: translateX(-50%);
+  }
+
+  .dashboard .sidebar .sidebar-item .fa {
+    font-size: 1.5rem;
+  }
+
+  .dashboard .sidebar .sidebar-logo .text-icon,
+  .dashboard .sidebar .sidebar-item span:last-child {
+    display: none;
+  }
+
+  .dashboard .sidebar.show {
+    max-width: 250px;
+  }
+
+  .dashboard .sidebar.show .sidebar-logo img {
+    transform: translateX(-50%);
+  }
+
+  .dashboard .sidebar.show .sidebar-item .fa {
+    font-size: initial;
+  }
+
+  .dashboard .sidebar.show .sidebar-logo .text-icon,
+  .dashboard .sidebar.show .sidebar-item span:last-child {
+    display: initial;
+  }
+
+  .dashboard .sidebar.show .sidebar-logo .text-icon {
+    display: flex;
+  }
+
+  .dashboard .main-dashboard.show {
+    max-width: calc(100% - 250px) !important;
+  }
+}
+
+/* ---------------------------------------END OF DASHBOARD------------------------------ */

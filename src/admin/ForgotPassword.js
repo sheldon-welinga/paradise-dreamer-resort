@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { API_URL } from "../configure";
+import {
+  counterCheckerForClasses,
+  resetCounterCheckerForClasses,
+} from "../functions/checkerFucntions";
 
 class ForgotPassword extends Component {
   constructor(props) {
@@ -7,6 +12,8 @@ class ForgotPassword extends Component {
 
     this.state = {
       email: "",
+      error: "",
+      success: "",
     };
   }
 
@@ -16,14 +23,84 @@ class ForgotPassword extends Component {
     });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(this.state);
+    const formGroups = [...document.querySelectorAll(".form-group")];
+
+    const counter = counterCheckerForClasses(
+      formGroups,
+      "invalid-error",
+      "success",
+      "none"
+    );
+
+    if (counter >= formGroups.length) {
+      try {
+        const configOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.state),
+        };
+
+        sessionStorage.setItem("activeEmail", this.state.email);
+
+        const response = await fetch(
+          `${API_URL}/admins/forgot-password`,
+          configOptions
+        );
+
+        const responseMsg = await response.json();
+
+        this.setState({ email: "" });
+
+        resetCounterCheckerForClasses(formGroups, "success");
+
+        if (responseMsg.error) {
+          this.setState({
+            error: responseMsg.error,
+          });
+        } else {
+          this.setState({
+            success: responseMsg.message,
+          });
+
+          setTimeout(() => {
+            this.props.history.push("/accounts/reset-password");
+          }, 4000);
+        }
+
+        setTimeout(() => {
+          this.setState({
+            error: "",
+            success: "",
+          });
+        }, 7000);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
   };
 
+  componentDidMount() {
+    const token = JSON.parse(localStorage.getItem("token"));
+
+    if (token) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
+  componentWillUnmount() {
+    // fix Warning: Can't perform a React state update on an unmounted component
+    this.setState = (state, callback) => {
+      return;
+    };
+  }
+
   render() {
-    const { email } = this.state;
+    const { email, error, success } = this.state;
 
     return (
       <div className="page-height forgot-password">
@@ -35,8 +112,11 @@ class ForgotPassword extends Component {
         </div>
         <div className="forgot-password-right-side">
           <h2 className="title">Forgot Password</h2>
+          {error && <div className="error">{error}</div>}
+          {success && <div className="main-success">{success}</div>}
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
+              <span className="fa fa-user"></span>
               <input
                 type="email"
                 name="email"
@@ -47,7 +127,6 @@ class ForgotPassword extends Component {
                 value={email}
                 onChange={this.handleChange}
               />
-              <span className="fa fa-user"></span>
             </div>
             <button type="submit" className="btn btn-primary">
               Reset Password

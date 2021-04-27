@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { API_URL } from "../configure";
+import { counterCheckerForClasses } from "../functions/checkerFucntions";
 
 class Login extends Component {
   constructor(props) {
@@ -8,6 +10,8 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
+      error: "",
+      success: "",
     };
   }
 
@@ -17,14 +21,78 @@ class Login extends Component {
     });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(this.state);
+    const formGroups = [...document.querySelectorAll(".form-group")];
+
+    const counter = counterCheckerForClasses(
+      formGroups,
+      "invalid-error",
+      "success",
+      "none"
+    );
+
+    if (counter >= formGroups.length) {
+      try {
+        //request to the server
+        const configOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.state),
+        };
+
+        const response = await fetch(`${API_URL}/admins/login`, configOptions);
+
+        const responseMsg = await response.json();
+
+        this.setState({ email: "", password: "" });
+
+        if (responseMsg.error) {
+          this.setState({
+            error: responseMsg.error,
+          });
+        } else {
+          this.setState({ success: responseMsg.message });
+
+          localStorage.setItem("user", JSON.stringify(responseMsg.user));
+          localStorage.setItem("token", JSON.stringify(responseMsg.token));
+          localStorage.setItem("message", JSON.stringify(responseMsg.message));
+
+          this.props.history.push("/dashboard");
+        }
+
+        setTimeout(() => {
+          this.setState({
+            error: "",
+            success: "",
+          });
+        }, 7000);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
   };
 
+  componentDidMount() {
+    const token = JSON.parse(localStorage.getItem("token"));
+
+    if (token) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
+  componentWillUnmount() {
+    // fix Warning: Can't perform a React state update on an unmounted component
+    this.setState = (state, callback) => {
+      return;
+    };
+  }
+
   render() {
-    const { email, password } = this.state;
+    const { email, password, error, success } = this.state;
 
     return (
       <div className="page-height login">
@@ -36,8 +104,11 @@ class Login extends Component {
         </div>
         <div className="login-right-side">
           <h2 className="title">Admin Login</h2>
+          {error && <div className="error">{error}</div>}
+          {success && <div className="main-success">{success}</div>}
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
+              <span className="fa fa-user"></span>
               <input
                 type="email"
                 name="email"
@@ -48,9 +119,9 @@ class Login extends Component {
                 value={email}
                 onChange={this.handleChange}
               />
-              <span className="fa fa-user"></span>
             </div>
             <div className="form-group">
+              <span className="fa fa-lock"></span>
               <input
                 type="password"
                 name="password"
@@ -61,7 +132,6 @@ class Login extends Component {
                 value={password}
                 onChange={this.handleChange}
               />
-              <span className="fa fa-lock"></span>
             </div>
             <button type="submit" className="btn btn-primary">
               Login

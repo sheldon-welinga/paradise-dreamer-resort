@@ -33,6 +33,7 @@ import Contact from "./pages/Contact";
 import Login from "./admin/Login";
 import ForgotPassword from "./admin/ForgotPassword";
 import Dashboard from "./admin/Dashboard";
+import ResetPassword from "./admin/ResetPassword";
 
 const App = (props) => {
   // console.log(props.location.pathname.split("/"));
@@ -115,6 +116,11 @@ const App = (props) => {
           exact
           path="/accounts/forgot-password"
           component={ForgotPassword}
+        />
+        <Route
+          exact
+          path="/accounts/reset-password"
+          component={ResetPassword}
         />
         <Route exact path="/dashboard" component={Dashboard} />
         {/* <Route exact path="/datepicker" component={DatePicker} /> */}
