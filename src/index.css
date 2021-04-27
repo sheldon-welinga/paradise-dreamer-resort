@@ -15,6 +15,7 @@
   --blue: #022296;
   --lightBlue: #0a8ee0;
   --lightestBlue: rgb(231, 235, 236);
+  --gray-white: #f2f2f2;
   --orange: #ff2419;
   --black: #1c1616;
   --lightBlack: #110f0fd5;
@@ -4308,7 +4309,7 @@ select::-ms-expand {
   max-width: 250px;
   width: 100%;
   min-height: 100vh;
-  position: relative;
+  position: fixed;
   background: #fff;
   color: var(--white);
   position: absolute;
@@ -4417,7 +4418,9 @@ select::-ms-expand {
   position: absolute;
   top: 0;
   min-height: 8vh;
+  max-height: 100vh;
   transition: max-width 0.3s ease-in-out;
+  min-width: 280px;
 }
 
 .dashboard .admin-header {
@@ -4430,6 +4433,7 @@ select::-ms-expand {
   justify-content: space-between;
   align-items: center;
   padding: 5px 1rem;
+  z-index: 10;
 }
 
 .dashboard .admin-header .admin-header-left h5,
@@ -4573,6 +4577,29 @@ select::-ms-expand {
   padding: 1rem;
 }
 
+.dashboard .main-dashboard .dashboard-body .dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.dashboard .main-dashboard .dashboard-body .dashboard-header-left h5 {
+  text-transform: uppercase;
+  color: var(--black);
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.dashboard .main-dashboard .dashboard-body .dashboard-header-left p span {
+  cursor: pointer;
+}
+
+.dashboard .dashboard-body .dashboard-header-left p span:first-child {
+  font-size: 17px;
+  font-weight: bold;
+}
+
 .dashboard .main-dashboard .dashboard-body .dashboard-body-top {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -4629,11 +4656,13 @@ select::-ms-expand {
 
 .dashboard .main-dashboard .item-styled-container .text-container h3 {
   font-size: 1.7rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
 }
 
 .dashboard .main-dashboard .item-styled-container .text-container h5 {
   font-size: 1.5rem;
   margin-top: 5px;
+  font-family: serif;
 }
 
 .dashboard .main-dashboard .dashboard-body .item-styled .fa {
@@ -4670,6 +4699,128 @@ select::-ms-expand {
   align-items: center;
   justify-content: center;
 }
+
+/* ------------------------------------DASHBOARD LISTINGS ------------------------------- */
+.dashboard-listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  margin: 2rem 0;
+}
+
+.listings {
+  background-color: var(--white);
+  padding: 1rem;
+  overflow-x: scroll;
+}
+
+.listings .title {
+  font-size: 1.2rem;
+  color: var(--black);
+  margin-bottom: 5px;
+}
+
+.listings > p {
+  font-size: 1rem;
+}
+
+.listing {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.listing .listing-body img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.listing .listing-item,
+.listing th {
+  border: none;
+  border-top: 1px solid var(--lightGray);
+  border-bottom: 1px solid var(--lightGray);
+  padding: 8px;
+}
+
+.listing .listing-item .listing-checkbox[type="checkbox"] {
+  transform: scale(1.5);
+  cursor: pointer;
+  /* position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  font-size: 1rem;
+  user-select: none;
+  -webkit-user-select: none;
+  border: 1px solid gray; */
+}
+
+/* .listing .listing-item .listing-checkbox[type="checkbox"]:checked + label {
+  background-color: var(--bg-success);
+  position: relative;
+  display: block;
+}
+
+.listing
+  .listing-item
+  .listing-checkbox[type="checkbox"]:checked
+  + label::before {
+  background-color: var(--bg-success) !important;
+  color: var(--bg-success) !important;
+  top: 2px;
+  left: 1px;
+  width: 100%;
+  height: 13px;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  background-color: var(--bg-blue);
+  z-index: 10;
+  transform: rotateZ(37deg);
+  transform-origin: 100% 100%;
+} */
+
+.listing .listing-item:nth-child(3) p:first-child {
+  font-weight: bold;
+}
+
+.listing .listing-item:last-child p {
+  background-color: var(--bg-success);
+  width: 35px;
+  height: 35px;
+  margin: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.listing .listing-body:nth-child(even) {
+  background-color: var(--gray-white);
+}
+
+.listing .listing-body:hover {
+  background-color: var(--lightGray);
+}
+
+.listing th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  border-top: none;
+  border-bottom-width: 2px;
+  /* background-color: var(--bg-success); */
+  /* color: var(--white); */
+}
+
+/* -----------------------------------END OF DASHBOARD LISTINGS--------------------------- */
 
 /* ----------------------------------END OF MAIN DASHBOARD--------------------------------- */
 
@@ -4718,6 +4869,36 @@ select::-ms-expand {
 
   .dashboard .main-dashboard.show {
     max-width: calc(100% - 250px) !important;
+  }
+}
+
+@media screen and (max-width: 647px) {
+  .admin-header {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 1.5rem;
+  }
+
+  .dashboard .admin-header .admin-header-left .form-group,
+  .admin-header-left form,
+  .admin-header-left {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .dashboard-body .dashboard-header {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .dashboard .main-dashboard .dashboard-body .dashboard-body-top {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
 }
 

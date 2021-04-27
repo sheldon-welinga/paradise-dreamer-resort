@@ -32,7 +32,7 @@ const SideBar = ({ showSideMenu, ...props }) => {
           </p>
           <p className="sidebar-item">
             <span className="fa fa-building"></span>
-            <span>Rooms</span>
+            <span>Hotels &amp; SPAs</span>
           </p>
           <p className="sidebar-item">
             <span className="fa fa-paper-plane"></span>
