@@ -533,6 +533,10 @@ select::-ms-expand {
   justify-content: center;
 }
 
+.home-slider .cover > div {
+  margin: 0 0.5rem;
+}
+
 .home-slider .cover div h2,
 .home-slider .cover div h4,
 .home-slider .cover div h5 {
@@ -582,6 +586,124 @@ select::-ms-expand {
     font-size: 1.5rem;
   }
 }
+
+/* ----------------------------HOME SEARCH---------------------- */
+.home-search {
+  background-color: var(--white);
+  border: 1px solid var(--lightGray);
+  padding: 0.5rem 1.5rem;
+  padding-bottom: 1rem;
+  /* max-height: 80px; */
+  width: 100%;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-search > .title {
+  color: var(--black) !important;
+  font-size: 2rem !important;
+  line-height: 3rem;
+}
+
+.home-search .home-search-form form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-search .home-search-form .form-group {
+  width: 100%;
+  margin: 0 0.5rem;
+}
+
+.home-search .btn-container .btn {
+  border-radius: 0;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.home-search .home-search-form,
+.home-search .home-search-form .form-group {
+  position: relative;
+}
+
+.home-search .home-search-form .form-group .form-control {
+  max-width: 700px;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  color: var(--lightBlack);
+  outline: none;
+  border: 1px solid gray;
+  cursor: pointer !important;
+}
+
+.home-search .select {
+  max-width: 700px;
+  cursor: pointer !important;
+}
+
+.home-search .select::after {
+  right: 0.5rem;
+  /* margin-top: 2px; */
+  border-top-color: var(--lightBlack);
+  border-left-color: var(--lightBlack);
+}
+
+.home-search .home-search-form .form-group.invalid-error .form-control {
+  border-color: var(--error);
+  color: var(--error);
+  cursor: pointer;
+}
+
+.home-search .home-search-form .form-group.invalid-error p {
+  color: var(--error);
+}
+
+.home-search
+  .home-search-form
+  .form-group.invalid-error:not(.specialCode)::after {
+  content: "This field cannot be empty";
+  display: block;
+  position: absolute;
+  height: 2px;
+  bottom: -2px;
+  z-index: 10;
+  color: var(--error);
+}
+
+.home-search .home-search-form .form-group.success .form-control {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.home-search .home-search-form .form-group.success p {
+  color: var(--success);
+}
+
+.home-search .home-search-form .form-group.sucess::after {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .home-search .home-search-form form {
+    flex-direction: column;
+  }
+
+  .home-search .home-search-form .form-group {
+    margin: 0.5rem;
+  }
+
+  .home-search .btn-container,
+  .home-search .btn-container .btn {
+    width: 100% !important;
+    margin-left: 0;
+    /* min-width: 100% !important; */
+    /* max-width: 100% !important; */
+  }
+}
+
+/* --------------------------END OF HOME SEARCH-------------------- */
 
 /* -----------------------End of Home Slider------------------- */
 /* -----------------------Welcome Home--------------------------- */
@@ -4703,7 +4825,7 @@ select::-ms-expand {
 /* ------------------------------------DASHBOARD LISTINGS ------------------------------- */
 .dashboard-listings {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   grid-gap: 1rem;
   margin: 2rem 0;
 }
