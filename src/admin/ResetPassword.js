@@ -127,7 +127,7 @@ class ResetPassword extends Component {
     return (
       <div className="page-height reset-password">
         <div className="reset-password-left-side">
-          <h2>Welcome To Paradise Dreamer Resort &amp; Spa</h2>
+          <h2>Welcome To Paradise Dreamer Resorts &amp; SPAs</h2>
           <Link to="/" className="main-site">
             Back to Main Site <span className="fa fa-long-arrow-right"></span>
           </Link>

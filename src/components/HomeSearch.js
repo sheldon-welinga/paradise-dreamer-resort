@@ -9,6 +9,7 @@ class HomeSearch extends Component {
       counties: [],
       location: "Select location",
       listing: "Select listing",
+      //   country: "Select country",
     };
   }
 
@@ -40,16 +41,23 @@ class HomeSearch extends Component {
   render() {
     const { counties, location, listing } = this.state;
 
-    // console.log(
-    //   counties.sort((countyA, countyB) =>
-    //     countyA.name > countyB.name ? 1 : -1
-    //   )
-    // );
     return (
       <div className="home-search">
         <h2 className="title">Search for a hotel, resort or SPA</h2>
         <div className="home-search-form">
           <form>
+            {/* <div className="form-group select">
+              <select
+                name="country"
+                id="country"
+                className="form-control"
+                value={country}
+                onChange={this.handleChange}
+              >
+                <option value="Select country">Select Country</option>
+                <option value="Kenya">Kenya</option>
+              </select>
+            </div> */}
             <div className="form-group select">
               <select
                 name="location"

@@ -97,7 +97,7 @@ class Login extends Component {
     return (
       <div className="page-height login">
         <div className="login-left-side">
-          <h2>Welcome To Paradise Dreamer Resort &amp; Spa</h2>
+          <h2>Welcome To Paradise Dreamer Resorts &amp; SPAs</h2>
           <Link to="/" className="main-site">
             Back to Main Site <span className="fa fa-long-arrow-right"></span>
           </Link>
@@ -137,7 +137,7 @@ class Login extends Component {
               Login
             </button>
             <Link to="/accounts/forgot-password" className="f-password">
-              Forgot Password?
+              Forgot your Password?
             </Link>
           </form>
         </div>
