@@ -5,7 +5,7 @@ import Gallery from "../components/Gallery";
 import HomeSlider from "../components/HomeSlider";
 import ResortSection from "../components/ResortSection";
 import WelcomeHome from "../components/WelcomeHome";
-import FeaturedListings from "./FeaturedListings";
+import FeaturedListings from "./Listings/FeaturedListings";
 
 const Home = () => {
   return (

@@ -43,7 +43,7 @@ class HomeSearch extends Component {
 
     return (
       <div className="home-search">
-        <h2 className="title">Search for a hotel, resort or SPA</h2>
+        <h2 className="title">Search for a Hotel, Resort or SPA</h2>
         <div className="home-search-form">
           <form>
             {/* <div className="form-group select">
@@ -58,6 +58,17 @@ class HomeSearch extends Component {
                 <option value="Kenya">Kenya</option>
               </select>
             </div> */}
+            <div className="form-group search">
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Search for a hotel, resort or SPA"
+                className="form-control"
+                // value={search}
+                onChange={this.handleChange}
+              />
+            </div>
             <div className="form-group select">
               <select
                 name="location"
@@ -90,6 +101,30 @@ class HomeSearch extends Component {
                 <option value="SPA">SPA</option>
               </select>
             </div>
+            {/* <div className="form-group form-amount">
+              <label htmlFor="amount">Bookings Amount in Kshs.</label>
+              <div>
+                <input
+                  type="text"
+                  name="min-amount"
+                  id="min"
+                  placeholder="Min amount"
+                  // value={min}
+                  className="form-control"
+                  onChange={this.handleChange}
+                />
+
+                <input
+                  type="text"
+                  name="max-amount"
+                  id="max"
+                  placeholder="Max amount"
+                  // value={max}
+                  className="form-control"
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div> */}
             <div className="btn-container">
               <button type="submit" className="btn btn-primary">
                 Search

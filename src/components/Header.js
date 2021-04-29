@@ -71,6 +71,9 @@ const Header = () => {
             <Link to="/">Home</Link>
           </li>
           <li className="nav-link">
+            <Link to="/listings">Listings</Link>
+          </li>
+          <li className="nav-link">
             <Link to="/accomodation">Accomodation</Link>
           </li>
           <li className="nav-link">
@@ -79,9 +82,9 @@ const Header = () => {
           <li className="nav-link">
             <Link to="/spa">SPA</Link>
           </li>
-          <li className="nav-link">
+          {/* <li className="nav-link">
             <Link to="/dinning">Dining</Link>
-          </li>
+          </li> */}
           <li className="nav-link">
             <Link to="/our-gallery">Our Gallery</Link>
           </li>
