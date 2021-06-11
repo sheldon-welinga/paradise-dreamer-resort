@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-import Gallery from "../components/Gallery";
+// import Gallery from "../components/Gallery";
 import HomeSlider from "../components/HomeSlider";
 import PopularDestinations from "../components/PopularDestinations";
 import SubscribeSection from "../components/SubscribeSection";
