@@ -756,6 +756,7 @@ select::-ms-expand {
   min-height: 40vh;
 }
 
+.popular-destinations .title,
 .featured-listings .title {
   text-align: center;
   display: flex;
@@ -767,6 +768,22 @@ select::-ms-expand {
   position: relative;
 }
 
+.popular-destinations .title {
+  font-size: 1.8rem;
+  margin: 0.3rem 0.5rem;
+}
+
+.popular-destinations .sub-title {
+  font-size: 1.3rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+}
+
+.popular-destinations > .title::after,
 .featured-listings > .title::after {
   content: "";
   display: block;
@@ -775,6 +792,12 @@ select::-ms-expand {
   background-color: var(--maroon);
   position: absolute;
   bottom: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.popular-destinations > .title:hover::after,
+.featured-listings > .title:hover::after {
+  width: 300px;
 }
 
 .featured-listings-wrapper {
@@ -787,12 +810,26 @@ select::-ms-expand {
   margin-right: auto;
 }
 
-.featured-listings-wrapper .featured-listing {
+.featured-listings-wrapper.page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 1rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popular-destinations .location {
+  margin-left: 1rem;
+}
+
+/* .featured-listings-wrapper .featured-listing {
   background: url(./accomodation-1.jpg) center/cover no-repeat;
   height: 35vh;
   position: relative;
   transition: all 0.3s ease-in-out;
-}
+} */
 
 .featured-listings-wrapper .featured-listing .listing-info {
   background-color: var(--mediumTransparentBlack);
@@ -812,14 +849,36 @@ select::-ms-expand {
 }
 
 .featured-listings-wrapper .featured-listing .description,
-.featured-listings-wrapper .featured-listing .listing-info .location,
+.featured-listings-wrapper .featured-listing .listing-info p,
+.featured-listings-wrapper .featured-listing .listing-info p span,
 .featured-listings-wrapper .featured-listing .listing-info .location .fa {
   color: var(--white);
 }
 
-.featured-listings-wrapper .featured-listing .description {
-  display: none;
+.featured-listings-wrapper .featured-listing .listing-info .location {
+  margin-top: 0.7rem;
 }
+
+.featured-listings-wrapper .featured-listing .listing-info .ratings {
+  display: flex;
+  margin: 5px 0;
+  margin-top: 0.9rem;
+}
+
+.featured-listings-wrapper .featured-listing .listing-info .ratings .count {
+  background-color: var(--bg-orange);
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+}
+
+.featured-listings-wrapper .featured-listing .listing-info .reviews {
+  margin-left: 1rem;
+}
+
+/* .featured-listings-wrapper .featured-listing .description {
+  display: none;
+} */
 
 .featured-listings-wrapper .featured-listing .listing-info .btn {
   min-height: inherit;
@@ -840,6 +899,63 @@ select::-ms-expand {
 .featured-listings .show-more .btn {
   border-radius: 0;
   cursor: pointer;
+}
+
+.popular-destinations .main-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 1rem 3.5rem;
+}
+
+.popular-destinations .main-wrapper .item > div {
+  width: 300px;
+  min-width: 300px;
+  margin: 1rem;
+}
+
+.popular-destinations .main-wrapper .owl-nav {
+  display: flex !important;
+  justify-content: center;
+}
+
+.popular-destinations .main-wrapper .owl-nav button {
+  height: 50px;
+  width: 50px !important;
+  border-radius: 50% !important;
+  display: block;
+  position: relative;
+  margin: 0.5rem 1rem;
+}
+
+.popular-destinations .main-wrapper .owl-nav button span {
+  display: none;
+}
+
+.popular-destinations .main-wrapper .owl-nav button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  left: 40%;
+  top: 30%;
+  margin-bottom: 1rem;
+  /* transform: translate(-50%, -50%); */
+  border-top: 2px solid var(--black);
+  border-right: 2px solid var(--black);
+}
+
+.popular-destinations .main-wrapper .owl-nav button.owl-prev::after {
+  transform: rotate(-135deg);
+  margin-bottom: 1rem;
+}
+
+.popular-destinations .main-wrapper .owl-nav button.owl-next::after {
+  transform: rotate(45deg);
+  margin-bottom: 1rem;
+  left: 30%;
+  /* top: 30%; */
 }
 
 /* -----------------------END OF FEATURED LISTINGS ------------------- */
@@ -925,6 +1041,197 @@ select::-ms-expand {
 }
 
 /* ------------------End of Welcome Home---------------------- */
+/* ----------------------why book with us---------------------- */
+.why-book-with-us {
+  min-height: 50vh;
+  position: relative;
+}
+
+.why-book-with-us .top-section {
+  min-height: 50vh;
+  background: url(./dist/images/travel1.jpg) center/cover no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--white);
+  padding: 3rem 0.5rem;
+}
+
+.why-book-with-us .top-section::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--lightBlack);
+  z-index: 1;
+}
+
+.why-book-with-us .top-section .title,
+.why-book-with-us .top-section .line,
+.why-book-with-us .top-section .content {
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  color: var(--white);
+  z-index: 10;
+  max-width: 900px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  line-height: 1.5rem;
+}
+
+.why-book-with-us .top-section .title {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.why-book-with-us .top-section .line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.why-book-with-us .top-section .line::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background-color: var(--yellow);
+  transform: rotate(45deg);
+  z-index: 1;
+  left: 48%;
+}
+
+.why-book-with-us .top-section .line span {
+  display: inline-block;
+  min-height: 1.5px;
+  width: 150px;
+  margin: 0.3rem 1rem;
+  background-color: var(--white);
+  z-index: 10;
+}
+
+.why-book-with-us .bottom-section {
+  min-height: 25vh;
+  background-color: var(--gray-white);
+  display: flex;
+  justify-content: center;
+}
+
+.why-book-with-us .bottom-section .section-wrapper {
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* top: 0; */
+  z-index: 10;
+  bottom: 12vh;
+}
+
+.why-book-with-us .bottom-section .bottom-section-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.why-book-with-us .bottom-section .bottom-section-item .wrapper {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-book-with-us .bottom-section .bottom-section-item .wrapper .icon {
+  font-size: 2rem;
+}
+
+.why-book-with-us .bottom-section .bottom-section-item .content {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+}
+
+/* ------------------end of why book with us--------------------- */
+/* ------------------subscribe section------------------------- */
+.subscribe-section {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 1rem;
+}
+
+.subscribe-section .subscribe {
+  background-color: var(--maroon);
+  max-width: 600px;
+  width: 100%;
+  min-height: 30vh;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.subscribe-section .subscribe .title {
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  margin: 10px 0;
+  color: var(--white);
+}
+
+.subscribe-section .subscribe .content {
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin: 0.5rem 0;
+}
+
+.subscribe-section .subscribe form {
+  display: flex;
+  align-items: center;
+}
+
+.subscribe-section .subscribe form > .form-group:first-child {
+  flex: 0.7;
+  margin: 0.5rem;
+  width: 100%;
+}
+
+.subscribe-section .subscribe form > .form-group:last-child {
+  flex: 0.3;
+  margin: 0.5rem;
+  /* margin-left: 0; */
+  width: 100%;
+}
+
+.subscribe-section .form-group .form-control {
+  /* max-width: 600px; */
+  width: 100%;
+  padding: 0.7rem 1rem;
+  color: var(--lightBlack);
+  outline: none;
+  border: 1px solid gray;
+}
+
+.subscribe-section .subscribe .btn {
+  border-radius: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ---------------------end of subscribe section---------------- */
 /* -----------------------Resort Section ---------------------- */
 .resort-section {
   display: flex;
@@ -1112,6 +1419,7 @@ select::-ms-expand {
 /* ------------------------End of Home ------------------------ */
 
 /* -------------------------------LISTINGS PAGE-------------------- */
+.single-listings-page,
 .listings-page {
   min-height: calc(100vh - 150px);
 }
@@ -1156,15 +1464,15 @@ select::-ms-expand {
   overflow: hidden;
 }
 
-.listings-page .featured-listings-wrapper .featured-listing .location {
+.listings-page .featured-listings-wrapper .featured-listing .more-info {
   max-height: 0rem;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.listings-page .featured-listings-wrapper .featured-listing:hover .location {
+.listings-page .featured-listings-wrapper .featured-listing:hover .more-info {
   margin-top: 10px;
-  max-height: 5rem;
+  max-height: 30vh;
 }
 
 /* ------------------------------END OF LISTINGS PAGE----------------- */

@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 
 import Gallery from "../components/Gallery";
 import HomeSlider from "../components/HomeSlider";
-import ResortSection from "../components/ResortSection";
+import PopularDestinations from "../components/PopularDestinations";
+import SubscribeSection from "../components/SubscribeSection";
+// import ResortSection from "../components/ResortSection";
 import WelcomeHome from "../components/WelcomeHome";
+import WhyBookWithUs from "../components/WhyBookWithUs";
 import FeaturedListings from "./Listings/FeaturedListings";
 
 const Home = () => {
@@ -13,8 +16,11 @@ const Home = () => {
       <HomeSlider />
       <WelcomeHome />
       <FeaturedListings />
-      <ResortSection />
-      <div className="gallery-section">
+      <PopularDestinations />
+      <WhyBookWithUs />
+      <SubscribeSection />
+      {/* <ResortSection /> */}
+      {/* <div className="gallery-section">
         <h2 className="title">Gallery</h2>
         <Gallery featuredClass="featured" />
         <div className="browse-gallery">
@@ -22,7 +28,7 @@ const Home = () => {
             Browse our gallery
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

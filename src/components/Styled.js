@@ -52,4 +52,12 @@ const ImageSlide = styled.div`
   min-height: 40vh;
 `;
 
-export { StyledHero, ImageSlide };
+const ImageWrapper = styled.div`
+  background: url(${(props) => (props.img ? props.img : defaultImg)})
+    center/cover no-repeat;
+  height: ${(props) => (props.height ? props.height : "35vh")};
+  position: relative;
+  transition: all 0.3s ease-in-out;
+`;
+
+export { StyledHero, ImageSlide, ImageWrapper };

@@ -1,6 +1,6 @@
 import React from "react";
 import HomeSearch from "../../components/HomeSearch";
-import FeaturedListing from "./FeaturedListing";
+import SingleListing from "./SingleListing";
 
 const Listings = () => {
   return (
@@ -9,13 +9,19 @@ const Listings = () => {
         <HomeSearch />
       </div>
 
-      <div className="featured-listings-wrapper">
-        <FeaturedListing />
-        <FeaturedListing />
-        <FeaturedListing />
-        <FeaturedListing />
-        <FeaturedListing />
-        <FeaturedListing />
+      <div className="featured-listings-wrapper page">
+        <SingleListing>
+          <p className="description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+            totam itaque non nostrum ducimus temporibus est asperiores illo
+            autem optio!
+          </p>
+        </SingleListing>
+        <SingleListing></SingleListing>
+        <SingleListing></SingleListing>
+        <SingleListing></SingleListing>
+        <SingleListing></SingleListing>
+        <SingleListing></SingleListing>
       </div>
     </div>
   );

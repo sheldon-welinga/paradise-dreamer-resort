@@ -35,6 +35,7 @@ import ForgotPassword from "./admin/ForgotPassword";
 import Dashboard from "./admin/Dashboard";
 import ResetPassword from "./admin/ResetPassword";
 import Listings from "./pages/Listings/Listings";
+import SingleListingPage from "./pages/Listings/SingleListingPage";
 
 const App = (props) => {
   // console.log(props.location.pathname.split("/"));
@@ -58,6 +59,11 @@ const App = (props) => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/listings" component={Listings} />
+        <Route
+          exact
+          path="/listing/:listingName"
+          component={SingleListingPage}
+        />
         <Route exact path="/accomodation" component={Accomodation} />
         <Route exact path="/accomodation/:type" component={Accomodation} />
         <Route exact path="/accomodation/:type/:slug" component={SingleRoom} />
