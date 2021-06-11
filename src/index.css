@@ -811,13 +811,14 @@ select::-ms-expand {
 }
 
 .featured-listings-wrapper.page {
+  flex: 0.85;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 1rem;
   padding: 1rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: initial;
+  margin-left: initial;
+  margin-right: initial;
 }
 
 .popular-destinations .location {
@@ -875,10 +876,6 @@ select::-ms-expand {
 .featured-listings-wrapper .featured-listing .listing-info .reviews {
   margin-left: 1rem;
 }
-
-/* .featured-listings-wrapper .featured-listing .description {
-  display: none;
-} */
 
 .featured-listings-wrapper .featured-listing .listing-info .btn {
   min-height: inherit;
@@ -941,7 +938,6 @@ select::-ms-expand {
   left: 40%;
   top: 30%;
   margin-bottom: 1rem;
-  /* transform: translate(-50%, -50%); */
   border-top: 2px solid var(--black);
   border-right: 2px solid var(--black);
 }
@@ -1424,6 +1420,63 @@ select::-ms-expand {
   min-height: calc(100vh - 150px);
 }
 
+.listings-page-wrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1500px;
+  padding: 1rem 0;
+  padding-bottom: 2rem;
+}
+
+.listings-page-wrapper .listings-filter {
+  width: 200px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  flex: 0.15;
+}
+
+.listings-page-wrapper .listings-filter .filter-section {
+  /* margin: 1rem 0; */
+  border-bottom: 1px solid var(--black);
+  border-right: 1px solid var(--black);
+  border-left: 1px solid var(--black);
+  padding: 1rem;
+}
+
+.listings-page-wrapper .listings-filter .filter-section:first-child {
+  border-top: 1px solid var(--black);
+}
+
+.listings-page-wrapper .listings-filter .filter-section h2,
+.listings-page-wrapper .listings-filter .filter-section p {
+  margin: 0.4rem 0;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+}
+
+.listings-page-wrapper .listings-filter .filter-section h2 {
+  font-family: serif;
+  font-size: 1.2rem;
+}
+
+.listings-page-wrapper .listings-filter .filter-section p label {
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.listings-page-wrapper .listings-filter .filter-section .form-control {
+  width: 100%;
+  padding: 0.5rem;
+  display: block;
+  margin: 0.5rem 0;
+  outline: none;
+}
+
+.listings-page-wrapper .listings-filter .select::after {
+  right: 0.6rem;
+  border-top-color: var(--gray);
+  border-left-color: var(--gray);
+}
+
 .listings-page .home-search-wrapper {
   border-bottom: 1px solid var(--lightGray);
 }
@@ -1448,9 +1501,9 @@ select::-ms-expand {
   display: block;
 }
 
-.listings-page .featured-listings-wrapper {
+/* .listings-page .featured-listings-wrapper {
   max-width: 1500px;
-}
+} */
 
 .listings-page .featured-listings-wrapper .name {
   border-bottom: 1px solid var(--maroon);

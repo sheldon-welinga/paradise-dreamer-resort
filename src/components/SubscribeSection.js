@@ -8,6 +8,10 @@ const SubscribeSection = () => {
         <p className="content">
           Signup for our weekly updates and Never miss a moment of the latest
           and great places to be
+          {/* Signup for our regular e-newsletter and will keep you upto date with 
+          the latest offers, destinations and lots more. */}
+          {/* Sign up for our regular e-newsletter that will keep you up to date 
+          with offers, destination news and lots more. */}
         </p>
         <form>
           <div className="form-group">
