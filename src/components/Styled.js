@@ -60,4 +60,50 @@ const ImageWrapper = styled.div`
   transition: all 0.3s ease-in-out;
 `;
 
-export { StyledHero, ImageSlide, ImageWrapper };
+const PropertyOtherImage = styled.div`
+  min-height: 20vh;
+  max-width: 200px;
+  width: 100%;
+  background: url(${(props) => (props.image ? props.image : defaultImg)})
+    center/cover no-repeat;
+  object-fit: cover;
+  position: relative;
+`;
+
+const StyledHotelHero = styled.div`
+  min-height: 50vh;
+  background: url(${(props) => (props.image ? props.image : defaultImg)})
+    center/cover no-repeat;
+  object-fit: cover;
+  position: relative;
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    min-height: 50vh;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: left;
+    /* flex-direction: column; */
+
+    > div {
+      bottom: 2rem;
+      left: 2rem;
+      position: absolute;
+    }
+
+    .btn {
+      cursor: pointer;
+    }
+  }
+`;
+
+export {
+  StyledHero,
+  ImageSlide,
+  ImageWrapper,
+  PropertyOtherImage,
+  StyledHotelHero,
+};

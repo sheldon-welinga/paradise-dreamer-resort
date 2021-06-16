@@ -46,7 +46,7 @@ const App = (props) => {
   //   return <Redirect to="/accounts/login" />;
   // }
 
-  console.log(url);
+  // console.log(url);
   return (
     <div>
       {url !== "accounts" && url !== "dashboard" ? (
@@ -59,11 +59,7 @@ const App = (props) => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/listings" component={Listings} />
-        <Route
-          exact
-          path="/listing/:listingName"
-          component={SingleListingPage}
-        />
+        <Route path="/listing/:slug" component={SingleListingPage} />
         <Route exact path="/accomodation" component={Accomodation} />
         <Route exact path="/accomodation/:type" component={Accomodation} />
         <Route exact path="/accomodation/:type/:slug" component={SingleRoom} />
