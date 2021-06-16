@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Route, withRouter } from "react-router-dom";
 import SingleListingProperty from "../../components/Listings/SingleListingProperty";
+import SingleListingRatingAndRemarks from "../../components/Listings/SingleListingRatingAndRemarks";
 import SingleListingRoom from "../../components/Listings/SingleListingRooms";
 
 const SingleListingPage = (props) => {
@@ -32,6 +33,17 @@ const SingleListingPage = (props) => {
               Rooms
             </Link>
           </p>
+          <p
+            className={`listing-tab ${
+              mainUrl === "listing" && url === "ratings-and-remarks"
+                ? "active"
+                : ""
+            }`}
+          >
+            <Link to="/listing/:slug/ratings-and-remarks" className="tab">
+              Ratings &amp; Remarks
+            </Link>
+          </p>
           {/* <p className="listing-tab">
           <Link to="/listing/:listingId/property">Property</Link>
         </p> */}
@@ -43,6 +55,11 @@ const SingleListingPage = (props) => {
           exact
           path="/listing/:slug/rooms"
           component={SingleListingRoom}
+        />
+        <Route
+          exact
+          path="/listing/:slug/ratings-and-remarks"
+          component={SingleListingRatingAndRemarks}
         />
       </div>
     </div>

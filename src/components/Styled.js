@@ -71,15 +71,15 @@ const PropertyOtherImage = styled.div`
 `;
 
 const StyledHotelHero = styled.div`
-  min-height: 50vh;
+  min-height: 60vh;
   background: url(${(props) => (props.image ? props.image : defaultImg)})
     center/cover no-repeat;
   object-fit: cover;
   position: relative;
 
   .overlay {
-    background-color: rgba(0, 0, 0, 0.4);
-    min-height: 50vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 60vh;
     width: 100%;
     position: relative;
 
@@ -94,8 +94,50 @@ const StyledHotelHero = styled.div`
       position: absolute;
     }
 
+    .listing-header-top {
+      padding: 1rem 0;
+      display: flex;
+      align-items: baseline;
+      text-transform: uppercase;
+    }
+
+    .listing-header-top p,
+    .listing-header-top h2 {
+      color: #ffffff;
+      font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+      font-size: 1.7rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .listing-header-top p {
+      font-size: 0.9rem;
+      margin-left: 5px;
+      font-weight: normal;
+    }
+
     .btn {
       cursor: pointer;
+    }
+
+    .book-info-extra {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #860d0d;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .book-info-extra .link {
+      margin-left: 5px;
+      display: inline-block;
+      text-decoration: underline;
+      color: #860d0d;
+      cursor: pointer;
+      font-size: 0.9rem;
     }
   }
 `;
