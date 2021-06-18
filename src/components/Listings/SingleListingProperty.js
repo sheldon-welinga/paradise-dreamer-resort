@@ -42,6 +42,38 @@ const SingleListingProperty = () => {
           <div className="manager-section">Manager</div>
         </div>
       </div>
+      <div className="property-info">
+        <div className="property-more-info">
+          <div className="info">
+            <p>Location</p>
+            <h3>Nairobi, Kenya</h3>
+          </div>
+          <div className="info">
+            <p>Property Type</p>
+            <h3>Resort</h3>
+          </div>
+          <div>
+            <button className="btn btn-primary cursor-pointer">
+              Search Rooms
+            </button>
+          </div>
+        </div>
+        <div className="property-amenities">
+          <div className="amenity">
+            <span className="fa fa-wifi"></span>
+            <p>Wifi</p>
+          </div>
+          <div className="amenity">
+            <span className="fa fa-wheelchair"></span>
+            <p>Wheelchair</p>
+          </div>
+          <div className="amenity">
+            <span className="fa fa-blind"></span>
+            <p>Vision Aids</p>
+          </div>
+        </div>
+      </div>
+
       <div className="content-section">
         <div className="about">
           <h2 className="title">

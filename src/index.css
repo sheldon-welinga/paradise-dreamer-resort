@@ -145,6 +145,10 @@ select::-ms-expand {
   pointer-events: none;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* .select::after {
   content: "";
   width: 10px;
@@ -1680,6 +1684,80 @@ select::-ms-expand {
   letter-spacing: 0.5px;
   text-align: justify;
   margin: 0.7rem 0;
+}
+
+.single-listing-property .property-info .property-amenities,
+.single-listing-property .property-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single-listing-property .property-info .property-amenities {
+  padding: 1rem;
+  justify-content: left;
+}
+
+.single-listing-property .property-info .property-amenities .amenity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 130px;
+}
+
+.single-listing-property .property-info .property-amenities .amenity .fa {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.single-listing-property .property-info .property-amenities .amenity p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.single-listing-property .property-info > div {
+  flex: 0.5;
+}
+
+.single-listing-property .property-more-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  box-shadow: 0px 0px 2px 0px black;
+  max-width: 630px;
+  padding: 1rem;
+}
+
+.single-listing-property .property-more-info .info {
+  position: relative;
+}
+
+.single-listing-property .property-more-info .info p {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.single-listing-property .property-more-info .info:nth-child(2)::before,
+.single-listing-property .property-more-info .info:nth-child(2)::after {
+  content: "";
+  height: 50px;
+  width: 2px;
+  position: absolute;
+  background-color: var(--lightGray);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.single-listing-property .property-more-info .info:nth-child(2)::before {
+  left: -2rem;
+}
+
+.single-listing-property .property-more-info .info:nth-child(2)::after {
+  right: -2rem;
 }
 
 /* -------------------------------END OF SINGLE LISTING PAGE--------------- */
